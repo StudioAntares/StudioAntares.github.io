@@ -289,6 +289,11 @@ header {
         padding-right: 0.8em;
     }
 
+    #lastNav {
+        padding-right: none !important;
+    }
+
+
     .navLink:hover {
         text-decoration: underline;
     }
