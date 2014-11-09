@@ -387,18 +387,19 @@ h1 {
         right: 19%;
     }
 
-#tempMessage {
-    position: absolute;
-    top: 20%;
-    left: 6%;
-    width: 88%;
-    height: 60%;
-    background-color: #000000;
-    font-size: 0.8em;
-}
-#close {
-    font-size: 2em;
-}
+    #tempMessage {
+        position: absolute;
+        top: 25%;
+        left: 6%;
+        width: 88%;
+        height: 60%;
+        background-color: #000000;
+        font-size: 0.8em;
+    }
+    
+    #close {
+        font-size: 2em;
+    }
 
 
 
