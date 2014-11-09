@@ -60,10 +60,6 @@ $(document).ready(function() {
 
     $("body").addClass("good");
 
-
-
-
-
 });
 
 $( window ).load(function() {
@@ -102,6 +98,18 @@ $(".mediaButton").click(function(){
         //alert(what);
         $(this).attr("data-control","pause");
         $(this).removeClass("play");
+    };
+});
+
+$("#close").click(function(){
+    $("#tempMessage").fadeOut();
+    $("#fullBg").addClass("pointer");
+});
+
+$("#fullBg").click(function(){
+    if ($(this).hasClass("pointer")) {
+        $("#tempMessage").fadeIn();
+        $("#fullBg").removeClass("pointer");
     };
 });
 
