@@ -160,7 +160,7 @@ header {
 }
 
 #lastNav {
-    padding-right: none !important;
+    padding-right: 0em !important;
 }
 
 .navLink:hover {
@@ -290,7 +290,7 @@ header {
     }
 
     #lastNav {
-        padding-right: none !important;
+        padding-right: 0em !important;
     }
 
 
