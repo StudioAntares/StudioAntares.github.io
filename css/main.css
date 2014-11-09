@@ -150,13 +150,17 @@ header {
     position: absolute;
     right: 10%;
     bottom: 0.05em;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .navLink {
     color: #ffffff;
     text-decoration: none;
     padding-left: 1em;
+}
+
+#lastNav {
+    padding-right: none !important;
 }
 
 .navLink:hover {
@@ -275,6 +279,7 @@ header {
         position: absolute;
         left: 10%;
         margin-left: 50px;
+        font-size: 1em;
     }
 
     .navLink {
@@ -288,10 +293,12 @@ header {
         text-decoration: underline;
     }
 
-    #lastNav {
-        padding-right: none;
-    }
+}
 
+@media only screen and (max-width: 650px) {
+    #navLinks {
+        font-size: 0.9em;
+    }
 }
 
 @media print,
