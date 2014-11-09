@@ -1,12 +1,18 @@
-
+var titles;
+var descriptions;
 
 $(document).ready(function() {
 
     $("#fullBg").backstretch(["img/c_2146_0003.jpg"],{duration: 8000, fade: 1000});
+    titles = ["Santa Anita Park", "Another Title", "A third title"];
+    descriptions = ["description 1 description 1 description 1 description 1",
+                    "description 2 description 2 description 2 description 2",
+                    "description 3 description 3 description 3 description 3",]
+
+    $("#projName").html(titles[0]);
+    $("#projDesc").html(descriptions[0]);
 
 });
-
-
 
 $( window ).load(function() {
     // if (jQuery.browser.mobile == true) {
@@ -16,6 +22,32 @@ $( window ).load(function() {
     var bgArray = $('#fullBg').data('backstretch');
     bgArray.images.push('img/c_2146_0005.jpg');
     bgArray.images.push('img/c_2146_0007.jpg');
+});
+
+$(window).on("backstretch.before", function (e, instance, index) {
+  //$("#projName, #projDesc").animate({ opacity: 0 });
+});
+
+$(window).on("backstretch.after", function (e, instance, index) {
+    $("#projName").html(titles[index]);
+    $("#projDesc").html(descriptions[index]);
+    //$("#projName, #projDesc").animate({ opacity: 1 });
+    // $("#labelPane").css("visibility","visible");
+});
+
+$(".mediaButton").click(function(){
+    var what = $(this).attr("data-control");
+     $("#fullBg").backstretch(what);
+    
+    if (what == "pause") {
+        alert(what);
+        $(this).attr("data-control","resume");
+        $(this).addClass("play");
+    } else if (what == "resume") {
+        alert(what);
+        $(this).attr("data-control","pause");
+        $(this).removeClass("play");
+    };
 });
 
 on_resize(function() {
