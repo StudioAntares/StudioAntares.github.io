@@ -40,11 +40,11 @@ $(".mediaButton").click(function(){
      $("#fullBg").backstretch(what);
     
     if (what == "pause") {
-        alert(what);
+        //alert(what);
         $(this).attr("data-control","resume");
         $(this).addClass("play");
     } else if (what == "resume") {
-        alert(what);
+        //alert(what);
         $(this).attr("data-control","pause");
         $(this).removeClass("play");
     };
