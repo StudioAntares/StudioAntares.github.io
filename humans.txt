@@ -3,7 +3,8 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <name> ---------- <role> ---------- <twitter>
+    Ivaylo Getov      Designer          @ivaylopg
 
 # THANKS
 
