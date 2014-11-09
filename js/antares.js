@@ -12,33 +12,41 @@ $(document).ready(function() {
     $("#projName").html(titles[0]);
     $("#projDesc").html(descriptions[0]);
 
-    var Menu = {
-        el: {
-            ham: $('.menu'),
-            menuTop: $('.menu-top'),
-            menuMiddle: $('.menu-middle'),
-            menuBottom: $('.menu-bottom')
-        },
-        init: function() {
-            Menu.bindUIactions();
-        },
-        bindUIactions: function() {
-            Menu.el.ham
-            .on('click',
-                function(event) {
-                Menu.activateMenu(event);
-                event.preventDefault();
-                $("#my-menu").trigger("open.mm");
-                }
-            );
-        },
-        activateMenu: function() {
-            Menu.el.menuTop.toggleClass('menu-top-click');
-            Menu.el.menuMiddle.toggleClass('menu-middle-click');
-            Menu.el.menuBottom.toggleClass('menu-bottom-click'); 
-        }
+    var Menu;
+    if (Modernizr.csstransitions && Modernizr.csstransforms) {
+        Menu = {
+            el: {
+                ham: $('.menu'),
+                menuTop: $('.menu-top'),
+                menuMiddle: $('.menu-middle'),
+                menuBottom: $('.menu-bottom')
+            },
+            init: function() {
+                Menu.bindUIactions();
+            },
+            bindUIactions: function() {
+                Menu.el.ham
+                .on('click',
+                    function(event) {
+                    Menu.activateMenu(event);
+                    event.preventDefault();
+                    $("#my-menu").trigger("open.mm");
+                    }
+                );
+            },
+            activateMenu: function() {
+                Menu.el.menuTop.toggleClass('menu-top-click');
+                Menu.el.menuMiddle.toggleClass('menu-middle-click');
+                Menu.el.menuBottom.toggleClass('menu-bottom-click'); 
+            }
+        };
+        Menu.init();
+    } else {
+        
     };
-    Menu.init();
+    
+
+    
 
     $("#my-menu").mmenu({
         offCanvas: {

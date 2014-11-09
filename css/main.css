@@ -107,14 +107,21 @@ body {
     background-color: #000000;
 }
 
+/* * * * * * Menu Stuff * * * * * */
 #my-menu {
     visibility: hidden;
     background-color: #151515;
+    color: #ffffff;
+}
+
+.mm-list {
+    font-size: 1.1em !important;
 }
 
 #container {
     height: 100%;
 }
+/* * * * * * * * * * * * * * * * * */
 
 #fullBg {
     position: absolute;
@@ -264,7 +271,6 @@ header {
     background-position: -45px -15px !important;
 }
 
-
 .menu {
   cursor: pointer;
   margin: 0 auto;
@@ -274,6 +280,7 @@ header {
   right: 6%;
   width: 9px;
   height: 18px;
+  visibility: hidden;
 }
 
 .menu-global {
@@ -316,21 +323,29 @@ header {
 /*@media only screen and (max-width: 768px) {*/
 @media only screen and (max-width: 650px) {
 
-    #logoTop {
+    #logoTop, #antaresName {
         left: 6%;
     }
 
-    #antaresName {
-        left: 6%;
-/*        margin-left: 50px;
-        bottom: 35%;*/
-    }
-
-    #navLinks {
+    #navLinks, #projDesc {
         visibility: hidden;
         display: none;
     }
 
+    .menu {
+        visibility: visible;
+    }
+
+    #labelPane {
+        left: 0%;
+        padding-left: 6%;
+        width: 100%;
+        height: 8%;
+    }
+
+    #mediaControls {
+        right: 19%;
+    }
 }
 
 /*@media only screen and (max-width: 650px) {
