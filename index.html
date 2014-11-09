@@ -10,6 +10,8 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/jquery.mmenu.css">
+        <link rel="stylesheet" href="css/jquery.mmenu.positioning.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
         <script src="//use.typekit.net/dsz0noy.js"></script>
@@ -17,34 +19,50 @@
 
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-        <header>
-            <img src="img/logoTop.png" id="logoTop"/>
-            <div id="antaresName">Studio Antares</div>
-            <div id="navLinks">
-                <a href="#" class="navLink">work</a>
-                <a href="#" class="navLink">philosophy</a>
-                <a href="#" class="navLink">process</a>
-                <a href="#" class="navLink" id="lastNav">contact</a>
-            </div>
-        </header>
+        <div id="container">
+            <!--[if lt IE 8]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+            <header>
+                <img src="img/logoTop.png" id="logoTop"/>
+                <div id="antaresName">Studio Antares</div>
+                <div id="navLinks">
+                    <a href="#my-menu" class="navLink">work</a>
+                    <a href="#" class="navLink">philosophy</a>
+                    <a href="#" class="navLink">process</a>
+                    <a href="#" class="navLink" id="lastNav">contact</a>
+                </div>
+            </header>
 
-        <div id="labelPane">
-            <p id="projName"></p>
-            <p id="projDesc"></p>
-            <div id="mediaControls">
-                <div id="playPause" class="mediaButton" data-control="pause"></div>
-                <div id="prevButton" class="mediaButton" data-control="prev"></div>
-                <div id="nextButton" class="mediaButton"data-control="next"></div>
+            <div id="labelPane">
+                <p id="projName"></p>
+                <p id="projDesc"></p>
+                <div id="mediaControls">
+                    <div id="playPause" class="mediaButton" data-control="pause"></div>
+                    <div id="prevButton" class="mediaButton" data-control="prev"></div>
+                    <div id="nextButton" class="mediaButton"data-control="next"></div>
+                </div>
             </div>
+
+            <div id="fullBg">
+            </div>
+
+            
+            
+
+            
         </div>
 
+        <nav id="my-menu">
+           <ul>
+              <li><a href="/">work</a></li>
+              <li><a href="/about/">philosphy</a></li>
+              <li><a href="/contact/">process</a></li>
+              <li><a href="/contact/">contact</a></li>
+           </ul>
+        </nav>
         
-        <div id="fullBg">
-        </div>
 
 
 
@@ -54,6 +72,7 @@
 
         <!-- Vendor JS -->
         <script src="js/vendor/jquery.backstretch.min.js"></script>
+        <script src="js/vendor/jquery.mmenu.min.js"></script>
 
         <!-- Custom JS -->
         <script src="js/antares.js"></script>

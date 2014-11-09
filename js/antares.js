@@ -3,6 +3,12 @@ var descriptions;
 
 $(document).ready(function() {
 
+    $("#my-menu").mmenu({
+        offCanvas: {
+           position  : "right"
+        }
+     }).css("visibility","visible");
+
     $("#fullBg").backstretch(["img/c_2146_0003.jpg"],{duration: 8000, fade: 1000});
     titles = ["Santa Anita Park", "Another Title", "A third title"];
     descriptions = ["description 1 description 1 description 1 description 1",
@@ -11,6 +17,10 @@ $(document).ready(function() {
 
     $("#projName").html(titles[0]);
     $("#projDesc").html(descriptions[0]);
+
+    $("body").addClass("good");
+
+
 
 });
 
