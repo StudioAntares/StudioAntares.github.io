@@ -159,10 +159,6 @@ header {
     padding-left: 1em;
 }
 
-#lastNav {
-    padding-right: none;
-}
-
 .navLink:hover {
     text-decoration: underline;
 }
