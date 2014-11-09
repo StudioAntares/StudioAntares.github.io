@@ -264,54 +264,71 @@ header {
     background-position: -45px -15px !important;
 }
 
+
+.menu {
+  cursor: pointer;
+  margin: 0 auto;
+  padding-left: 1.25em;
+  position: absolute;
+  top: 15px;
+  right: 6%;
+  width: 9px;
+  height: 18px;
+}
+
+.menu-global {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  border-top: 4px solid white;
+  width: 100%;
+  transition: 0.55s;
+}
+.menu-top {
+  top: 0;
+}
+.menu-middle {
+  top: 9px;
+}
+.menu-bottom {
+  top: 18px;
+}
+.menu-top-click {
+  backface-visibility: hidden;
+  top: 10px;
+  transform: rotate(45deg);
+  transition: 0.55s;
+}
+.menu-middle-click {
+  opacity: 0;
+}
+.menu-bottom-click {
+  backface-visibility: hidden;
+  top: 10px;
+  transform: rotate(-45deg);
+  transition: 0.55s;
+}
+
 /* ==========================================================================
    Media Queries 
    ========================================================================== */
 
+/*@media only screen and (max-width: 768px) {*/
 @media only screen and (max-width: 650px) {
 
-    header {
-        width: 100%;
-        min-height: 75px;
-        height: auto;
-        /*padding: 0em 10%;*/
-    }
-
     #logoTop {
-        position: absolute;
-        left: 5%;
-        top: 10%;
-        height: 60%;
-        width: auto;
+        left: 6%;
     }
 
     #antaresName {
         left: 6%;
-        margin-left: 50px;
-        bottom: 35%;
+/*        margin-left: 50px;
+        bottom: 35%;*/
     }
 
     #navLinks {
-        position: absolute;
-        left: 6%;
-        margin-left: 50px;
-        font-size: 0.9em;
-    }
-
-    .navLink {
-        color: #ffffff;
-        text-decoration: none;
-        padding-left: 0em;
-        padding-right: 0.8em;
-    }
-
-    #lastNav {
-        padding-right: 0em !important;
-    }
-
-
-    .navLink:hover {
-        text-decoration: underline;
+        visibility: hidden;
+        display: none;
     }
 
 }
