@@ -395,7 +395,7 @@ h1 {
         left: 6%;
         width: 88%;
         background-color: #000000;
-        font-size: 0.8em;
+        font-size: 0.75em;
     }
 
     #close {
@@ -406,11 +406,11 @@ h1 {
 
 }
 
-/*@media only screen and (max-width: 650px) {
-    #navLinks {
-        font-size: 0.9em;
+@media only screen and (max-width: 450px) {
+    #tempMessage h1 {
+        font-size: 1.6em;
     }
-}*/
+}
 
 @media print,
        (-o-min-device-pixel-ratio: 5/4),
