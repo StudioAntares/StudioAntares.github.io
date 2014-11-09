@@ -178,6 +178,7 @@ header {
     /*/min-height: 10%;*/
     background-color: #000000;
     /*visibility: hidden;*/
+    overflow: hidden;
 }
 
 .rgba #labelPane {
@@ -263,21 +264,21 @@ header {
 
     #logoTop {
         position: absolute;
-        left: 10%;
+        left: 5%;
         top: 10%;
         height: 60%;
         width: auto;
     }
 
     #antaresName {
-        left: 10%;
+        left: 6%;
         margin-left: 50px;
         bottom: 35%;
     }
 
     #navLinks {
         position: absolute;
-        left: 10%;
+        left: 6%;
         margin-left: 50px;
         font-size: 1em;
     }
