@@ -68,7 +68,7 @@ $( window ).load(function() {
     // };
     
     var bgArray = $('#fullBg').data('backstretch');
-    for (var i = 2; i < 12; i++) {
+    for (var i = 2; i <= 13; i++) {
         bgArray.images.push('img/main/' + i + '.jpg');
     };
     // bgArray.images.push('img/main/2.jpg');
