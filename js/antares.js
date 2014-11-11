@@ -3,7 +3,7 @@ var descriptions;
 
 $(document).ready(function() {
 
-    $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 8000, fade: 1000});
+    $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 4500, fade: 3500});
     titles = ["000", "000", "000", "000", "000", "000", "000", "000", "000", "000"];
     descriptions = ["000", "000", "000", "000", "000", "000", "000", "000", "000", "000"]
 
@@ -68,7 +68,7 @@ $( window ).load(function() {
     // };
     
     var bgArray = $('#fullBg').data('backstretch');
-    for (var i = 2; i <= 13; i++) {
+    for (var i = 2; i <= 11; i++) {
         bgArray.images.push('img/main/' + i + '.jpg');
     };
     // bgArray.images.push('img/main/2.jpg');
