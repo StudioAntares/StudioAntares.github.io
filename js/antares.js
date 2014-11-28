@@ -7,7 +7,7 @@ var trans = false;
 
 $(document).ready(function() {
 
-    $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 4500, fade: 3500});
+    $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 6500, fade: 3000});
     titles = ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010"];
     descriptions = ["Description description content description stuff", 
                     "stuff stuff stuff describing things that are real", 
@@ -20,8 +20,8 @@ $(document).ready(function() {
                     "Description description content description stuff",
                     "stuff stuff stuff describing things that are real"]
 
-    $("#projName").html(titles[0]);
-    $("#projDesc").html(descriptions[0]);
+    //$("#projName").html(titles[0]);
+    //$("#projDesc").html(descriptions[0]);
 
     var Menu;
     if (Modernizr.csstransitions && Modernizr.csstransforms) {
@@ -89,12 +89,18 @@ $( window ).load(function() {
 });
 
 $(window).on("backstretch.before", function (e, instance, index) {
-  //$("#projName, #projDesc").animate({ opacity: 0 });
+    $("#projName, #projDesc").fadeOut(1500,function(){
+        $("#projName").html(titles[index]);
+        $("#projDesc").html(descriptions[index]);
+        $("#projName, #projDesc").fadeIn(1500);
+    });
 });
 
 $(window).on("backstretch.after", function (e, instance, index) {
-    $("#projName").html(titles[index]);
-    $("#projDesc").html(descriptions[index]);
+    //$("#projName, #projDesc").fadeIn(2000);
+    //$("#projName").html(titles[index]);
+    //$("#projDesc").html(descriptions[index]);
+
     //$("#projName, #projDesc").animate({ opacity: 1 });
     // $("#labelPane").css("visibility","visible");
 });
