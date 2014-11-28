@@ -123,6 +123,7 @@ $(".navLink").click(function(){
             trans = true;
             $("#labelPane").fadeOut( "slow");
             $("#headerbg").animate({height: winHeight +"px"}, function(){
+                fadeRGBA($("#headerbg"),0.9);
                 $("#aboutInfo").fadeIn("slow",function(){
                     showAbout = true;
                     trans = false;
@@ -132,6 +133,7 @@ $(".navLink").click(function(){
             trans = true;
             $("#aboutInfo").fadeOut("slow",function(){
                 $("#headerbg").animate({height: "100%"},function(){
+                    fadeRGBA($("#headerbg"),0.75);
                     $("#labelPane").fadeIn("slow",function(){
                         showAbout = false;
                         trans = false;        
@@ -154,6 +156,7 @@ $(".navLink").click(function(){
             trans = true;
             $("#labelPane").fadeOut( "slow");
             $("#headerbg").animate({height: winHeight +"px"}, function(){
+                fadeRGBA($("#headerbg"),0.9);
                 $("#contactInfo").fadeIn("slow",function(){
                     showContact = true;
                     trans = false;
@@ -163,6 +166,7 @@ $(".navLink").click(function(){
             trans = true;
             $("#contactInfo").fadeOut("slow",function(){
                 $("#headerbg").animate({height: "100%"},function(){
+                    fadeRGBA($("#headerbg"),0.75);
                     $("#labelPane").fadeIn("slow",function(){
                         showContact = false;
                         trans = false;        
@@ -181,6 +185,12 @@ $(".navLink").click(function(){
         };
     };
 });
+
+function fadeRGBA(thing, target) {
+    if (Modernizr.rgba) {
+        thing.animate({backgroundColor: jQuery.Color( "rgba(0,0,0," + target + ")" )});
+    };
+}
 
 on_resize(function() {
 
