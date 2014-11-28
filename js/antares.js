@@ -1,11 +1,24 @@
 var titles;
 var descriptions;
 
+var showAbout = false;
+var showContact = false;
+var trans = false;
+
 $(document).ready(function() {
 
     $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 4500, fade: 3500});
-    titles = ["000", "000", "000", "000", "000", "000", "000", "000", "000", "000"];
-    descriptions = ["000", "000", "000", "000", "000", "000", "000", "000", "000", "000"]
+    titles = ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010"];
+    descriptions = ["Description description content description stuff", 
+                    "stuff stuff stuff describing things that are real", 
+                    "Description description content description stuff", 
+                    "stuff stuff stuff describing things that are real", 
+                    "Description description content description stuff", 
+                    "stuff stuff stuff describing things that are real", 
+                    "Description description content description stuff",
+                    "stuff stuff stuff describing things that are real",
+                    "Description description content description stuff",
+                    "stuff stuff stuff describing things that are real"]
 
     $("#projName").html(titles[0]);
     $("#projDesc").html(descriptions[0]);
@@ -101,15 +114,73 @@ $(".mediaButton").click(function(){
     };
 });
 
-$("#close").click(function(){
-    $("#tempMessage").fadeOut();
-    $("#fullBg").addClass("pointer");
-});
+$(".navLink").click(function(){
+    var dest = $(this).attr("data-dest");
+    var winHeight = window.innerHeight;
 
-$("#fullBg").click(function(){
-    if ($(this).hasClass("pointer")) {
-        $("#tempMessage").fadeIn();
-        $("#fullBg").removeClass("pointer");
+    if (dest == "about" && !trans) {
+        if (!showAbout && !showContact) {
+            trans = true;
+            $("#labelPane").fadeOut( "slow", function(){
+                $("#headerbg").animate({height: winHeight +"px"}, function(){
+                    $("#aboutInfo").fadeIn("slow",function(){
+                        showAbout = true;
+                        trans = false;
+                    });
+                });
+            });
+        } else if (showAbout && !showContact) {
+            trans = true;
+            $("#aboutInfo").fadeOut("slow",function(){
+                $("#headerbg").animate({height: "100%"},function(){
+                    $("#labelPane").fadeIn("slow",function(){
+                        showAbout = false;
+                        trans = false;        
+                    });
+                });
+            });
+        } else if (!showAbout && showContact) {
+            trans = true;
+            $("#contactInfo").fadeOut(function(){
+                showContact = false;
+                $("#aboutInfo").fadeIn("slow",function(){
+                    showAbout = true;
+                    trans = false;
+                });
+            });
+        };
+
+    } else if (dest == "contact" && !trans) {
+        if (!showContact && !showAbout) {
+            trans = true;
+            $("#labelPane").fadeOut( "slow", function(){
+                $("#headerbg").animate({height: winHeight +"px"}, function(){
+                    $("#contactInfo").fadeIn("slow",function(){
+                        showContact = true;
+                        trans = false;
+                    });
+                });
+            });
+        } else if (showContact && !showAbout) {
+            trans = true;
+            $("#contactInfo").fadeOut("slow",function(){
+                $("#headerbg").animate({height: "100%"},function(){
+                    $("#labelPane").fadeIn("slow",function(){
+                        showContact = false;
+                        trans = false;        
+                    });
+                });
+            });
+        } else if (!showContact && showAbout) {
+            trans = true;
+            $("#aboutInfo").fadeOut(function(){
+                showAbout = false;
+                $("#contactInfo").fadeIn("slow",function(){
+                    showContact = true;
+                    trans = false;
+                });
+            });
+        };
     };
 });
 
