@@ -336,16 +336,20 @@ h1 {
     font-weight: 400;
 }
 
-#close {
+.close {
     position: absolute;
     top: 0em;
-    right: 0.4em;
+    right: 0em;
     font-size: 2.5em;
 }
 
-#close:hover {
+.close:hover {
     color: #999999;
     cursor: pointer;
+}
+
+.closeOver {
+    top: -1em;
 }
 
 .infoOverlay {
@@ -398,7 +402,7 @@ h1 {
         font-size: 0.75em;
     }
 
-    #close {
+    .close {
         font-size: 2em;
     }
 
