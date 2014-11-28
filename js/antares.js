@@ -121,12 +121,11 @@ $(".navLink").click(function(){
     if (dest == "about" && !trans) {
         if (!showAbout && !showContact) {
             trans = true;
-            $("#labelPane").fadeOut( "slow", function(){
-                $("#headerbg").animate({height: winHeight +"px"}, function(){
-                    $("#aboutInfo").fadeIn("slow",function(){
-                        showAbout = true;
-                        trans = false;
-                    });
+            $("#labelPane").fadeOut( "slow");
+            $("#headerbg").animate({height: winHeight +"px"}, function(){
+                $("#aboutInfo").fadeIn("slow",function(){
+                    showAbout = true;
+                    trans = false;
                 });
             });
         } else if (showAbout && !showContact) {
@@ -153,12 +152,11 @@ $(".navLink").click(function(){
     } else if (dest == "contact" && !trans) {
         if (!showContact && !showAbout) {
             trans = true;
-            $("#labelPane").fadeOut( "slow", function(){
-                $("#headerbg").animate({height: winHeight +"px"}, function(){
-                    $("#contactInfo").fadeIn("slow",function(){
-                        showContact = true;
-                        trans = false;
-                    });
+            $("#labelPane").fadeOut( "slow");
+            $("#headerbg").animate({height: winHeight +"px"}, function(){
+                $("#contactInfo").fadeIn("slow",function(){
+                    showContact = true;
+                    trans = false;
                 });
             });
         } else if (showContact && !showAbout) {
