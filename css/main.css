@@ -375,12 +375,17 @@ h1 {
     background: none;
     z-index: 5;
     display: none;
- }
+}
 
- .isMobile #mediaControls {
+#mediaControls {
     visibility: hidden;
     display: none;
- }
+}
+
+.isNotMobile #mediaControls {
+    visibility: visible;
+    display: block;
+}
 
 /* ==========================================================================
    Media Queries 
@@ -425,6 +430,9 @@ h1 {
         font-size: 2em;
     }
 
+    .infoOverlay {
+        top: 100px;
+    }
 
 
 }
