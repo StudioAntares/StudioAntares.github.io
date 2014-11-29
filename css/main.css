@@ -117,7 +117,7 @@ h1 {
     font-weight: 400;
 }
 
-#fullBg {
+#fullBg, #workBg {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -293,6 +293,18 @@ header, #headerbg {
     background-color: #000000;
     overflow: hidden;
     z-index: 2;
+}
+
+.workPage #labelPane {
+    position: fixed;
+    top: 100%;
+    right: 100%;
+    padding-right: none;
+    width: 1px;
+    height: 1px;
+    background-color: none;
+    overflow: hidden;
+    z-index: -2;
 }
 
 .rgba #labelPane {

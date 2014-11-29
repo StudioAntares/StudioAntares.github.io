@@ -1,6 +1,7 @@
 
 ////////////////////////
 // GLOBAL VARS
+var whichPage;
 
 var titles;
 var descriptions;
@@ -9,37 +10,52 @@ var showAbout = false;
 var showContact = false;
 var trans = false;
 
-var workDest = "work/"
+var workDest = "work.html"
 var procDest = "process/"
+
+var paneFade = "slow"
 
 ////////////////////////
 // SETUP ON READY
 
 $(document).ready(function() {
 
-    $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 6500, fade: 3000});
+    if (document.getElementById("fullBg") !== null && document.getElementById("fullBg") !== undefined) {
+        //alert("Home Page");
+        whichPage = "home";
+        $("body").addClass("homePage");
+        $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 6500, fade: 3000});
+    } else if (document.getElementById("workBg") !== null && document.getElementById("workBg") !== undefined) {
+        //alert("Work Page");
+        whichPage = "work";
+        $("body").addClass("workPage");
+        $("#workBg").backstretch("img/work/mesh.jpg");
+        paneFade = 10;
+    };
 
-    titles = ["001",
-              "002",
-              "003",
-              "004",
-              "005",
-              "006",
-              "007",
-              "008",
-              "009",
-              "010"];
+    if (whichPage === "home") {
+        titles = ["001",
+                  "002",
+                  "003",
+                  "004",
+                  "005",
+                  "006",
+                  "007",
+                  "008",
+                  "009",
+                  "010"];
     
-    descriptions = ["Description description content description stuff", 
-                    "stuff stuff stuff describing things that are real", 
-                    "Description description content description stuff", 
-                    "stuff stuff stuff describing things that are real", 
-                    "Description description content description stuff", 
-                    "stuff stuff stuff describing things that are real", 
-                    "Description description content description stuff",
-                    "stuff stuff stuff describing things that are real",
-                    "Description description content description stuff",
-                    "stuff stuff stuff describing things that are real"]
+        descriptions = ["Description description content description stuff", 
+                        "stuff stuff stuff describing things that are real", 
+                        "Description description content description stuff", 
+                        "stuff stuff stuff describing things that are real", 
+                        "Description description content description stuff", 
+                        "stuff stuff stuff describing things that are real", 
+                        "Description description content description stuff",
+                        "stuff stuff stuff describing things that are real",
+                        "Description description content description stuff",
+                        "stuff stuff stuff describing things that are real"]
+    };
 
     //$("#projName").html(titles[0]);
     //$("#projDesc").html(descriptions[0]);
@@ -101,10 +117,11 @@ $( window ).load(function() {
     } else {
         $("body").addClass("isNotMobile");
     };
-    
-    var bgArray = $('#fullBg').data('backstretch');
-    for (var i = 2; i <= 11; i++) {
-        bgArray.images.push('img/main/' + i + '.jpg');
+    if (whichPage === "home") {
+        var bgArray = $('#fullBg').data('backstretch');
+        for (var i = 2; i <= 11; i++) {
+            bgArray.images.push('img/main/' + i + '.jpg');
+        };
     };
 });
 
@@ -197,7 +214,7 @@ function hideOver(){
         $("#aboutInfo").fadeOut("slow",function(){
             $("#headerbg").animate({height: "100%"},function(){
                 fadeRGBA($("#headerbg"),0.75);
-                $("#labelPane").fadeIn("slow",function(){
+                $("#labelPane").fadeIn(paneFade,function(){
                     showAbout = false;
                     trans = false;        
                 });
@@ -208,12 +225,15 @@ function hideOver(){
         $("#contactInfo").fadeOut("slow",function(){
             $("#headerbg").animate({height: "100%"},function(){
                 fadeRGBA($("#headerbg"),0.75);
-                $("#labelPane").fadeIn("slow",function(){
+                $("#labelPane").fadeIn(paneFade,function(){
                     showContact = false;
                     trans = false;        
                 });
             });
         });
+    };
+    if (whichPage === "work") {
+        $(".navLink:eq(0)").addClass("underlined");
     };
 };
 
@@ -229,7 +249,7 @@ function overlay(dest,active) {
     if (dest == "about" && !trans) {
         if (!showAbout && !showContact) {
             trans = true;
-            $("#labelPane").fadeOut( "slow");
+            $("#labelPane").fadeOut( paneFade);
             $("#headerbg").animate({height: winHeight +"px"}, function(){
                 fadeRGBA($("#headerbg"),0.9);
                 $("#aboutInfo").fadeIn("slow",function(){
@@ -243,8 +263,11 @@ function overlay(dest,active) {
             $("#aboutInfo").fadeOut("slow",function(){
                 $("#headerbg").animate({height: "100%"},function(){
                     fadeRGBA($("#headerbg"),0.75);
-                    $("#labelPane").fadeIn("slow",function(){
+                    $("#labelPane").fadeIn(paneFade,function(){
                         showAbout = false;
+                        if (whichPage === "work") {
+                            $(".navLink:eq(0)").addClass("underlined");
+                        };
                         trans = false;        
                     });
                 });
@@ -264,7 +287,7 @@ function overlay(dest,active) {
     } else if (dest == "contact" && !trans) {
         if (!showContact && !showAbout) {
             trans = true;
-            $("#labelPane").fadeOut( "slow");
+            $("#labelPane").fadeOut( paneFade);
             $("#headerbg").animate({height: winHeight +"px"}, function(){
                 fadeRGBA($("#headerbg"),0.9);
                 $("#contactInfo").fadeIn("slow",function(){
@@ -278,8 +301,11 @@ function overlay(dest,active) {
             $("#contactInfo").fadeOut("slow",function(){
                 $("#headerbg").animate({height: "100%"},function(){
                     fadeRGBA($("#headerbg"),0.75);
-                    $("#labelPane").fadeIn("slow",function(){
+                    $("#labelPane").fadeIn(paneFade,function(){
                         showContact = false;
+                        if (whichPage === "work") {
+                            $(".navLink:eq(0)").addClass("underlined");
+                        };
                         trans = false;        
                     });
                 });
