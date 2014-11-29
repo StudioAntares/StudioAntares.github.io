@@ -15,6 +15,7 @@ var procDest = "process/"
 
 var paneFade = "slow"
 var $container;
+var pageBg;
 
 ////////////////////////
 // SETUP ON READY
@@ -25,12 +26,15 @@ $(document).ready(function() {
         //alert("Home Page");
         whichPage = "home";
         $("body").addClass("homePage");
-        $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 6500, fade: 3000});
+        pageBg = $("#fullBg");
+        pageBg.backstretch(["img/main/1.jpg"],{duration: 6500, fade: 3000});
+        resizeBg(pageBg);
     } else if (document.getElementById("workBg") !== null && document.getElementById("workBg") !== undefined) {
         //alert("Work Page");
         whichPage = "work";
         $("body").addClass("workPage");
-        $("#workBg").backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
+        pageBg = $("#workBg");
+        pageBg.backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
         paneFade = 10;
         resizeThumbs();
         $container = $('#projContainer');
@@ -41,7 +45,7 @@ $(document).ready(function() {
             "itemSelector": '.projThumb',
             "isResizeBound": false
         });
-
+        resizeBg(pageBg);
     };
 
     if (whichPage === "home") {
@@ -129,7 +133,7 @@ $( window ).load(function() {
         $("body").addClass("isNotMobile");
     };
     if (whichPage === "home") {
-        var bgArray = $('#fullBg').data('backstretch');
+        var bgArray = pageBg.data('backstretch');
         for (var i = 2; i <= 11; i++) {
             bgArray.images.push('img/main/' + i + '.jpg');
         };
@@ -153,7 +157,7 @@ $(window).on("backstretch.after", function (e, instance, index) {
 
 $(".mediaButton").click(function(){
     var what = $(this).attr("data-control");
-    $("#fullBg").backstretch(what);
+    pageBg.backstretch(what);
     if (what == "pause") {
         //alert(what);
         $(this).attr("data-control","resume");
@@ -241,11 +245,19 @@ $(document).keyup(function(e) {
 
 on_resize(function() {
     //Throttled on-resize handler
+    
+    
+})();
+
+$( window ).resize(function() {
+    //Normal on-resize handler
+    
     if (whichPage === "work" && $container != undefined) {
         resizeThumbs();
         $container.masonry();
     };
-})();
+    resizeBg(pageBg);
+});
 
 ////////////////////////
 // CUSTOM FUNCTIONS
@@ -378,11 +390,19 @@ function resizeThumbs(){
     });
 }
 
+function resizeBg(bg) {
+    //bg.height(jQuery(window).height());
+    if (bg !== undefined) {
+        bg.height(jQuery(window).height()+60);
+    };
+    //resizeBg(pageBg);
+}
+
 ////////////////////////
 // UTILITIES
 
 // debulked onresize handler
-function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,250)};return c};
+function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,150)};return c};
 
 // Avoid `console` errors in browsers that lack a console.
 (function() {
