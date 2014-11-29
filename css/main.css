@@ -434,6 +434,9 @@ h1 {
         top: 100px;
     }
 
+    .closeOver {
+        top: -0.5em;
+    }
 
 }
 

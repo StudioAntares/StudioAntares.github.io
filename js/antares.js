@@ -5,6 +5,9 @@ var showAbout = false;
 var showContact = false;
 var trans = false;
 
+var workDest = "work/"
+var procDest = "process/"
+
 $(document).ready(function() {
 
     $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 6500, fade: 3000});
@@ -131,15 +134,31 @@ $(".navLink").click(function(event){
         $(this).removeClass("underlined");
     })
 
-    overlay(dest,active);
-    
+    if (dest == "work") {
+        $("#container").fadeOut(1000,function(){
+            document.location.href = workDest;
+        })
+    } else if (dest == "process") {
+        $("#container").fadeOut(1000,function(){
+            document.location.href = procDest;
+        })
+    } else {
+        overlay(dest,active);
+    };
 });
 
 $(".mmenuLink").click(function(event){
     event.preventDefault();
     var dest = $(this).attr("data-dest");
-    overlay(dest,99);
-    $("#my-menu").trigger("close.mm");
+
+    if (dest == "work") {
+        document.location.href = workDest;
+    } else if (dest == "process") {
+        document.location.href = procDest;
+    } else {
+        $("#my-menu").trigger("close.mm");
+        overlay(dest,99);
+    };
 });
 
 $(".closeOver").click(function(){
