@@ -136,12 +136,16 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.isNotMobile a:hover {
     text-decoration: underline;
 }
 
 .pointer {
     cursor: pointer;
+}
+
+.underlined {
+    text-decoration: underline;
 }
 
 header, #headerbg {

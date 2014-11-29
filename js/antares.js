@@ -76,9 +76,12 @@ $(document).ready(function() {
 });
 
 $( window ).load(function() {
-    // if (jQuery.browser.mobile == true) {
-    //     isMobile = true;
-    // };
+    if (jQuery.browser.mobile == true) {
+        //isMobile = true;
+        $("body").addClass("isMobile");
+    } else {
+        $("body").addClass("isNotMobile");
+    };
     
     var bgArray = $('#fullBg').data('backstretch');
     for (var i = 2; i <= 11; i++) {
@@ -123,6 +126,11 @@ $(".mediaButton").click(function(){
 $(".navLink").click(function(){
     var dest = $(this).attr("data-dest");
     var winHeight = window.innerHeight;
+    var active = $(this).index();
+    $(".navLink").each(function(){
+        $(this).removeClass("underlined");
+    })
+
 
     if (dest == "about" && !trans) {
         if (!showAbout && !showContact) {
@@ -132,6 +140,7 @@ $(".navLink").click(function(){
                 fadeRGBA($("#headerbg"),0.9);
                 $("#aboutInfo").fadeIn("slow",function(){
                     showAbout = true;
+                    $(".navLink:eq(" + active + ")").addClass("underlined");
                     trans = false;
                 });
             });
@@ -152,6 +161,7 @@ $(".navLink").click(function(){
                 showContact = false;
                 $("#aboutInfo").fadeIn("slow",function(){
                     showAbout = true;
+                    $(".navLink:eq(" + active + ")").addClass("underlined");
                     trans = false;
                 });
             });
@@ -165,6 +175,7 @@ $(".navLink").click(function(){
                 fadeRGBA($("#headerbg"),0.9);
                 $("#contactInfo").fadeIn("slow",function(){
                     showContact = true;
+                    $(".navLink:eq(" + active + ")").addClass("underlined");
                     trans = false;
                 });
             });
@@ -185,6 +196,7 @@ $(".navLink").click(function(){
                 showAbout = false;
                 $("#contactInfo").fadeIn("slow",function(){
                     showContact = true;
+                    $(".navLink:eq(" + active + ")").addClass("underlined");
                     trans = false;
                 });
             });
