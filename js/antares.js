@@ -241,9 +241,10 @@ $(document).keyup(function(e) {
 
 on_resize(function() {
     //Throttled on-resize handler
-    resizeThumbs();
-    //$("#projContainer").masonry()
-    $container.masonry();
+    if (whichPage === "work" && $container != undefined) {
+        resizeThumbs();
+        $container.masonry();
+    };
 })();
 
 ////////////////////////
