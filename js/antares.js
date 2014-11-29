@@ -30,7 +30,7 @@ $(document).ready(function() {
         //alert("Work Page");
         whichPage = "work";
         $("body").addClass("workPage");
-        $("#workBg").backstretch("img/work/mesh.jpg");
+        $("#workBg").backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
         paneFade = 10;
         resizeThumbs();
         $container = $('#projContainer');
@@ -197,12 +197,14 @@ $(".mmenuLink").click(function(event){
     if (dest == "work") {
         if (whichPage === "work") {
             hideOver();
+            $("#my-menu").trigger("close.mm");
         } else {
             document.location.href = workDest;
         };
     } else if (dest == "process") {
         if (whichPage === "process") {
             hideOver();
+            $("#my-menu").trigger("close.mm");
         } else {
             document.location.href = procDest;
         };
@@ -217,8 +219,13 @@ $(".closeOver").click(function(){
 });
 
 $("#logoTop, #antaresName").click(function(){
-    if (showAbout || showContact) {
-        hideOver();
+    // if (showAbout || showContact) {
+    //     hideOver();
+    // };
+    if (whichPage !== "home") {
+        $("#container").fadeOut(1000,function(){
+            document.location.href = "index.html";
+        })
     };
 });
 
