@@ -126,6 +126,10 @@ h1 {
     background-color: #000000;
 }
 
+#workBg {
+    position: fixed;
+}
+
 /* * * * * * Menu Stuff * * * * * */
 #my-menu {
     background-color: #151515;
@@ -137,7 +141,7 @@ h1 {
 }
 
 #container {
-    height: 100%;
+    min-height: 100%;
 }
 
 .menu {
@@ -237,6 +241,11 @@ header, #headerbg {
 #headerbg {
     z-index: 0;
     background-color: #000000;
+}
+
+.workPage header {
+    position: fixed;
+    z-index: 5;
 }
 
 .rgba #headerbg {
@@ -400,11 +409,71 @@ header, #headerbg {
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * Work Page Styles  * * * * * * * */
+
+#projMargin {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 150px 0px;
+    height: auto;
+    min-height: 100%;
+    /*background-color: #ff0000;*/
+    z-index: 3;
+}
+
+#projContainer {
+    width: 100%;
+    height: 1900px;
+    /*background-color: #222222;*/
+}
+
+.projThumb {
+    width: 32%;
+    height: 100px;
+    background-color: #555555;
+    margin-bottom: 10px;
+}
+
+.vertThumb {
+    height: 200px;
+}
+
+.gutter {
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    width: 1.5%;
+    height: 1px;
+    background: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 
 /* ==========================================================================
    Media Queries 
    ========================================================================== */
+
+@media only screen and (min-width: 1500px) {
+    .projThumb {
+        width: 24%;
+    }
+
+    .gutter {
+        width: 1%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .projThumb {
+        width: 48%;
+    }
+
+    .gutter {
+        width: 3%;
+    }
+}
 
 @media only screen and (max-width: 900px) {
     #labelPane {
@@ -461,12 +530,25 @@ header, #headerbg {
         top: -0.5em;
     }
 
+    #projMargin {
+        width: 85%;
+        padding: 100px 0px;
+    }
+
 }
 
 @media only screen and (max-width: 450px) {
     #tempMessage h1 {
         margin-top: 1.1em;
         font-size: 1.6em;
+    }
+
+    .projThumb {
+        width: 100%;
+    }
+
+    .gutter {
+        width: 5%;
     }
 }
 

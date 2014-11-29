@@ -14,6 +14,7 @@ var workDest = "work.html"
 var procDest = "process/"
 
 var paneFade = "slow"
+var $container;
 
 ////////////////////////
 // SETUP ON READY
@@ -31,6 +32,16 @@ $(document).ready(function() {
         $("body").addClass("workPage");
         $("#workBg").backstretch("img/work/mesh.jpg");
         paneFade = 10;
+        resizeThumbs();
+        $container = $('#projContainer');
+        // initialize
+        $container.masonry({
+            "columnWidth": ".projThumb",
+            "gutter": ".gutter",
+            "itemSelector": '.projThumb',
+            "isResizeBound": false
+        });
+
     };
 
     if (whichPage === "home") {
@@ -159,13 +170,21 @@ $(".navLink").click(function(event){
     })
 
     if (dest == "work") {
-        $("#container").fadeOut(1000,function(){
-            document.location.href = workDest;
-        })
+        if (whichPage === "work") {
+            hideOver();
+        } else {
+            $("#container").fadeOut(1000,function(){
+                document.location.href = workDest;
+            })
+        };
     } else if (dest == "process") {
-        $("#container").fadeOut(1000,function(){
-            document.location.href = procDest;
-        })
+        if (whichPage === "process") {
+            hideOver();
+        } else {
+            $("#container").fadeOut(1000,function(){
+                document.location.href = procDest;
+            })
+        };        
     } else {
         overlay(dest,active);
     };
@@ -176,9 +195,17 @@ $(".mmenuLink").click(function(event){
     var dest = $(this).attr("data-dest");
 
     if (dest == "work") {
-        document.location.href = workDest;
+        if (whichPage === "work") {
+            hideOver();
+        } else {
+            document.location.href = workDest;
+        };
     } else if (dest == "process") {
-        document.location.href = procDest;
+        if (whichPage === "process") {
+            hideOver();
+        } else {
+            document.location.href = procDest;
+        };
     } else {
         $("#my-menu").trigger("close.mm");
         overlay(dest,99);
@@ -203,6 +230,9 @@ $(document).keyup(function(e) {
 
 on_resize(function() {
     //Throttled on-resize handler
+    resizeThumbs();
+    //$("#projContainer").masonry()
+    $container.masonry();
 })();
 
 ////////////////////////
@@ -322,6 +352,18 @@ function overlay(dest,active) {
             });
         };
     };
+}
+
+function resizeThumbs(){
+    $(".projThumb").css("margin-bottom", $(".gutter").width()+"px");
+    $(".projThumb").each(function(){
+        var w = $(this).width();
+        if ($(this).hasClass("vertThumb")) {
+            $(this).css("height", (w * 1.5) + "px");
+        } else {
+            $(this).css("height", w + "px");
+        };
+    });
 }
 
 ////////////////////////
