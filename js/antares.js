@@ -126,12 +126,72 @@ $(".mediaButton").click(function(){
 $(".navLink").click(function(event){
     event.preventDefault();
     var dest = $(this).attr("data-dest");
-    var winHeight = window.innerHeight;
     var active = $(this).index();
     $(".navLink").each(function(){
         $(this).removeClass("underlined");
     })
 
+    overlay(dest,active);
+    
+});
+
+$(".mmenuLink").click(function(event){
+    event.preventDefault();
+    var dest = $(this).attr("data-dest");
+    overlay(dest,99);
+    $("#my-menu").trigger("close.mm");
+});
+
+$(".closeOver").click(function(){
+    hideOver();
+});
+
+$("#logoTop, #antaresName").click(function(){
+    if (showAbout || showContact) {
+        hideOver();
+    };
+});
+
+function hideOver(){
+    if (showAbout && !trans) {
+        trans = true;
+        $("#aboutInfo").fadeOut("slow",function(){
+            $("#headerbg").animate({height: "100%"},function(){
+                fadeRGBA($("#headerbg"),0.75);
+                $("#labelPane").fadeIn("slow",function(){
+                    showAbout = false;
+                    trans = false;        
+                });
+            });
+        });
+    } else if (showContact && !trans) {
+        trans = true;
+        $("#contactInfo").fadeOut("slow",function(){
+            $("#headerbg").animate({height: "100%"},function(){
+                fadeRGBA($("#headerbg"),0.75);
+                $("#labelPane").fadeIn("slow",function(){
+                    showContact = false;
+                    trans = false;        
+                });
+            });
+        });
+    };
+};
+
+function fadeRGBA(thing, target) {
+    if (Modernizr.rgba) {
+        thing.animate({backgroundColor: jQuery.Color( "rgba(0,0,0," + target + ")" )});
+    };
+};
+
+$(document).keyup(function(e) {
+    if (e.keyCode == 27) {            // ESC
+        hideOver();
+    }   
+});
+
+function overlay(dest,active) {
+    var winHeight = window.innerHeight;
 
     if (dest == "about" && !trans) {
         if (!showAbout && !showContact) {
@@ -203,59 +263,7 @@ $(".navLink").click(function(event){
             });
         };
     };
-});
-
-$(".closeOver").click(function(){
-    hideOver();
-});
-
-$("#logoTop, #antaresName").click(function(){
-    if (showAbout || showContact) {
-        hideOver();
-    };
-});
-
-function hideOver(){
-    if (showAbout && !trans) {
-        trans = true;
-        $("#aboutInfo").fadeOut("slow",function(){
-            $("#headerbg").animate({height: "100%"},function(){
-                fadeRGBA($("#headerbg"),0.75);
-                $("#labelPane").fadeIn("slow",function(){
-                    showAbout = false;
-                    trans = false;        
-                });
-            });
-        });
-    } else if (showContact && !trans) {
-        trans = true;
-        $("#contactInfo").fadeOut("slow",function(){
-            $("#headerbg").animate({height: "100%"},function(){
-                fadeRGBA($("#headerbg"),0.75);
-                $("#labelPane").fadeIn("slow",function(){
-                    showContact = false;
-                    trans = false;        
-                });
-            });
-        });
-    };
-};
-
-function fadeRGBA(thing, target) {
-    if (Modernizr.rgba) {
-        thing.animate({backgroundColor: jQuery.Color( "rgba(0,0,0," + target + ")" )});
-    };
-};
-
-$(document).keyup(function(e) {
-    if (e.keyCode == 27) {            // ESC
-        hideOver();
-    }   
-});
-
-$(".mmenuLink").click(function(event){
-    event.preventDefault();
-});
+}
 
 on_resize(function() {
     // $("#entry1, #entry2, #entry3, #entry4").css('left', '');
