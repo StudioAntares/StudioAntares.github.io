@@ -473,6 +473,12 @@ header, #headerbg {
     background-color: rgba(0,0,0,0.75);
 }
 
+.no-touch.opacity.csstransitions .thumbInfo {
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
 .no-touch.opacity .isNotMobile .thumbInfo {
     opacity: 0.0;
 }
