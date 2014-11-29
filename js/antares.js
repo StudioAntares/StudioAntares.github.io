@@ -71,7 +71,7 @@ $(document).ready(function() {
 
     
 
-    $("body").addClass("good");
+    //$("body").addClass("good");
 
 });
 
