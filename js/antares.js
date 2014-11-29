@@ -142,6 +142,9 @@ $(window).on("backstretch.before", function (e, instance, index) {
         $("#projDesc").html(descriptions[index]);
         $("#projName, #projDesc").fadeIn(1500);
     });
+    if (whichPage === "work") {
+        $("#projMargin").fadeTo(2000,1.0);
+    };
 });
 
 $(window).on("backstretch.after", function (e, instance, index) {

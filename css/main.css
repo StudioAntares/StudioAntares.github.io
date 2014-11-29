@@ -435,6 +435,10 @@ header, #headerbg {
     margin-bottom: 10px;
 }
 
+.rgba .projThumb {
+    background-color: rgba(48,48,48,0.8);
+}
+
 .vertThumb {
     height: 200px;
 }
@@ -446,6 +450,10 @@ header, #headerbg {
     width: 1.5%;
     height: 1px;
     background: none;
+}
+
+.opacity #projMargin {
+    opacity: 0.0;
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
