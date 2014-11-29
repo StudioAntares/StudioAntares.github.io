@@ -322,7 +322,13 @@ header, #headerbg {
 .menu-top-click {
   backface-visibility: hidden;
   top: 10px;
+
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+
   transform: rotate(45deg);
+
   transition: 0.55s;
 }
 .menu-middle-click {
@@ -331,6 +337,11 @@ header, #headerbg {
 .menu-bottom-click {
   backface-visibility: hidden;
   top: 10px;
+
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg);
+
   transform: rotate(-45deg);
   transition: 0.55s;
 }
@@ -363,6 +374,11 @@ h1 {
     height: auto;
     background: none;
     z-index: 5;
+    display: none;
+ }
+
+ .isMobile #mediaControls {
+    visibility: hidden;
     display: none;
  }
 
