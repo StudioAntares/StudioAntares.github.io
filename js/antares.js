@@ -123,7 +123,8 @@ $(".mediaButton").click(function(){
     };
 });
 
-$(".navLink").click(function(){
+$(".navLink").click(function(event){
+    event.preventDefault();
     var dest = $(this).attr("data-dest");
     var winHeight = window.innerHeight;
     var active = $(this).index();
@@ -250,6 +251,10 @@ $(document).keyup(function(e) {
     if (e.keyCode == 27) {            // ESC
         hideOver();
     }   
+});
+
+$(".mmenuLink").click(function(event){
+    event.preventDefault();
 });
 
 on_resize(function() {
