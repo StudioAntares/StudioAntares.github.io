@@ -375,7 +375,7 @@ h1 {
 
     #navLinks, #projDesc {
         visibility: hidden;
-        display: none;
+        /*display: none;*/
     }
 
     .menu {
