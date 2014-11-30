@@ -12,6 +12,7 @@ var trans = false;
 
 var workDest = "work.html"
 var procDest = "process/"
+var homeDest = "index.html"
 
 var paneFade = "slow"
 var $container;
@@ -215,6 +216,13 @@ $(".mmenuLink").click(function(event){
             $("#my-menu").trigger("close.mm");
         } else {
             document.location.href = procDest;
+        };
+    } else if (dest == "home") {
+        if (whichPage === "home") {
+            hideOver();
+            $("#my-menu").trigger("close.mm");
+        } else {
+            document.location.href = homeDest;
         };
     } else {
         $("#my-menu").trigger("close.mm");
