@@ -492,6 +492,28 @@ header, #headerbg {
     margin: 0em;
 }
 
+#projTags {
+    width: 100%;
+    height: auto;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px;
+    padding: 0.5em 0em;
+    margin-bottom: 1em;
+}
+
+#projTags a {
+    padding-left: 1em;
+}
+
+.projHidden {
+    width: 1px;
+    height: 1px;
+    display: none !important;
+    visibility: hidden;
+}
+
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * * * */

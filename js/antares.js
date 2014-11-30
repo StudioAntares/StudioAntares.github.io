@@ -42,7 +42,7 @@ $(document).ready(function() {
         $container.masonry({
             "columnWidth": ".projThumb",
             "gutter": ".gutter",
-            "itemSelector": '.projThumb',
+            "itemSelector": '.activeThumb',
             "isResizeBound": false
         });
         resizeBg(pageBg);
@@ -222,6 +222,25 @@ $(".mmenuLink").click(function(event){
     };
 });
 
+$(".tagLink").click(function(event){
+    event.preventDefault();
+    //var item = $container.masonry('getItemElements');
+    //$container.masonry( 'remove', item[1] );
+    //$container.masonry( 'remove', document.getElementById("firstThumb") ).masonry();
+    var filter = $(this).attr("data-filter");
+    $(".projThumb").each(function(){
+        $(this).removeClass("projHidden");
+        if (!$(this).hasClass(filter)) {
+            $(this).addClass("projHidden");
+            $(this).removeClass("activeThumb");
+        } else {
+            $(this).addClass("activeThumb");
+        };
+    });
+    resizeThumbs();
+    $container.masonry('reloadItems').masonry();
+});
+
 $(".closeOver").click(function(){
     hideOver();
 });
@@ -251,7 +270,7 @@ on_resize(function() {
 
 $( window ).resize(function() {
     //Normal on-resize handler
-    
+
     if (whichPage === "work" && $container != undefined) {
         resizeThumbs();
         $container.masonry();
