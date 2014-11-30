@@ -420,7 +420,7 @@ function resizeThumbs(){
 function resizeBg(bg) {
     //bg.height(jQuery(window).height());
     if (bg !== undefined) {
-        bg.height(jQuery(window).height()+60);
+        bg.height(jQuery(window).height()+200);
     };
     //resizeBg(pageBg);
 }
