@@ -546,7 +546,11 @@ header, #headerbg {
     #labelPane {
         left: 0%;
         padding-left: 10%;
-        width: 100%;
+        width: 80%;
+    }
+
+    #mediaControls{
+        right: 12.5%;
     }
 }
 
