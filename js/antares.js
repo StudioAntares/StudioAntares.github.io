@@ -455,3 +455,14 @@ function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,150)}
 }());
 
 
+/*
+event.preventDefault();
+var items = $container.masonry('getItemElements');
+//$container.masonry( 'remove', item[1] );
+//$container.masonry( 'remove', document.getElementById("firstThumb") ).masonry();
+var item = $container.masonry( 'getItem', items[0] );
+console.log(item);
+$container.masonry( 'remove', items[0] );
+*/
+
+
