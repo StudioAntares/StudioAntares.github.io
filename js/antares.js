@@ -3,7 +3,7 @@ var descriptions;
 
 $(document).ready(function() {
 
-    $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 4500, fade: 3500});
+    $("#fullBg").backstretch(["img/main/1.jpg"],{duration: 3500, fade: 3500});
     titles = ["000", "000", "000", "000", "000", "000", "000", "000", "000", "000"];
     descriptions = ["000", "000", "000", "000", "000", "000", "000", "000", "000", "000"]
 
