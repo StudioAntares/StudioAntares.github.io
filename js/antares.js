@@ -238,11 +238,6 @@ $(".tagLink").click(function(event){
     event.preventDefault();
     var filter = $(this).attr("data-filter");
 
-    // $container.masonry( 'on', 'layoutComplete', function() {
-    //   expandThumbBgs(filter);
-    //   return true;
-    // });
-
     if (filter === whichThumbs) {
         //alert("This IS active");
         // Do nothing
@@ -259,6 +254,7 @@ $(".tagLink").click(function(event){
 
             setTimeout(function() {
                 //alert("woo")
+                resizeThumbs();
                 $container.masonry('reloadItems').masonry();
             }, 50);
         });
@@ -287,6 +283,7 @@ $(".tagLink").click(function(event){
             if (index == amt-1) {
                 setTimeout(function() {
                     //alert("woo")
+                    resizeThumbs();
                     $container.masonry('reloadItems').masonry();
                 }, 600);
             };
