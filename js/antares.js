@@ -18,6 +18,9 @@ var paneFade = "slow"
 var $container;
 var pageBg;
 
+var whichThumbs = "all";
+var sorting = false;
+
 ////////////////////////
 // SETUP ON READY
 
@@ -46,6 +49,7 @@ $(document).ready(function() {
             "itemSelector": '.activeThumb',
             "isResizeBound": false
         });
+        $container.masonry( 'on', 'layoutComplete', expandThumbBgs);
         resizeBg(pageBg);
     };
 
@@ -232,37 +236,62 @@ $(".mmenuLink").click(function(event){
 
 $(".tagLink").click(function(event){
     event.preventDefault();
-    //var item = $container.masonry('getItemElements');
-    //$container.masonry( 'remove', item[1] );
-    //$container.masonry( 'remove', document.getElementById("firstThumb") ).masonry();
     var filter = $(this).attr("data-filter");
-    $(".projThumb").each(function(){
-        $(this).removeClass("projHidden");
-        if (!$(this).hasClass(filter)) {
-            $(this).addClass("projHidden");
-            $(this).removeClass("activeThumb");
-        } else {
-            $(this).addClass("activeThumb");
-        };
-    });
-    resizeThumbs();
-    $container.masonry('reloadItems').masonry();
-});
 
+    // $container.masonry( 'on', 'layoutComplete', function() {
+    //   expandThumbBgs(filter);
+    //   return true;
+    // });
 
-$(".projThumb").click(function(event){
+    if (filter === whichThumbs) {
+        //alert("This IS active");
+        // Do nothing
+    } else if (filter === "all") {
+        //alert("Will show All")
+        sorting = true;
+        whichThumbs = filter;
 
-    event.preventDefault();
-    $("p",this).fadeOut();
-    $(this).animate({
-        height: "0px"
-      }, 500, function() {
-        $(this).removeClass("activeThumb");
-        $(this).addClass("projHidden");
-        $container.masonry('reloadItems').masonry();
-      });
+        $(".projThumb").each(function(index){
+            // console.log(index);
+            var outer = $(this);
+            outer.addClass("activeThumb");
+            outer.removeClass("projHidden");
 
-    //$container.masonry('reloadItems').masonry();
+            setTimeout(function() {
+                //alert("woo")
+                $container.masonry('reloadItems').masonry();
+            }, 50);
+        });
+    } else {
+        sorting = true;
+        whichThumbs = filter;
+        var amt = $('.projThumb').length;
+        //alert(amt);
+        $(".projThumb").each(function(index){
+            // console.log(index);
+            var outer = $(this);
+            if ($(this).hasClass(filter)) {
+                outer.addClass("activeThumb");
+                outer.removeClass("projHidden");
+            } else {
+                $("p",this).fadeOut();
+                $(".innerImage", this).animate({
+                    height: "0px"
+                  }, 500, function() {
+                    outer.removeClass("activeThumb");
+                    outer.addClass("projHidden");
+                    //$container.masonry('reloadItems').masonry();
+                  }
+                );
+            }
+            if (index == amt-1) {
+                setTimeout(function() {
+                    //alert("woo")
+                    $container.masonry('reloadItems').masonry();
+                }, 600);
+            };
+        });
+    }
 });
 
 $(".closeOver").click(function(){
@@ -439,6 +468,22 @@ function resizeBg(bg) {
         bg.height(jQuery(window).height()+60);
     };
     //resizeBg(pageBg);
+}
+
+function expandThumbBgs(target) {
+    if (sorting) {
+        //alert("Expanded");
+        $(".projThumb").each(function(){
+            if ($(this).hasClass(whichThumbs) || whichThumbs === "all") {
+                $(".innerImage", this).animate({
+                    width: "100%",
+                    height: "100%"
+                  }, 500);
+                $("p",this).fadeIn();
+            }
+        });
+        sorting = false;
+    };
 }
 
 ////////////////////////
