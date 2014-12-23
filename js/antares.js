@@ -28,7 +28,7 @@ $(document).ready(function() {
         whichPage = "home";
         $("body").addClass("homePage");
         pageBg = $("#fullBg");
-        pageBg.backstretch(["img/main/1.jpg"],{duration: 6500, fade: 3000});
+        pageBg.backstretch(["img/main/1.jpg"],{duration: 5500, fade: 3000});
         resizeBg(pageBg);
     } else if (document.getElementById("workBg") !== null && document.getElementById("workBg") !== undefined) {
         //alert("Work Page");
