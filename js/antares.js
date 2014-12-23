@@ -249,6 +249,22 @@ $(".tagLink").click(function(event){
     $container.masonry('reloadItems').masonry();
 });
 
+
+$(".projThumb").click(function(event){
+
+    event.preventDefault();
+    $("p",this).fadeOut();
+    $(this).animate({
+        height: "0px"
+      }, 500, function() {
+        $(this).removeClass("activeThumb");
+        $(this).addClass("projHidden");
+        $container.masonry('reloadItems').masonry();
+      });
+
+    //$container.masonry('reloadItems').masonry();
+});
+
 $(".closeOver").click(function(){
     hideOver();
 });
