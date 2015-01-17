@@ -40,6 +40,13 @@ $(document).ready(function() {
         pageBg = $("#workBg");
         pageBg.backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
         paneFade = 10;
+    } else if (document.getElementById("workBg") !== null && document.getElementById("workBg") !== undefined) {
+        //alert("Work Page");
+        whichPage = "project";
+        $("body").addClass("projPage");
+        pageBg = $("#projBg");
+        // pageBg.backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
+        paneFade = 10;
         resizeThumbs();
         $container = $('#projContainer');
         // initialize
@@ -51,7 +58,7 @@ $(document).ready(function() {
         });
         $container.masonry( 'on', 'layoutComplete', expandThumbBgs);
         resizeBg(pageBg);
-    };
+    } ;;
 
     if (whichPage === "home") {
         titles = ["001",

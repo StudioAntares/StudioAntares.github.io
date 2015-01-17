@@ -121,7 +121,7 @@ h1 {
     font-weight: 400;
 }
 
-#fullBg, #workBg {
+#fullBg, #workBg, #projBg {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -130,7 +130,7 @@ h1 {
     background-color: #000000;
 }
 
-#workBg {
+#workBg, #projBg {
     position: fixed;
 }
 
@@ -247,7 +247,7 @@ header, #headerbg {
     background-color: #000000;
 }
 
-.workPage header {
+.workPage header, .projPage header {
     position: fixed;
     z-index: 5;
 }
@@ -308,7 +308,7 @@ header, #headerbg {
     z-index: 2;
 }
 
-.workPage #labelPane {
+.workPage #labelPane, .projPage #labelPane {
     position: fixed;
     top: 100%;
     right: 100%;
@@ -419,7 +419,7 @@ header, #headerbg {
     position: relative;
     width: 80%;
     margin: 0 auto;
-    padding: 150px 0px;
+    padding: 100px 0px;
     height: auto;
     min-height: 100%;
     /*background-color: #ff0000;*/
@@ -449,7 +449,7 @@ header, #headerbg {
 }
 
 .no-touch .projThumb:hover {
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 .vertThumb {
@@ -466,9 +466,15 @@ header, #headerbg {
 }
 
 .innerImage{
+    display: block;
+    text-decoration: none;
     width: 100%;
     height: 100%;
     background-color: #555555;
+}
+
+.innerImage:hover {
+    text-decoration: none !important;
 }
 
 .rgba .innerImage {
