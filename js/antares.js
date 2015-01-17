@@ -39,15 +39,11 @@ $(document).ready(function() {
         $("body").addClass("workPage");
         pageBg = $("#workBg");
         pageBg.backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
-        paneFade = 10;
-    } else if (document.getElementById("workBg") !== null && document.getElementById("workBg") !== undefined) {
-        //alert("Work Page");
-        whichPage = "project";
-        $("body").addClass("projPage");
-        pageBg = $("#projBg");
-        // pageBg.backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
-        paneFade = 10;
+        //paneFade = 10;
         resizeThumbs();
+        if (Modernizr.csstransitions && Modernizr.opacity) {
+            $("#projMargin").addClass("fadeMeIn");
+        };
         $container = $('#projContainer');
         // initialize
         $container.masonry({
@@ -58,7 +54,26 @@ $(document).ready(function() {
         });
         $container.masonry( 'on', 'layoutComplete', expandThumbBgs);
         resizeBg(pageBg);
-    } ;;
+    } else if (document.getElementById("projBg") !== null && document.getElementById("projBg") !== undefined) {
+        //alert("Work Page");
+        whichPage = "project";
+        $("body").addClass("projPage");
+        pageBg = $("#projBg");
+        // pageBg.backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
+        //paneFade = 10;
+        // resizeThumbs();
+        // $container = $('#projContainer');
+        workDest = "../work.html"
+        procDest = "../process/"
+        homeDest = "../index.html"
+        if (Modernizr.csstransitions && Modernizr.opacity) {
+            $("#projMargin").addClass("fadeMeIn");
+        };
+    };
+
+    // console.log(aboutInfoText);
+    $("#aboutInfo").append(aboutInfoText);
+    $("#contactInfo").append(contactInfoText);
 
     if (whichPage === "home") {
         titles = ["001",
@@ -158,10 +173,6 @@ $(window).on("backstretch.before", function (e, instance, index) {
         $("#projDesc").html(descriptions[index]);
         $("#projName, #projDesc").fadeIn(1500);
     });
-
-    if (whichPage === "work" && Modernizr.opacity) {
-        $("#projMargin").fadeTo(2000,1.0);
-    };
 });
 
 $(window).on("backstretch.after", function (e, instance, index) {
@@ -375,6 +386,7 @@ function fadeRGBA(thing, target) {
 
 function overlay(dest,active) {
     var winHeight = window.innerHeight;
+    // console.log(trans);
 
     if (dest == "about" && !trans) {
         if (!showAbout && !showContact) {

@@ -426,8 +426,16 @@ header, #headerbg {
     z-index: 3;
 }
 
-.opacity #projMargin {
+.opacity.csstransitions #projMargin {
     opacity: 0.0;
+    transition: opacity 2s linear;
+    -moz-transition: opacity 2s linear;
+    -webkit-transition: opacity 2s linear;
+    /*opacity: 1.0;*/
+}
+
+.opacity.csstransitions #projMargin.fadeMeIn {
+    opacity: 1.0 !important;
 }
 
 #projContainer {
@@ -537,6 +545,13 @@ header, #headerbg {
     height: 1px;
     display: none !important;
     visibility: hidden;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * Project Page Styles * * * * * * * */
+
+#projContainer.singleProject {
+    /*background-color: #f00;*/
 }
 
 
