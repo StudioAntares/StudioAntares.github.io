@@ -794,7 +794,7 @@ header, #headerbg {
 .portrait .projNav {
     color: white;
     position: fixed;
-    right: 6%;
+    right: 10%;
     top: 50px;
     z-index: 12;
     height: 100%;
@@ -806,9 +806,11 @@ header, #headerbg {
     height: 0%;
     background-color: #fff;
     margin-top: 0px;
+    /*
     -webkit-transform: translateX(4px);
     -ms-transform: translateX(4px);
     transform: translateX(4px);
+    */
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -915,6 +917,9 @@ header, #headerbg {
     .landscape .projNav {
         left: 6%;
         width: 88%;
+    }
+    .portrait .projNav {
+        right: 6%;
     }
 
 }
