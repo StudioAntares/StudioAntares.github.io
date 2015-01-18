@@ -98,7 +98,7 @@ textarea {
 
 html, body {
     color: #ffffff;
-    font-family: "futura-pt", "arial", sans-serif;
+    font-family: "futura-pt", "Futura PT", "arial", sans-serif;
     font-weight: 300;
     font-size: 100%;
 
@@ -132,6 +132,17 @@ h1 {
 
 #workBg, #projBg {
     position: fixed;
+}
+
+.dropCap { 
+    float: left; 
+    color: #903; 
+    font-size: 2.9em; 
+    line-height: 1em; 
+    padding-top: 0em; 
+    padding-right: 0.1em; 
+    padding-left: 0em; 
+    font-family: Georgia; 
 }
 
 /* * * * * * Menu Stuff * * * * * */
@@ -550,11 +561,91 @@ header, #headerbg {
 /* * * * * * * * * * * * * * * * * * * * * * * * * */
 /* * * * * * * * Project Page Styles * * * * * * * */
 
-#projContainer.singleProject {
-    /*background-color: #f00;*/
+
+.projPage #projMargin {
+    position: relative;
+    padding: 50px 0px;
+    width: 100%;
 }
 
 
+#projContainer.singleProject {
+    /*background-color: #f00;*/
+    /*text-align: center;*/
+    position: relative;
+    height: 600px;
+}
+
+
+
+.projMarginL, .projMarginR, .spacer {
+    display: block;
+    width: 10%;
+    height: 100%;
+}
+
+.projMarginL, .projMarginR {
+    position: fixed;
+    top: 50px;
+    background-color: #000;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+.projMarginL {
+    left: 0px; 
+}
+
+.projMarginR {
+    right: 0px; 
+}
+
+/*#projContainer.singleProject img {
+    width: 100%;
+    height: auto;
+}
+
+#projContainer.singleProject p {
+    font-weight: 200;
+    text-align: left;
+}
+
+*/
+
+.slides {
+    height: 100%;
+    width: 100%;
+    /*white-space: nowrap;*/
+    /*overflow: auto;*/
+}
+
+.slides table {
+    height: 100%;
+}
+
+.slide {
+    position: relative;
+    /*float: left;*/
+    /*display: inline-block;*/
+    height: 100%;
+    /*width: auto;*/
+    /*
+    background-color: #00f;
+    border: solid #000;*/
+}
+
+.slide img {
+    display: block;
+}
+
+.textSlide {
+    width: 800px !important;
+    padding: 2em 3em;
+}
+
+.spacer {background: none}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * * * */

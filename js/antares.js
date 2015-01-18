@@ -59,7 +59,8 @@ $(document).ready(function() {
         whichPage = "project";
         $("body").addClass("projPage");
         pageBg = $("#projBg");
-        // pageBg.backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
+        // pageBgSrc = pageBg.attr("data-src");
+        // pageBg.backstretch([pageBgSrc],{duration: 6500, fade: 3000});
         //paneFade = 10;
         // resizeThumbs();
         // $container = $('#projContainer');
@@ -165,6 +166,7 @@ $( window ).load(function() {
             bgArray.images.push('img/main/' + i + '.jpg');
         };
     };
+    resizeCover();
 });
 
 $(window).on("backstretch.before", function (e, instance, index) {
@@ -344,6 +346,7 @@ $( window ).resize(function() {
         $container.masonry();
     };
     resizeBg(pageBg);
+    resizeCover();
 });
 
 ////////////////////////
@@ -500,6 +503,18 @@ function expandThumbBgs(target) {
         });
         sorting = false;
     };
+}
+
+function resizeCover(){
+    var viewH = Math.floor(window.innerHeight * 0.8) - 50;
+    var margWidth = $(".projMarginL").width();
+    var coverImage = $("#projContainer.singleProject");
+    coverImage.css("height",viewH+"px");
+    $(".spacer").css("width",margWidth+"px");
+    $("img", coverImage).each(function(){
+        //console.log($(this).attr("src"));
+        $(this).css({"height":viewH+"px","width":"auto"});
+    })
 }
 
 ////////////////////////
