@@ -686,10 +686,13 @@ header, #headerbg {
 .projNav {
     color: white;
     position: fixed;
-    left: 10%;
     top: 80%;
     z-index: 12;
     width: 80%;
+}
+
+.landscape .projNav {
+    left: 10%;
 }
 
 .projNav .navCircle {
@@ -786,6 +789,26 @@ header, #headerbg {
     box-sizing: border-box;
     overflow: hidden !important;
 */    
+}
+
+.portrait .projNav {
+    color: white;
+    position: fixed;
+    right: 6%;
+    top: 50px;
+    z-index: 12;
+    height: 100%;
+    width: auto;
+}
+
+.portrait .projBar {
+    width: 1px;
+    height: 0%;
+    background-color: #fff;
+    margin-top: 0px;
+    -webkit-transform: translateX(4px);
+    -ms-transform: translateX(4px);
+    transform: translateX(4px);
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -889,7 +912,7 @@ header, #headerbg {
         width: 6%;
     }
 
-    .projNav {
+    .landscape .projNav {
         left: 6%;
         width: 88%;
     }

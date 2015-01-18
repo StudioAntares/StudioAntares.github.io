@@ -158,47 +158,45 @@ $(document).ready(function() {
 
 var lastScrollLeft = 0;
 $("#projContainer.singleProject").scroll(function() {
-    var containerScrollLeft = $(this).scrollLeft();
-    if (lastScrollLeft != containerScrollLeft) {
-        if (whichPage === "project"){
-            //console.log(containerScrollLeft);
+    if (orientation === "landscape") {
+        var containerScrollLeft = $(this).scrollLeft();
+        if (lastScrollLeft != containerScrollLeft) {
+            if (whichPage === "project"){
+                //console.log(containerScrollLeft);
 
-            var maxScroll = $(".slides table").width() - window.innerWidth - 10;
-            var perc = (containerScrollLeft*100)/maxScroll;
+                var maxScroll = $(".slides table").width() - window.innerWidth - 10;
+                var perc = (containerScrollLeft*100)/maxScroll;
 
-            if (perc > 100) {perc = 100;};
-            if (perc < 0) {perc = 0;};
+                if (perc > 100) {perc = 100;};
+                if (perc < 0) {perc = 0;};
 
-            perc = perc + "%";
-            //console.log(perc);
-            $(".projBar").css("width",perc);
+                perc = perc + "%";
+                //console.log(perc);
+                $(".projBar").css("width",perc);      
+            }
+            lastScrollLeft = containerScrollLeft;
         }
-        lastScrollLeft = containerScrollLeft;
-    }
+    } 
 });
 
-/*
-var lastScrollLeft = 0;
 $(window).scroll(function() {
-    var documentScrollLeft = $(document).scrollLeft();
-    if (lastScrollLeft != documentScrollLeft) {
-
+    if (orientation === "portrait") {
         if (whichPage === "project"){
-            var maxScroll = $(".slides table").width() - window.innerWidth - 10;
-            var perc = (documentScrollLeft*100)/maxScroll;
+            var containerScrollTop = $(this).scrollTop();
+            //console.log(containerScrollTop);
+
+            var maxScroll = $(document).height() - window.innerHeight - 10;            
+            var perc = (containerScrollTop*100)/maxScroll;
 
             if (perc > 100) {perc = 100;};
             if (perc < 0) {perc = 0;};
 
             perc = perc + "%";
             //console.log(perc);
-            $(".projBar").css("width",perc);
+            $(".projBar").css("height",perc);       
         }
-        lastScrollLeft = documentScrollLeft;
-    }
+    };
 });
-*/
-//#projContainer.singleProject
 
 $( window ).load(function() {
     if (jQuery.browser.mobile == true) {
@@ -617,9 +615,18 @@ function resizeCover(){
             //console.log("didsomething");
             $(this).css({"max-height":viewH+"px"});
         })
+
+        var barHeight = window.innerHeight - 2* $("header").height();
+        $(".portrait .projNav").css({"height":barHeight + "px"})
     };
 
-
+    $(".innerText", coverImage).each(function(){
+        if ($(this).height() > $(this).parent().height()) {
+            $(this).removeClass("vCenter");
+        } else {
+            $(this).addClass("vCenter");
+        };
+    });
     
 
 
