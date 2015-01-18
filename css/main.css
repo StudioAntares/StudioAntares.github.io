@@ -603,6 +603,9 @@ header, #headerbg {
     overflow: scroll;
 }
 
+.touch #projContainer.singleProject, .isMobile #projContainer.singleProject {
+    -webkit-overflow-scrolling: touch;
+}
 
 
 .projMarginL, .projMarginR, .spacer {
