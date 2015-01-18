@@ -153,6 +153,26 @@ $(document).ready(function() {
 ////////////////////////
 // EVENTS
 
+var lastScrollLeft = 0;
+$(window).scroll(function() {
+    var documentScrollLeft = $(document).scrollLeft();
+    if (lastScrollLeft != documentScrollLeft) {
+
+        if (whichPage === "project"){
+            var maxScroll = $(".slides table").width() - window.innerWidth - 10;
+            var perc = (documentScrollLeft*100)/maxScroll;
+
+            if (perc > 100) {perc = 100;};
+            if (perc < 0) {perc = 0;};
+
+            perc = perc + "%";
+            //console.log(perc);
+            $(".projBar").css("width",perc);
+        }
+        lastScrollLeft = documentScrollLeft;
+    }
+});
+
 $( window ).load(function() {
     if (jQuery.browser.mobile == true) {
         //isMobile = true;
@@ -507,10 +527,13 @@ function expandThumbBgs(target) {
 
 function resizeCover(){
     var viewH = Math.floor(window.innerHeight * 0.8) - 50;
+    var viewW = Math.floor(window.innerWidth * 0.8);
     var margWidth = $(".projMarginL").width();
     var coverImage = $("#projContainer.singleProject");
     coverImage.css("height",viewH+"px");
+    $("table", coverImage).css("height",viewH+"px");
     $(".spacer").css("width",margWidth+"px");
+    // $(".firstSlide").css("width",viewW+"px");
     $("img", coverImage).each(function(){
         //console.log($(this).attr("src"));
         $(this).css({"height":viewH+"px","width":"auto"});
