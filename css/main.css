@@ -678,6 +678,7 @@ header, #headerbg {
     /*visibility: hidden;
     display: none;
     */
+    max-width: 100%;
 }
 
 .firstSlide {

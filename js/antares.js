@@ -624,7 +624,7 @@ function resizeCover(){
         if ($(this).height() > $(this).parent().height()) {
             $(this).removeClass("vCenter");
         } else {
-            $(this).addClass("vCenter");
+            // $(this).addClass("vCenter");
         };
     });
     
