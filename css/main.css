@@ -145,6 +145,28 @@ h1 {
     font-family: Georgia; 
 }
 
+.vCenterAlt {
+  /* use if you have a declared height */
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.vCenterParent {
+  /* Apply to parent of any element that is vertically centereed
+     using below method to prevent blurry rendering */
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.vCenter {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 /* * * * * * Menu Stuff * * * * * */
 #my-menu {
     background-color: #151515;
@@ -640,8 +662,23 @@ header, #headerbg {
 }
 
 .textSlide {
-    width: 800px !important;
-    padding: 2em 3em;
+    width: 900px !important;
+    margin: 0em;
+    padding: 0em;
+    max-height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.textSlide p {
+    padding: 1em 2em;
+    margin: 0em 0em;
+    /*visibility: hidden;
+    display: none;
+    */
 }
 
 .firstSlide {

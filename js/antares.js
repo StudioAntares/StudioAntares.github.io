@@ -64,9 +64,9 @@ $(document).ready(function() {
         //paneFade = 10;
         // resizeThumbs();
         // $container = $('#projContainer');
-        workDest = "../work.html"
-        procDest = "../process/"
-        homeDest = "../index.html"
+        workDest = "../../work.html"
+        procDest = "../../process/"
+        homeDest = "../../index.html"
         if (Modernizr.csstransitions && Modernizr.opacity) {
             $("#projMargin").addClass("fadeMeIn");
         };
@@ -185,8 +185,12 @@ $( window ).load(function() {
         for (var i = 2; i <= 11; i++) {
             bgArray.images.push('img/main/' + i + '.jpg');
         };
+    } else if (whichPage === "work") {
+        createThumbImages();
+    } else if (whichPage === "project") {
+        addTextBg();
+        resizeCover();
     };
-    resizeCover();
 });
 
 $(window).on("backstretch.before", function (e, instance, index) {
@@ -331,6 +335,14 @@ $(".tagLink").click(function(event){
     }
 });
 
+$(".innerImage").click(function(event){
+    event.preventDefault();
+    var projDest = $(this).attr("href");
+    $("#container").fadeOut(1000,function(){
+        document.location.href = projDest;
+    })
+});
+
 $(".closeOver").click(function(){
     hideOver();
 });
@@ -342,7 +354,7 @@ $("#logoTop, #antaresName").click(function(){
     if (whichPage !== "home") {
         var homeUrl = "index.html";
         if (whichPage === "project") {
-            homeUrl = "../index.html";
+            homeUrl = "../../index.html";
         };
         $("#container").fadeOut(1000,function(){
             document.location.href = homeUrl;
@@ -370,7 +382,9 @@ $( window ).resize(function() {
         $container.masonry();
     };
     resizeBg(pageBg);
-    resizeCover();
+    if (whichPage === "project") {
+        resizeCover();
+    };
 });
 
 ////////////////////////
@@ -493,6 +507,22 @@ function overlay(dest,active) {
     };
 }
 
+function createThumbImages() {
+    if (whichPage === "work") {
+        $(".innerImage").each(function(){
+            var $thumb = $(this);
+            if ($thumb.attr("data-dir") !== null && $thumb.attr("data-dir") !== undefined) {
+                var projectDir = $thumb.attr("data-dir");
+                //console.log(projectDir);
+                var thumbPath = "projects/" + projectDir + "/img/thumb.jpg";
+                $thumb.backstretch([thumbPath],{duration: 6500, fade: 3000});
+                projectDir = "projects/" + projectDir + "/index.html";
+                $thumb.attr("href",projectDir);
+            };
+        });
+    };
+}
+
 function resizeThumbs(){
     $(".projThumb").css("margin-bottom", $(".gutter").width()+"px");
     $(".projThumb").each(function(){
@@ -542,6 +572,17 @@ function resizeCover(){
         //console.log($(this).attr("src"));
         $(this).css({"height":viewH+"px","width":"auto"});
     })
+}
+
+function addTextBg() {
+    $(".textSlide").each(function(){
+        var $slide = $(this);
+        if ($slide.attr("data-bg") !== null && $slide.attr("data-bg") !== undefined) {
+            var bgPath = $slide.attr("data-bg");
+            //console.log(bgPath);
+            $slide.backstretch(bgPath);
+        };
+    });
 }
 
 ////////////////////////
