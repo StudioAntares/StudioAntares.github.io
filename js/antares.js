@@ -340,8 +340,12 @@ $("#logoTop, #antaresName").click(function(){
     //     hideOver();
     // };
     if (whichPage !== "home") {
+        var homeUrl = "index.html";
+        if (whichPage === "project") {
+            homeUrl = "../index.html";
+        };
         $("#container").fadeOut(1000,function(){
-            document.location.href = "index.html";
+            document.location.href = homeUrl;
         })
     };
 });
