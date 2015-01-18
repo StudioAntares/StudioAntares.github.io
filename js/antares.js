@@ -613,7 +613,7 @@ function resizeCover(){
         })
         $(".textSlide", coverImage).each(function(){
             //console.log("didsomething");
-            $(this).css({"max-height":viewH+"px"});
+            $(this).css({"width":contWidth + "px","max-height":viewH+"px"});
         })
 
         var barHeight = window.innerHeight - 2* $("header").height();
