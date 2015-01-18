@@ -654,6 +654,10 @@ header, #headerbg {
     table-layout: fixed;
 }
 
+.slides td {
+    /*display: block;*/
+}
+
 .slide {
     position: relative;
     /*float: left;*/

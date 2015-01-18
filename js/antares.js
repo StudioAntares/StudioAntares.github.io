@@ -21,10 +21,13 @@ var pageBg;
 var whichThumbs = "all";
 var sorting = false;
 
+var orientation = "landscape";
+
 ////////////////////////
 // SETUP ON READY
 
 $(document).ready(function() {
+    getOrientation();
 
     if (document.getElementById("fullBg") !== null && document.getElementById("fullBg") !== undefined) {
         //alert("Home Page");
@@ -376,7 +379,7 @@ on_resize(function() {
 
 $( window ).resize(function() {
     //Normal on-resize handler
-
+    getOrientation();
     if (whichPage === "work" && $container != undefined) {
         resizeThumbs();
         $container.masonry();
@@ -573,10 +576,9 @@ function resizeCover(){
         $(this).css({"height":viewH+"px","width":"auto"});
     })
     $(".textSlide", coverImage).each(function(){
-        console.log("didsomething");
+        //console.log("didsomething");
         $(this).css({"max-height":viewH+"px"});
     })
-
 }
 
 function addTextBg() {
@@ -588,6 +590,16 @@ function addTextBg() {
             $slide.backstretch(bgPath);
         };
     });
+}
+
+function getOrientation() {
+    ratio = window.innerHeight/window.innerWidth;
+    if (ratio <= 1) {
+        orientation = "landscape";
+    } else {
+        orientation = "portrait";
+    };
+    //console.log(orientation);
 }
 
 ////////////////////////
