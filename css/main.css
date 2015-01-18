@@ -167,6 +167,9 @@ h1 {
   transform: translateY(-50%);
 }
 
+.noOverflow {
+    overflow: hidden;
+}
 /* * * * * * Menu Stuff * * * * * */
 #my-menu {
     background-color: #151515;
@@ -641,8 +644,14 @@ header, #headerbg {
     /*overflow: auto;*/
 }
 
-.slides table {
+.slides table, .slides table tr, .slides table td {
     /*height: 100%;*/
+    max-height: 100%;
+    position: relative;
+}
+
+.slides table {
+    table-layout: fixed;
 }
 
 .slide {
@@ -662,15 +671,16 @@ header, #headerbg {
 }
 
 .textSlide {
+    position: relative;
     width: 900px !important;
     margin: 0em;
     padding: 0em;
-    max-height: 100%;
+    max-height: 400%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
+    overflow: hidden !important;
+    
 }
 
 .textSlide p {

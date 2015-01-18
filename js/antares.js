@@ -572,6 +572,11 @@ function resizeCover(){
         //console.log($(this).attr("src"));
         $(this).css({"height":viewH+"px","width":"auto"});
     })
+    $(".textSlide", coverImage).each(function(){
+        console.log("didsomething");
+        $(this).css({"max-height":viewH+"px"});
+    })
+
 }
 
 function addTextBg() {
