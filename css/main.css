@@ -599,6 +599,8 @@ header, #headerbg {
     /*text-align: center;*/
     position: relative;
     height: 600px;
+    width: 100%;
+    overflow: scroll;
 }
 
 
