@@ -587,13 +587,43 @@ function expandThumbBgs(target) {
 }
 
 function resizeCover(){
+    getOrientation();
     var viewH = Math.floor(window.innerHeight * 0.8) - 50;
     var viewW = Math.floor(window.innerWidth * 0.8);
     var margWidth = $(".projMarginL").width();
     var coverImage = $("#projContainer.singleProject");
-    coverImage.css("height",viewH+"px");
-    $("table", coverImage).css("height",viewH+"px");
-    $(".spacer").css("width",margWidth+"px");
+    var contWidth = coverImage.width();
+
+    if (orientation==="landscape") {
+        coverImage.css("height",viewH+"px");
+        $("table", coverImage).css("height",viewH+"px");
+        $(".spacer").css("width",margWidth+"px");
+        $("img", coverImage).each(function(){
+            //console.log($(this).attr("src"));
+            $(this).css({"height":viewH+"px","width":"auto"});
+        })
+        $(".textSlide", coverImage).each(function(){
+            //console.log("didsomething");
+            $(this).css({"max-height":viewH+"px"});
+        })
+    } else {
+        coverImage.css("height","100%");
+        $("table", coverImage).css({"height":"auto","width":contWidth + "px"});
+        $("img", coverImage).each(function(){
+            //console.log($(this).attr("src"));
+            $(this).css({"width":contWidth + "px","height":"auto"});
+        })
+        $(".textSlide", coverImage).each(function(){
+            //console.log("didsomething");
+            $(this).css({"max-height":viewH+"px"});
+        })
+    };
+
+
+    
+
+
+    /*
     // $(".firstSlide").css("width",viewW+"px");
     $("img", coverImage).each(function(){
         //console.log($(this).attr("src"));
@@ -603,6 +633,7 @@ function resizeCover(){
         //console.log("didsomething");
         $(this).css({"max-height":viewH+"px"});
     })
+    */  
 }
 
 function addTextBg() {
@@ -620,8 +651,12 @@ function getOrientation() {
     ratio = window.innerHeight/window.innerWidth;
     if (ratio <= 1) {
         orientation = "landscape";
+        $("body").removeClass("portrait");
+        $("body").addClass("landscape");
     } else {
         orientation = "portrait";
+        $("body").removeClass("landscape");
+        $("body").addClass("portrait");
     };
     //console.log(orientation);
 }

@@ -627,23 +627,9 @@ header, #headerbg {
     right: 0px; 
 }
 
-/*#projContainer.singleProject img {
-    width: 100%;
-    height: auto;
-}
-
-#projContainer.singleProject p {
-    font-weight: 200;
-    text-align: left;
-}
-
-*/
-
 .slides {
     height: 100%;
     width: 100%;
-    /*white-space: nowrap;*/
-    /*overflow: auto;*/
 }
 
 .slides table, .slides table tr, .slides table td {
@@ -656,24 +642,18 @@ header, #headerbg {
     table-layout: fixed;
 }
 
-.slides td {
-    /*display: block;*/
-}
-
 .slide {
     position: relative;
-    /*float: left;*/
-    /*display: inline-block;*/
     height: 100%;
-    /*width: auto;*/
-    /*
-    background-color: #00f;
-    border: solid #000;*/
 }
 
 .slide img {
     display: block;
     margin: auto;
+    /*
+    max-width: 100%;
+    max-height: 100%;
+    */
 }
 
 .textSlide {
@@ -748,6 +728,64 @@ header, #headerbg {
     height: 1px;
     background-color: #fff;
     margin-top: 11px;
+}
+
+.portrait #projContainer.singleProject {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0% 10%;
+}
+
+.portrait .spacer {
+    visibility: hidden;
+    display: none;
+}
+
+.portrait .slides {
+    height: 100%;
+    width: 100%;
+}
+
+.portrait .slides table, .portrait .slides table tr, .portrait .slides table td {
+    /*height: 100%;*/
+    max-height: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+.portrait .slides td {
+    display: block;
+}
+
+.portrait .projMarginL, .portrait .projMarginR {
+    visibility: hidden;
+    display: none;
+}
+
+.portrait .slide {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+}
+
+.portrait .slide img {
+    /*display: block;
+    margin: auto;*/
+}
+
+.portrait .textSlide {
+/*    position: relative;
+    width: 900px !important;
+    margin: 0em;
+    padding: 0em;
+    max-height: 400%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden !important;
+*/    
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -841,6 +879,19 @@ header, #headerbg {
     #projMargin {
         width: 85%;
         padding: 100px 0px;
+    }
+
+    .portrait #projContainer.singleProject {
+        padding: 0% 6%;
+    }
+
+    .projMarginL, .projMarginR, .spacer {
+        width: 6%;
+    }
+
+    .projNav {
+        left: 6%;
+        width: 88%;
     }
 
 }
