@@ -21,7 +21,7 @@ var pageBg;
 var whichThumbs = "all";
 var sorting = false;
 
-var orientation = "landscape";
+var screenAspect = "landscape";
 var imgLoaded = false;
 
 ////////////////////////
@@ -30,7 +30,7 @@ var imgLoaded = false;
 jQuery(window).bind("unload", jQuery.noop);
 
 $(document).ready(function() {
-    getOrientation();
+    getScreenAspect();
 
     if (document.getElementById("fullBg") !== null && document.getElementById("fullBg") !== undefined) {
         //alert("Home Page");
@@ -161,7 +161,7 @@ $(document).ready(function() {
 
 var lastScrollLeft = 0;
 $("#projContainer.singleProject").scroll(function() {
-    if (orientation === "landscape") {
+    if (screenAspect === "landscape") {
         var containerScrollLeft = $(this).scrollLeft();
         if (lastScrollLeft != containerScrollLeft) {
             if (whichPage === "project"){
@@ -183,7 +183,7 @@ $("#projContainer.singleProject").scroll(function() {
 });
 
 $(window).scroll(function() {
-    if (orientation === "portrait") {
+    if (screenAspect === "portrait") {
         if (whichPage === "project"){
             var containerScrollTop = $(this).scrollTop();
             //console.log(containerScrollTop);
@@ -395,7 +395,7 @@ $("#projContainer.singleProject .slides").imagesLoaded()
   .done( function( instance ) {
     //console.log('all images successfully loaded');
     imgLoaded = true;
-    alert("imagesLoaded() was called DONE");
+    // alert("imagesLoaded() was called DONE");
     resizeCover();
   })
   .fail( function(instance) {
@@ -411,7 +411,7 @@ $("#projContainer.singleProject .slides").imagesLoaded()
         };
     }
     imgLoaded = true;
-    alert("imagesLoaded() was called FAIL");
+    // alert("imagesLoaded() was called FAIL");
     resizeCover();
   });
 
@@ -429,7 +429,7 @@ on_resize(function() {
 
 $( window ).resize(function() {
     //Normal on-resize handler
-    getOrientation();
+    getScreenAspect();
     if (whichPage === "work" && $container != undefined) {
         resizeThumbs();
         $container.masonry();
@@ -613,12 +613,12 @@ function expandThumbBgs(target) {
 }
 
 function resizeCover(){
-    getOrientation();
+    getScreenAspect();
     var margWidth = $(".projMarginL").width();
     $(".spacer").css("width",margWidth+"px");
 
-    alert("called resizeCover() : " + imgLoaded);
-    if (orientation==="landscape") {
+    //alert("called resizeCover() : " + imgLoaded + ":" +  screenAspect);
+    if (screenAspect==="landscape") {
 
         if (imgLoaded == true) {
         //if (1 === 2) {
@@ -631,7 +631,7 @@ function resizeCover(){
             });
             //console.log(totWidth);
             $(".slides").width(totWidth);
-            alert("resized after images loaded : " + imgLoaded);
+            //alert("resized after images loaded : " + imgLoaded);
         } else {
             /*
             var imgLoad = imagesLoaded("#projContainer.singleProject .slides");
@@ -646,7 +646,7 @@ function resizeCover(){
 
         var navTop = $(".slides").height() + 50;
         $(".projNav").css("top",navTop + "px")
-    } else if (orientation==="portrait") {
+    } else if (screenAspect==="portrait") {
         $(".slides").removeAttr('style');
     };
     //var viewH = Math.floor(window.innerHeight * 0.8) - 50;
@@ -656,7 +656,7 @@ function resizeCover(){
 
     /*
 
-    if (orientation==="landscape") {
+    if (screenAspect==="landscape") {
         coverImage.css("height",viewH+"px");
         $("table", coverImage).css("height",viewH+"px");
         $(".spacer").css("width",margWidth+"px");
@@ -718,18 +718,18 @@ function addTextBg() {
     });
 }
 
-function getOrientation() {
+function getScreenAspect() {
     ratio = window.innerHeight/window.innerWidth;
     if (ratio <= 1) {
-        orientation = "landscape";
+        screenAspect = "landscape";
         $("body").removeClass("portrait");
         $("body").addClass("landscape");
     } else {
-        orientation = "portrait";
+        screenAspect = "portrait";
         $("body").removeClass("landscape");
         $("body").addClass("portrait");
     };
-    //console.log(orientation);
+    //console.log(screenAspect);
 }
 
 ////////////////////////
