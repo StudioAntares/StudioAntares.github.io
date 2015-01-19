@@ -26,6 +26,8 @@ var orientation = "landscape";
 ////////////////////////
 // SETUP ON READY
 
+jQuery(window).bind("unload", jQuery.noop);
+
 $(document).ready(function() {
     getOrientation();
 
@@ -199,6 +201,7 @@ $(window).scroll(function() {
 });
 
 $( window ).load(function() {
+    //console.log("loaded");
     if (jQuery.browser.mobile == true) {
         //isMobile = true;
         $("body").addClass("isMobile");
