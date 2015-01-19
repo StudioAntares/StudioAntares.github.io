@@ -31,6 +31,7 @@ jQuery(window).bind("unload", jQuery.noop);
 
 $(document).ready(function() {
     getScreenAspect();
+    FastClick.attach(document.body);
 
     if (document.getElementById("fullBg") !== null && document.getElementById("fullBg") !== undefined) {
         //alert("Home Page");
