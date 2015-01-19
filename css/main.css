@@ -640,6 +640,7 @@ header, #headerbg {
 }
 
 .slides {
+    -webkit-transform: translate3d(0, 0, 0);
     position: absolute;
     top: 0px;
     left: 0px;
@@ -658,6 +659,7 @@ header, #headerbg {
 }*/
 
 .slide {
+    -webkit-transform: translate3d(0, 0, 0);
     height: 100%;
     max-height: 100%;
     /*overflow: hidden;*/

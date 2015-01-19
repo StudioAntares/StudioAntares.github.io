@@ -628,12 +628,13 @@ function resizeCover(){
             });
             //console.log(totWidth);
             $(".slides").width(totWidth);
+            alert("didIt");
         };
 
         var navTop = $(".slides").height() + 50;
         $(".projNav").css("top",navTop + "px")
     } else if (orientation==="portrait") {
-        
+
     };
     //var viewH = Math.floor(window.innerHeight * 0.8) - 50;
     //var viewW = Math.floor(window.innerWidth * 0.8);
