@@ -196,7 +196,7 @@ $(window).scroll(function() {
             if (perc < 0) {perc = 0;};
 
             perc = perc + "%";
-            console.log(perc);
+            //console.log(perc);
             $(".projBarSide").css("height",perc);       
         }
     };
@@ -622,7 +622,6 @@ function resizeCover(){
     if (screenAspect==="landscape") {
 
         if (imgLoaded == true) {
-        //if (1 === 2) {
             var totWidth = 0;
             $(".slide").each(function(){
                 if ($(this).hasClass("imgSlide")) {
@@ -634,85 +633,34 @@ function resizeCover(){
             $(".slides").width(totWidth);
             //alert("resized after images loaded : " + imgLoaded);
         } else {
-            /*
-            var imgLoad = imagesLoaded("#projContainer.singleProject .slides");
-            for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
-                var image = imgLoad.images[i];
-                var result = image.isLoaded ? 'loaded' : 'broken';
-                console.log(result);
-                //console.log( 'image is ' + result + ' for ' + image.img.src );
-            }
-            */
+            //something is wrong...
         };
 
         var navTop = $(".slides").height() + 50;
         $(".projNav").css("top",navTop + "px")
-    } else if (screenAspect==="portrait") {
-        $(".slides").removeAttr('style');
-    };
-    //var viewH = Math.floor(window.innerHeight * 0.8) - 50;
-    //var viewW = Math.floor(window.innerWidth * 0.8);
-    //var coverImage = $("#projContainer.singleProject");
-    //var contWidth = coverImage.width();
 
-    /*
-
-    if (screenAspect==="landscape") {
-        coverImage.css("height",viewH+"px");
-        $("table", coverImage).css("height",viewH+"px");
-        $(".spacer").css("width",margWidth+"px");
-        $("img", coverImage).each(function(){
-            //console.log($(this).attr("src"));
-            $(this).css({"height":viewH+"px","width":"auto"});
-        })
-        $(".textSlide", coverImage).each(function(){
-            //console.log("didsomething");
-            $(this).css({"max-height":viewH+"px"});
-        })
-    } else {
-        coverImage.css("height","100%");
-        $("table", coverImage).css({"height":"auto","width":contWidth + "px"});
-        $("img", coverImage).each(function(){
-            //console.log($(this).attr("src"));
-            $(this).css({"width":contWidth + "px","height":"auto"});
-        })
-        $(".textSlide", coverImage).each(function(){
-            //console.log("didsomething");
-            $(this).css({"width":contWidth + "px","max-height":viewH+"px"});
-        })
-
-        var barHeight = window.innerHeight - 2* $("header").height();
-        $(".portrait .projNav").css({"height":barHeight + "px"})
-    };
-
-    $(".innerText", coverImage).each(function(){
-        if ($(this).height() > $(this).parent().height()) {
-            $(this).removeClass("vCenter");
-        } else {
-            // $(this).addClass("vCenter");
+        var textBlockWidth = $(".firstSlide").width();
+        if (textBlockWidth > 740) {
+            textBlockWidth = 740;
+        } else if(textBlockWidth > window.innerWidth * 0.80){
+            textBlockWidth = window.innerWidth * 0.80;
         };
-    });
-    
 
+        $(".landscape .projPageDesc").width(textBlockWidth);
 
-    /*
-    // $(".firstSlide").css("width",viewW+"px");
-    $("img", coverImage).each(function(){
-        //console.log($(this).attr("src"));
-        $(this).css({"height":viewH+"px","width":"auto"});
-    })
-    $(".textSlide", coverImage).each(function(){
-        //console.log("didsomething");
-        $(this).css({"max-height":viewH+"px"});
-    })
-    */  
+    } else if (screenAspect==="portrait") {
+        $(".projNavSide").height(window.innerHeight-100);
+        $(".slides").removeAttr('style');
+        $(".projPageDesc, .vertInfo").removeAttr('style');
+        $(".vertInfo").html($(".projectInfo").html());
+    };  
 }
 
 function addTextBg() {
     $(".textSlide").each(function(){
         var $slide = $(this);
         if ($slide.attr("data-bg") !== null && $slide.attr("data-bg") !== undefined) {
-            var bgPath = $slide.attr("data-bg");
+            var bgPath = "img/" + $slide.attr("data-bg");
             //console.log(bgPath);
             $slide.backstretch(bgPath);
         };

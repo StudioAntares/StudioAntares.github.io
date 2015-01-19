@@ -668,6 +668,11 @@ header, #headerbg {
     display: block;
 }
 
+.vertInfo {
+    display: none;
+    visibility: hidden;
+}
+
 .slide img {
     display: block;
     /*margin: auto;*/
@@ -689,7 +694,7 @@ header, #headerbg {
     width: 900px !important;
     margin: 0em;
     padding: 0em;
-    max-height: 400%;
+    max-height: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -719,8 +724,8 @@ header, #headerbg {
 
 .projNav {
     color: white;
-    position: fixed;
-    top: 80%;
+    position: absolute;
+    top: 100%;
     left: 10%;
     z-index: 12;
     width: 80%;
@@ -855,6 +860,37 @@ header, #headerbg {
     height: 50px;
 }
 
+.landscape .projPageTitle, .landscape .projPageDesc {
+    margin-left: 10%;
+}
+
+.projPageTitle h1 {
+    margin: 0.5em 0em;
+    font-size: 1.8em;
+}
+
+.projPageDesc {
+    font-size: 0.9em;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.landscape .projPageDesc {
+    width: 60%;
+    max-width: 740px;
+}
+
+.portrait .vertInfo {
+    display: block;
+    visibility: visible;
+    padding-right: 2px;
+}
+
+.portrait .projectInfo {
+    visibility: hidden;
+    display: none;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
@@ -966,6 +1002,10 @@ header, #headerbg {
 
     .portrait .slides {
         padding: 0% 7%;
+    }
+
+    .landscape .projPageTitle, .landscape .projPageDesc {
+        margin-left: 6%;
     }
 
 }
