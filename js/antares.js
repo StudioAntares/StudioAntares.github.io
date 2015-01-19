@@ -616,6 +616,7 @@ function resizeCover(){
     var margWidth = $(".projMarginL").width();
     $(".spacer").css("width",margWidth+"px");
 
+    alert("called resizeCover()");
     if (orientation==="landscape") {
 
         if (imgLoaded == true) {
@@ -628,13 +629,13 @@ function resizeCover(){
             });
             //console.log(totWidth);
             $(".slides").width(totWidth);
-            alert("didIt");
+            alert("resized after images loaded");
         };
 
         var navTop = $(".slides").height() + 50;
         $(".projNav").css("top",navTop + "px")
     } else if (orientation==="portrait") {
-
+        $(".slides").removeAttr('style');
     };
     //var viewH = Math.floor(window.innerHeight * 0.8) - 50;
     //var viewW = Math.floor(window.innerWidth * 0.8);
