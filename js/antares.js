@@ -195,8 +195,8 @@ $(window).scroll(function() {
             if (perc < 0) {perc = 0;};
 
             perc = perc + "%";
-            //console.log(perc);
-            $(".projBar").css("height",perc);       
+            console.log(perc);
+            $(".projBarSide").css("height",perc);       
         }
     };
 });
@@ -629,10 +629,12 @@ function resizeCover(){
             //console.log(totWidth);
             $(".slides").width(totWidth);
         };
-        
+
         var navTop = $(".slides").height() + 50;
         $(".projNav").css("top",navTop + "px")
-    }
+    } else if (orientation==="portrait") {
+        
+    };
     //var viewH = Math.floor(window.innerHeight * 0.8) - 50;
     //var viewW = Math.floor(window.innerWidth * 0.8);
     //var coverImage = $("#projContainer.singleProject");
