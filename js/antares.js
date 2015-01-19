@@ -393,8 +393,9 @@ $("#logoTop, #antaresName").click(function(){
 
 $("#projContainer.singleProject .slides").imagesLoaded()
   .done( function( instance ) {
-    console.log('all images successfully loaded');
+    //console.log('all images successfully loaded');
     imgLoaded = true;
+    alert("imagesLoaded() was called DONE");
     resizeCover();
   })
   .fail( function(instance) {
@@ -410,8 +411,8 @@ $("#projContainer.singleProject .slides").imagesLoaded()
         };
     }
     imgLoaded = true;
+    alert("imagesLoaded() was called FAIL");
     resizeCover();
-
   });
 
 $(document).keyup(function(e) {
@@ -616,10 +617,11 @@ function resizeCover(){
     var margWidth = $(".projMarginL").width();
     $(".spacer").css("width",margWidth+"px");
 
-    alert("called resizeCover()");
+    alert("called resizeCover() : " + imgLoaded);
     if (orientation==="landscape") {
 
         if (imgLoaded == true) {
+        //if (1 === 2) {
             var totWidth = 0;
             $(".slide").each(function(){
                 if ($(this).hasClass("imgSlide")) {
@@ -629,7 +631,17 @@ function resizeCover(){
             });
             //console.log(totWidth);
             $(".slides").width(totWidth);
-            alert("resized after images loaded");
+            alert("resized after images loaded : " + imgLoaded);
+        } else {
+            /*
+            var imgLoad = imagesLoaded("#projContainer.singleProject .slides");
+            for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
+                var image = imgLoad.images[i];
+                var result = image.isLoaded ? 'loaded' : 'broken';
+                console.log(result);
+                //console.log( 'image is ' + result + ' for ' + image.img.src );
+            }
+            */
         };
 
         var navTop = $(".slides").height() + 50;
