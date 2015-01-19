@@ -22,7 +22,7 @@ var whichThumbs = "all";
 var sorting = false;
 
 var orientation = "landscape";
-var imagesLoaded = false;
+var imgLoaded = false;
 
 ////////////////////////
 // SETUP ON READY
@@ -167,7 +167,7 @@ $("#projContainer.singleProject").scroll(function() {
             if (whichPage === "project"){
                 //console.log(containerScrollLeft);
 
-                var maxScroll = $(".slides table").width() - window.innerWidth - 10;
+                var maxScroll = $(".slides").width() - window.innerWidth - 10;
                 var perc = (containerScrollLeft*100)/maxScroll;
 
                 if (perc > 100) {perc = 100;};
@@ -394,6 +394,8 @@ $("#logoTop, #antaresName").click(function(){
 $("#projContainer.singleProject .slides").imagesLoaded()
   .done( function( instance ) {
     console.log('all images successfully loaded');
+    imgLoaded = true;
+    resizeCover();
   })
   .fail( function(instance) {
     //console.log('all images loaded, at least one is broken');
@@ -407,6 +409,8 @@ $("#projContainer.singleProject .slides").imagesLoaded()
             console.log( 'image is ' + result + ' for ' + image.img.src );
         };
     }
+    imgLoaded = true;
+    resizeCover();
 
   });
 
@@ -609,13 +613,28 @@ function expandThumbBgs(target) {
 
 function resizeCover(){
     getOrientation();
+    var margWidth = $(".projMarginL").width();
+    $(".spacer").css("width",margWidth+"px");
 
     if (orientation==="landscape") {
 
+        if (imgLoaded == true) {
+            var totWidth = 0;
+            $(".slide").each(function(){
+                if ($(this).hasClass("imgSlide")) {
+                    $(this).width($(this).children("img").first().width());
+                };
+                totWidth += $(this).width();
+            });
+            //console.log(totWidth);
+            $(".slides").width(totWidth);
+        };
+        
+        var navTop = $(".slides").height() + 50;
+        $(".projNav").css("top",navTop + "px")
     }
     //var viewH = Math.floor(window.innerHeight * 0.8) - 50;
     //var viewW = Math.floor(window.innerWidth * 0.8);
-    //var margWidth = $(".projMarginL").width();
     //var coverImage = $("#projContainer.singleProject");
     //var contWidth = coverImage.width();
 
