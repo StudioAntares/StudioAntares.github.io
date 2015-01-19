@@ -22,6 +22,7 @@ var whichThumbs = "all";
 var sorting = false;
 
 var orientation = "landscape";
+var imagesLoaded = false;
 
 ////////////////////////
 // SETUP ON READY
@@ -390,6 +391,25 @@ $("#logoTop, #antaresName").click(function(){
     };
 });
 
+$("#projContainer.singleProject .slides").imagesLoaded()
+  .done( function( instance ) {
+    console.log('all images successfully loaded');
+  })
+  .fail( function(instance) {
+    //console.log('all images loaded, at least one is broken');
+    //console.log( instance.images.length + ' images loaded' );
+    // detect which image is broken
+    for ( var i = 0, len = instance.images.length; i < len; i++ ) {
+        var image = instance.images[i];
+        var result = image.isLoaded ? 'loaded' : 'broken';
+        if (result === "broken") {
+            $(".imgSlide").eq(i).detach();
+            console.log( 'image is ' + result + ' for ' + image.img.src );
+        };
+    }
+
+  });
+
 $(document).keyup(function(e) {
     if (e.keyCode == 27) {            // ESC
         hideOver();
@@ -589,11 +609,17 @@ function expandThumbBgs(target) {
 
 function resizeCover(){
     getOrientation();
-    var viewH = Math.floor(window.innerHeight * 0.8) - 50;
-    var viewW = Math.floor(window.innerWidth * 0.8);
-    var margWidth = $(".projMarginL").width();
-    var coverImage = $("#projContainer.singleProject");
-    var contWidth = coverImage.width();
+
+    if (orientation==="landscape") {
+
+    }
+    //var viewH = Math.floor(window.innerHeight * 0.8) - 50;
+    //var viewW = Math.floor(window.innerWidth * 0.8);
+    //var margWidth = $(".projMarginL").width();
+    //var coverImage = $("#projContainer.singleProject");
+    //var contWidth = coverImage.width();
+
+    /*
 
     if (orientation==="landscape") {
         coverImage.css("height",viewH+"px");
