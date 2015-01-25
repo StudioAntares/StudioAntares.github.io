@@ -293,7 +293,7 @@ header, #headerbg {
     z-index: 5;
 }
 
-.isNotMobile .workPage header, .isNotMobile .projPage header {
+.isNotMobile.workPage header, .isNotMobile.projPage header {
     position: fixed;
 }
 
@@ -689,6 +689,70 @@ header, #headerbg {
 
 
 
+.projPageTitle h1 {
+    color: #fff;
+    margin: 0.5em 0em;
+    font-size: 1.8em;
+}
+
+.projPageDesc {
+    color: #fff;
+    font-size: 0.9em;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.projectInfo .projPageDesc, .vertInfo .projPageDesc {
+    width: 80%;
+    max-width: 740px;
+    padding-bottom: 40px;
+}
+
+.sideScroll .vertInfo {
+    /*visibility: hidden;
+    display: none;*/
+}
+
+.projNav {
+    color: white;
+    position: absolute;
+    top: 80%;
+    /*left: 10%;*/
+    left: 0%;
+    z-index: 12;
+    width: 100%;
+    padding: 0% 10%;
+    margin-top: 4px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.projBar {
+    width: 0%;
+    height: 1px;
+    background-color: #fff;
+    /*margin-top: 11px;*/
+}
+
+.projNavSide {
+    color: white;
+    position: fixed;
+    right: 10%;
+    top: 50px;
+    z-index: 12;
+    height: 100%;
+    width: auto;
+}
+
+.projBarSide {
+    width: 1px;
+    height: 0%;
+    background-color: #fff;
+    margin-top: 0px;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
@@ -786,6 +850,12 @@ header, #headerbg {
         padding: 0% 6%;
         padding-top: 50px;
         padding-bottom: 10px;
+    }
+
+    .projectInfo .projPageDesc, .vertInfo .projPageDesc {
+        width: 100%;
+        max-width: 768px;
+        padding-bottom: 20px;
     }
 
 }

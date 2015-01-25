@@ -23,6 +23,7 @@ var sorting = false;
 
 var screenAspect = "landscape";
 var imgLoaded = false;
+var totBarHeight = 0;
 
 ////////////////////////
 // SETUP ON READY
@@ -162,44 +163,46 @@ $(document).ready(function() {
 
 var lastScrollLeft = 0;
 $("#projContainer.singleProject").scroll(function() {
-    if (screenAspect === "landscape") {
-        var containerScrollLeft = $(this).scrollLeft();
-        if (lastScrollLeft != containerScrollLeft) {
-            if (whichPage === "project"){
-                //console.log(containerScrollLeft);
-
-                var maxScroll = $(".slides").width() - window.innerWidth - 10;
-                var perc = (containerScrollLeft*100)/maxScroll;
-
-                if (perc > 100) {perc = 100;};
-                if (perc < 0) {perc = 0;};
-
-                perc = perc + "%";
-                //console.log(perc);
-                $(".projBar").css("width",perc);      
-            }
-            lastScrollLeft = containerScrollLeft;
-        }
-    } 
-});
-
-$(window).scroll(function() {
-    if (screenAspect === "portrait") {
+    var containerScrollLeft = $(this).scrollLeft();
+    if (lastScrollLeft != containerScrollLeft) {
         if (whichPage === "project"){
-            var containerScrollTop = $(this).scrollTop();
-            //console.log(containerScrollTop);
+            //console.log(containerScrollLeft);
 
-            var maxScroll = $(document).height() - window.innerHeight - 10;            
-            var perc = (containerScrollTop*100)/maxScroll;
+            var maxScroll = $(".slides").width() - $(".projNav").width();// - 10;
+            var perc = (containerScrollLeft*100)/maxScroll;
 
             if (perc > 100) {perc = 100;};
             if (perc < 0) {perc = 0;};
 
             perc = perc + "%";
             //console.log(perc);
-            $(".projBarSide").css("height",perc);       
+            $(".projBar").css("width",perc);      
         }
-    };
+        lastScrollLeft = containerScrollLeft;
+    }
+});
+
+$(window).scroll(function() {
+    if (whichPage === "project"){
+        var containerScrollTop = $(this).scrollTop();
+
+        var maxScroll = totBarHeight;
+        var perc = (containerScrollTop*100)/maxScroll;
+
+        if (perc > 100) {perc = 100;};
+        if (perc < 0) {perc = 0;};
+
+        perc = perc + "%";
+        $(".projBarSide").css("height",perc);
+
+        var pushUp = $(this).scrollTop() - totBarHeight;
+        if (pushUp > 0) {
+            // console.log("bang");
+            $(".projNavSide").css("top", (50 - pushUp) + "px");
+        } else {
+            $(".projNavSide").css("top", "50px"); 
+        }
+    }
 });
 
 $( window ).load(function() {
@@ -614,6 +617,36 @@ function expandThumbBgs(target) {
 }
 
 function resizeCover(){
+    // $("#projContainer").addClass("sideScroll");
+    if ($("#projContainer").hasClass("sideScroll")) {
+        if (imgLoaded == true) {
+            var totWidth = 0;
+            $(".slide").each(function(){
+                if ($(this).hasClass("imgSlide")) {
+                    $(this).width($(this).children("img").first().width());
+                    totWidth += $(this).width();
+                };
+            });
+            $(".slides").width(totWidth);
+            //alert("resized after images loaded : " + imgLoaded);
+        } else {
+            //something is wrong...
+        };
+
+        var bar = $(".slides").offset().top + $(".slides").height();
+        $(".projNav").css("top",bar+"px").removeClass("hidden");
+        $(".projNavSide").addClass("hidden");
+        $(".projectInfo").html($(".vertInfo").html()).removeClass("hidden");
+        $(".vertInfo").addClass("hidden");
+    } else {
+        totBarHeight = $(".imgSlide").last().offset().top - window.innerHeight + $(".imgSlide").last().height();
+        $(".projNavSide").css("height",( window.innerHeight - 50 )+"px").removeClass("hidden");
+        $(".projNav").addClass("hidden");
+        $(".projectInfo").addClass("hidden");
+        $(".vertInfo").removeClass("hidden");
+    };
+    
+
     //$("#container").height(window.innerHeight);
     // getScreenAspect();
     // var margWidth = $(".projMarginL").width();
