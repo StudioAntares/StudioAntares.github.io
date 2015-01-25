@@ -180,6 +180,10 @@ h1 {
     font-size: 1.1em !important;
 }
 
+.mm-page {
+    height: 100%;
+}
+
 #container {
     height: 100%;
     min-height: 100%;
@@ -286,8 +290,11 @@ header, #headerbg {
 }
 
 .workPage header, .projPage header {
-    position: fixed;
     z-index: 5;
+}
+
+.isNotMobile .workPage header, .isNotMobile .projPage header {
+    position: fixed;
 }
 
 .rgba #headerbg {
@@ -626,7 +633,7 @@ header, #headerbg {
     left: 0px;
     /*height: 100%;*/
     width: 100%;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 .slide {
@@ -645,6 +652,39 @@ header, #headerbg {
     height: auto;
     display: block;
     /*margin: auto;*/
+}
+
+#projContainer.singleProject.sideScroll {
+    height: 85%;
+    overflow: scroll;
+}
+
+.touch #projContainer.singleProject.sideScroll, .isMobile #projContainer.singleProject.sideScroll {
+    -webkit-overflow-scrolling: touch;
+}
+
+.sideScroll .slides {
+    -webkit-transform: translate3d(0, 0, 0);
+    height: 100%;
+    width: 2000%;
+}
+
+.sideScroll  .slide {
+    -webkit-transform: translate3d(0, 0, 0);
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    width: auto;
+    float: left;
+    display: block;
+}
+
+
+.sideScroll .slide img {
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: auto;
 }
 
 

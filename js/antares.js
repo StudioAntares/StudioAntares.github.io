@@ -614,6 +614,7 @@ function expandThumbBgs(target) {
 }
 
 function resizeCover(){
+    //$("#container").height(window.innerHeight);
     // getScreenAspect();
     // var margWidth = $(".projMarginL").width();
     // var windowWidth = window.innerWidth;
