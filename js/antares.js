@@ -24,6 +24,7 @@ var sorting = false;
 var screenAspect = "landscape";
 var imgLoaded = false;
 var totBarHeight = 0;
+var barStartTop = 50;
 
 ////////////////////////
 // SETUP ON READY
@@ -184,6 +185,15 @@ $("#projContainer.singleProject").scroll(function() {
 
 $(window).scroll(function() {
     if (whichPage === "project"){
+        if (jQuery.browser.mobile) {
+            var startOff = $(this).scrollTop();
+            if (startOff > 50) {
+                startOff = 50
+            } else if (startOff < 0) {
+                startOff = 0;
+            };
+            barStartTop = 50 - startOff;
+        };
         var containerScrollTop = $(this).scrollTop();
 
         var maxScroll = totBarHeight;
@@ -198,9 +208,9 @@ $(window).scroll(function() {
         var pushUp = $(this).scrollTop() - totBarHeight;
         if (pushUp > 0) {
             // console.log("bang");
-            $(".projNavSide").css("top", (50 - pushUp) + "px");
+            $(".projNavSide").css("top", (barStartTop - pushUp) + "px");
         } else {
-            $(".projNavSide").css("top", "50px"); 
+            $(".projNavSide").css("top", barStartTop + "px"); 
         }
     }
 });
@@ -640,7 +650,7 @@ function resizeCover(){
         $(".vertInfo").addClass("hidden");
     } else {
         totBarHeight = $(".imgSlide").last().offset().top - window.innerHeight + $(".imgSlide").last().height();
-        $(".projNavSide").css("height",( window.innerHeight - 50 )+"px").removeClass("hidden");
+        $(".projNavSide").css("height",( window.innerHeight - barStartTop )+"px").removeClass("hidden");
         $(".projNav").addClass("hidden");
         $(".projectInfo").addClass("hidden");
         $(".vertInfo").removeClass("hidden");
