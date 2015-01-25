@@ -614,46 +614,49 @@ function expandThumbBgs(target) {
 }
 
 function resizeCover(){
-    getScreenAspect();
-    var margWidth = $(".projMarginL").width();
-    $(".spacer").css("width",margWidth+"px");
+    // getScreenAspect();
+    // var margWidth = $(".projMarginL").width();
+    // var windowWidth = window.innerWidth;
+    // $("header").css("max-width",windowWidth + "px");
+    // $(".spacer").css("width",margWidth+"px");
 
-    //alert("called resizeCover() : " + imgLoaded + ":" +  screenAspect);
-    if (screenAspect==="landscape") {
+    // //alert("called resizeCover() : " + imgLoaded + ":" +  screenAspect);
+    // if (screenAspect==="landscape" && !$("body").hasClass("isMobile")) {
 
-        if (imgLoaded == true) {
-            var totWidth = 0;
-            $(".slide").each(function(){
-                if ($(this).hasClass("imgSlide")) {
-                    $(this).width($(this).children("img").first().width());
-                };
-                totWidth += $(this).width();
-            });
-            //console.log(totWidth);
-            $(".slides").width(totWidth);
-            //alert("resized after images loaded : " + imgLoaded);
-        } else {
-            //something is wrong...
-        };
+    //     if (imgLoaded == true) {
+    //         var totWidth = 0;
+    //         $(".slide").each(function(){
+    //             if ($(this).hasClass("imgSlide")) {
+    //                 $(this).width($(this).children("img").first().width());
+    //             };
+    //             totWidth += $(this).width();
+    //         });
+    //         //console.log(totWidth);
+    //         $(".slides").width(totWidth);
+    //         //alert("resized after images loaded : " + imgLoaded);
+    //     } else {
+    //         //something is wrong...
+    //     };
 
-        var navTop = $(".slides").height() + 50;
-        $(".projNav").css("top",navTop + "px")
+    //     var navTop = $(".slides").height() + 50;
+    //     $(".projNav").css("top",navTop + "px")
 
-        var textBlockWidth = $(".firstSlide").width();
-        if (textBlockWidth > 740) {
-            textBlockWidth = 740;
-        } else if(textBlockWidth > window.innerWidth * 0.80){
-            textBlockWidth = window.innerWidth * 0.80;
-        };
+    //     var textBlockWidth = $(".firstSlide").width();
+    //     if (textBlockWidth > 740) {
+    //         textBlockWidth = 740;
+    //     } else if(textBlockWidth > window.innerWidth * 0.80){
+    //         textBlockWidth = window.innerWidth * 0.80;
+    //     };
 
-        $(".landscape .projPageDesc").width(textBlockWidth);
+    //     $(".landscape .projPageDesc").width(textBlockWidth);
 
-    } else if (screenAspect==="portrait") {
-        $(".projNavSide").height(window.innerHeight-100);
-        $(".slides").removeAttr('style');
-        $(".projPageDesc, .vertInfo").removeAttr('style');
-        $(".vertInfo").html($(".projectInfo").html());
-    };  
+    // } else if (screenAspect==="portrait" || $("body").hasClass("isMobile")) {
+    //     alert("vertical?");
+    //     $(".projNavSide").height(window.innerHeight-100);
+    //     $(".slides").removeAttr('style');
+    //     $(".projPageDesc, .vertInfo").removeAttr('style');
+    //     $(".vertInfo").html($(".projectInfo").html());
+    // };  
 }
 
 function addTextBg() {

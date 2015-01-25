@@ -274,6 +274,7 @@ header, #headerbg {
     top: 0px;
     left: 0px;
     width: 100%;
+    max-width: 100%;
     height: 50px;
     z-index: 2;
     background: none;
@@ -327,6 +328,16 @@ header, #headerbg {
 #lastNav {
     padding-right: 0em !important;
 }
+
+
+/*.isMobile header, .isMobile #headerbg {
+    height: 30px;
+}
+
+.isMobile #antaresName {
+    margin-left: 20px;
+    font-size: 1em;
+}*/
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 /* * * * * * * * Main Page Styles  * * * * * * * */
@@ -589,9 +600,11 @@ header, #headerbg {
 
 .projPage #projMargin {
     position: relative;
-    padding: 50px 0px;
     width: 100%;
     height: 100%;
+    padding: 0% 10%;
+    padding-top: 50px;
+    padding-bottom: 80px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -599,44 +612,11 @@ header, #headerbg {
 
 
 #projContainer.singleProject {
-    /*background-color: #f00;*/
-    /*text-align: center;*/
     position: relative;
-    height: 85%;
+    /*height: 85%;*/
+    height: auto;
     width: 100%;
-    overflow: scroll;
-}
-
-.touch #projContainer.singleProject, .isMobile #projContainer.singleProject {
-    -webkit-overflow-scrolling: touch;
-}
-
-
-.landscape .spacerLast {
-    visibility: hidden;
-    display: none;
-}
-
-.projMarginL, .projMarginR, .spacer {
-    display: block;
-    width: 10%;
-    height: 100%;
-}
-
-.projMarginL, .projMarginR {
-    position: fixed;
-    top: 50px;
-    background-color: #000;
-    opacity: 0.8;
-    z-index: 10;
-}
-
-.projMarginL {
-    left: 0px; 
-}
-
-.projMarginR {
-    right: 0px; 
+    /*overflow: scroll;*/
 }
 
 .slides {
@@ -644,252 +624,30 @@ header, #headerbg {
     position: absolute;
     top: 0px;
     left: 0px;
-    height: 100%;
-    width: 2000%;
-    overflow: hidden;
+    /*height: 100%;*/
+    width: 100%;
+    overflow: scroll;
 }
-
-/*.slides table, .slides table tr, .slides table td {
-    max-height: 100%;
-    position: relative;
-}
-
-.slides table {
-    table-layout: fixed;
-}*/
 
 .slide {
     -webkit-transform: translate3d(0, 0, 0);
-    height: 100%;
-    max-height: 100%;
+    /*height: 100%;*/
+    /*max-height: 100%;*/
     /*overflow: hidden;*/
-    width: auto;
-    float: left;
+    width: 100%;
+    /*float: left;*/
     display: block;
 }
 
-.vertInfo {
-    display: none;
-    visibility: hidden;
-}
 
 .slide img {
+    width: 100%;
+    height: auto;
     display: block;
     /*margin: auto;*/
 }
 
-.landscape .slide img{
-    height: 100%;
-    max-height: 100%;
-    width: auto;
-    margin: 0px;
-}
 
-/*.landscape .slide:first-of-type {
-    padding-left: 10%;
-}*/
-
-.textSlide {
-    position: relative;
-    width: 900px !important;
-    margin: 0em;
-    padding: 0em;
-    max-height: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    overflow: hidden !important;
-    
-}
-
-.textSlide p {
-    padding: 1em 2em;
-    margin: 0em 0em;
-    /*visibility: hidden;
-    display: none;
-    */
-    max-width: 100%;
-}
-
-.firstSlide {
-    text-align: center;
-}
-
-.spacer {background: none}
-
-.portrait .projNav {
-    visibility: hidden;
-    display: none;
-}
-
-.projNav {
-    color: white;
-    position: absolute;
-    top: 100%;
-    left: 10%;
-    z-index: 12;
-    width: 80%;
-}
-
-.projNav .navCircle {
-    float: left;
-    border-radius: 50%;
-    width: 12px;
-    height: 12px; 
-    background-color: #fff;
-    margin-right: 4px;
-    margin-top: 6px; 
-}
-
-.csstransitions .navCircle {
-    transition: background-color 0.5s linear;
-    -moz-transition: background-color 0.5s linear;
-    -webkit-transition: background-color 0.5s linear;
-}
-
-.navCircle .blackCircle {
-    position: relative;
-    top: 25%;
-    left: 25%;
-    border-radius: 50%;
-    width: 6px;
-    height: 6px; 
-    background-color: #000;
-}
-
-.navCircle:hover{
-    cursor: pointer;
-    background-color: #ccc;
-}
-
-.projBar {
-    width: 0%;
-    height: 1px;
-    background-color: #fff;
-    /*margin-top: 11px;*/
-}
-
-.portrait #projMargin {
-    padding-bottom: 0px;
-}
-
-.portrait #projContainer.singleProject {
-    width: 100%;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0% 10%;
-    overflow: visible;
-}
-
-.portrait .spacer {
-    visibility: hidden;
-    display: none;
-}
-
-.portrait .slides {
-    min-height: 100%;
-    width: 100%;
-    overflow: visible;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0% 10%;
-    /*margin-bottom: 500px;*/
-    margin-bottom: 300px;
-}
-
-.portrait .projMarginL, .portrait .projMarginR {
-    visibility: hidden;
-    display: none;
-}
-
-.portrait .slide {
-    position: relative;
-    max-width: 100%;
-    height: auto;
-}
-
-.portrait .slide img{
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    margin: 0px;
-}
-
-.portrait .textSlide {
-/*    position: relative;
-    width: 900px !important;
-    margin: 0em;
-    padding: 0em;
-    max-height: 400%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    overflow: hidden !important;
-*/    
-}
-
-.landscape .projNavSide {
-    visibility: hidden;
-    display: none;
-}
-
-.projNavSide {
-    color: white;
-    position: fixed;
-    right: 10%;
-    top: 50px;
-    z-index: 12;
-    height: 100%;
-    width: auto;
-}
-
-.portrait .projBarSide {
-    width: 1px;
-    height: 0%;
-    background-color: #fff;
-    margin-top: 0px;
-}
-
-.portrait .spacerLast {
-    visibility: visible;
-    display: block;
-    width: 100%;
-    height: 50px;
-}
-
-.landscape .projPageTitle, .landscape .projPageDesc {
-    margin-left: 10%;
-}
-
-.projPageTitle h1 {
-    margin: 0.5em 0em;
-    font-size: 1.8em;
-}
-
-.projPageDesc {
-    font-size: 0.9em;
-    margin-bottom: 50px;
-    text-align: justify;
-}
-
-.landscape .projPageDesc {
-    width: 60%;
-    max-width: 740px;
-}
-
-.portrait .vertInfo {
-    display: block;
-    visibility: visible;
-    padding-right: 2px;
-}
-
-.portrait .projectInfo {
-    visibility: hidden;
-    display: none;
-}
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
@@ -932,8 +690,8 @@ header, #headerbg {
     }
 }
 
-/*@media only screen and (max-width: 768px) {*/
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 768px) {
+/*@media only screen and (max-width: 650px) {*/
 
     #logoTop, #antaresName {
         left: 6%;
@@ -979,33 +737,15 @@ header, #headerbg {
         top: -0.5em;
     }
 
-    #projMargin {
+    .workPage #projMargin {
         width: 85%;
         padding: 100px 0px;
     }
 
-    .portrait #projContainer.singleProject {
+    .projPage #projMargin {
         padding: 0% 6%;
-    }
-
-    .projMarginL, .projMarginR, .spacer {
-        width: 6%;
-    }
-
-    .landscape .projNav {
-        left: 6%;
-        width: 88%;
-    }
-    .portrait .projNavSide {
-        right: 6%;
-    }
-
-    .portrait .slides {
-        padding: 0% 7%;
-    }
-
-    .landscape .projPageTitle, .landscape .projPageDesc {
-        margin-left: 6%;
+        padding-top: 50px;
+        padding-bottom: 10px;
     }
 
 }
