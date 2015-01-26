@@ -858,6 +858,10 @@ header, #headerbg {
         padding-bottom: 20px;
     }
 
+    .projNavSide {
+        right: 6%;
+    }
+
 }
 
 @media only screen and (max-width: 450px) {
