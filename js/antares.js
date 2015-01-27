@@ -629,6 +629,7 @@ function expandThumbBgs(target) {
 }
 
 function resizeCover(){
+    getScreenAspect();
     // $("#projContainer").addClass("sideScroll");
     if ($("#projContainer").hasClass("sideScroll")) {
         if (imgLoaded == true) {

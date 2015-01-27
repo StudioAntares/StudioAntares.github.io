@@ -204,6 +204,7 @@ h1 {
   height: 18px;
   visibility: hidden;
   z-index: 999;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .menu-global {
@@ -284,6 +285,7 @@ h1 {
 /* * * * * * Header * * * * * */
 
 header, #headerbg {
+    -webkit-transform: translate3d(0, 0, 0);
     position: absolute;
     top: 0px;
     left: 0px;
