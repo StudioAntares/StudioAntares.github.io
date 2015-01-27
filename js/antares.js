@@ -655,10 +655,7 @@ function resizeCover(){
         } else {
             $(".projPageDesc, .projectInfo").removeAttr("style");
         };
-
-        //
-
-
+        
         var bar = $(".slides").offset().top + $(".slides").height();
         $(".projNav").css("top",bar+"px").removeClass("hidden");
         $(".projNavSide").addClass("hidden");
