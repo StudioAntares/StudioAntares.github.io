@@ -200,6 +200,7 @@ window.onpageshow = function (event) {
         // alert("loaded");
         $("#container").removeAttr("style");
         $(".curtainOverlay").removeAttr("style");
+        //window.location.reload()
     }
 };
 
