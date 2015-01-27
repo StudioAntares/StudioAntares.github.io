@@ -671,6 +671,7 @@ header, #headerbg {
 #projContainer.singleProject.sideScroll {
     height: 85%;
     overflow: scroll;
+    overflow-y: hidden;
 }
 
 .touch #projContainer.singleProject.sideScroll, .isMobile #projContainer.singleProject.sideScroll {
@@ -681,6 +682,7 @@ header, #headerbg {
     -webkit-transform: translate3d(0, 0, 0);
     height: 100%;
     width: 2000%;
+    white-space: nowrap;
 }
 
 .sideScroll  .slide {
@@ -689,8 +691,9 @@ header, #headerbg {
     max-height: 100%;
     overflow: hidden;
     width: auto;
-    float: left;
-    display: block;
+    /*float: left;*/
+    /*display: block;*/
+    display: inline-block;
 }
 
 

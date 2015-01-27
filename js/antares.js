@@ -632,6 +632,8 @@ function resizeCover(){
     getScreenAspect();
     // $("#projContainer").addClass("sideScroll");
     if ($("#projContainer").hasClass("sideScroll")) {
+
+        //*
         if (imgLoaded == true) {
             var totWidth = 0;
             $(".slide").each(function(){
@@ -645,6 +647,7 @@ function resizeCover(){
         } else {
             //something is wrong...
         };
+        //*/
 
         var bar = $(".slides").offset().top + $(".slides").height();
         $(".projNav").css("top",bar+"px").removeClass("hidden");
