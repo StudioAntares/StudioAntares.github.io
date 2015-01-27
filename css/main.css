@@ -215,10 +215,6 @@ h1 {
   transition: 0.55s;
 }
 
-.isMobile .menu-global {
-    border-color: red;
-}
-
 .menu-top {
   top: 0;
 }
@@ -307,7 +303,7 @@ header, #headerbg {
     z-index: 5;
 }
 
-.isNotMobile.workPage header, .isNotMobile.projPage header {
+.no-touch .workPage header, .no-touch .projPage header {
     position: fixed;
 }
 
@@ -765,6 +761,11 @@ header, #headerbg {
     height: 0%;
     background-color: #fff;
     margin-top: 0px;
+}
+
+.touch .projNav, .touch .projNavSide {
+    display: none !important;
+    visibility: hidden;
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
