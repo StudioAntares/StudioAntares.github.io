@@ -280,7 +280,7 @@ h1 {
     font-size: 2.5em;
 }
 
-.close:hover {
+.no-touch .close:hover {
     color: #999999;
     cursor: pointer;
 }
