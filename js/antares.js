@@ -649,12 +649,29 @@ function resizeCover(){
         };
         //*/
 
+        var firstImgW = $(".imgSlide").first().children("img").first().width();
+        if (firstImgW > window.innerWidth*0.8*0.5 && firstImgW < window.innerWidth*0.88) {
+            $(".projPageDesc, .projectInfo").width(firstImgW);
+        } else {
+            $(".projPageDesc, .projectInfo").removeAttr("style");
+        };
+
+        //
+
+
         var bar = $(".slides").offset().top + $(".slides").height();
         $(".projNav").css("top",bar+"px").removeClass("hidden");
         $(".projNavSide").addClass("hidden");
         $(".projectInfo").html($(".vertInfo").html()).removeClass("hidden");
         $(".vertInfo").addClass("hidden");
     } else {
+        $(".projPageDesc, .projectInfo").removeAttr("style");
+        $(".slides").removeAttr("style");
+        // console.log("stuff");
+        $(".slide").each(function(){
+            $(this).removeAttr("style");
+        });
+
         totBarHeight = $(".imgSlide").last().offset().top - window.innerHeight + $(".imgSlide").last().height();
         leftoverHeight = $(document).height() - ($(".imgSlide").last().offset().top + $(".imgSlide").last().height());
         $(".projNavSide").css("height",( window.innerHeight - barStartTop )+"px").removeClass("hidden");
@@ -727,10 +744,12 @@ function getScreenAspect() {
         screenAspect = "landscape";
         $("body").removeClass("portrait");
         $("body").addClass("landscape");
+        $("#projContainer").addClass("sideScroll");
     } else {
         screenAspect = "portrait";
         $("body").removeClass("landscape");
         $("body").addClass("portrait");
+        $("#projContainer").removeClass("sideScroll");
     };
     //console.log(screenAspect);
 }
