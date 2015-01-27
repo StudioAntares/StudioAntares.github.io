@@ -189,6 +189,10 @@ h1 {
     min-height: 100%;
 }
 
+.isMobile #container {
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
 .menu {
   cursor: pointer;
   margin: 0 auto;
