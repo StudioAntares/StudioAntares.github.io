@@ -314,6 +314,7 @@ header, #headerbg {
 }
 
 #logoTop {
+    -webkit-transform: translate3d(0, 0, 0);
     position: absolute;
     left: 10%;
     bottom: -30%;
@@ -322,6 +323,7 @@ header, #headerbg {
 }
 
 #antaresName {
+    -webkit-transform: translate3d(0, 0, 0);
     position: absolute;
     left: 10%;
     margin-left: 60px;
@@ -877,6 +879,10 @@ header, #headerbg {
 
     .projNavSide {
         right: 6%;
+    }
+
+    .projNav {
+        padding: 0% 6%;
     }
 
 }
