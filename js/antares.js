@@ -265,8 +265,10 @@ $(".mediaButton").click(function(){
 
 $(".navLink").click(function(event){
     event.preventDefault();
+
     var dest = $(this).attr("data-dest");
     var active = $(this).index();
+
     $(".navLink").each(function(){
         $(this).removeClass("underlined");
     })
@@ -274,6 +276,8 @@ $(".navLink").click(function(event){
     if (dest == "work") {
         if (whichPage === "work") {
             hideOver();
+        } else if (whichPage === "project") {
+            curtainTransition(workDest);
         } else {
             $("#container").fadeOut(1000,function(){
                 document.location.href = workDest;
@@ -282,6 +286,8 @@ $(".navLink").click(function(event){
     } else if (dest == "process") {
         if (whichPage === "process") {
             hideOver();
+        } else if (whichPage === "project") {
+            curtainTransition(procDest);
         } else {
             $("#container").fadeOut(1000,function(){
                 document.location.href = procDest;
@@ -407,6 +413,7 @@ $("#logoTop, #antaresName").click(function(){
     };
 });
 
+//*
 $("#projContainer.singleProject .slides").imagesLoaded()
   .done( function( instance ) {
     //console.log('all images successfully loaded');
@@ -430,6 +437,7 @@ $("#projContainer.singleProject .slides").imagesLoaded()
     // alert("imagesLoaded() was called FAIL");
     resizeCover();
   });
+//*/
 
 $(document).keyup(function(e) {
     if (e.keyCode == 27) {            // ESC
@@ -576,6 +584,14 @@ function overlay(dest,active) {
     };
 }
 
+function curtainTransition(dest) {
+    $(".curtainOverlay").height(window.innerHeight);
+    $(".curtainOverlay").fadeIn(1000,function(){
+        document.location.href = dest;
+        //alert("yasssss");
+    })
+}
+
 function createThumbImages() {
     if (whichPage === "work") {
         $(".innerImage").each(function(){
@@ -631,50 +647,52 @@ function expandThumbBgs(target) {
 function resizeCover(){
     getScreenAspect();
     // $("#projContainer").addClass("sideScroll");
-    if ($("#projContainer").hasClass("sideScroll")) {
+    if (whichPage === "project") {
+        if ($("#projContainer").hasClass("sideScroll")) {
 
-        //*
-        if (imgLoaded == true) {
-            var totWidth = 0;
-            $(".slide").each(function(){
-                if ($(this).hasClass("imgSlide")) {
-                    $(this).width($(this).children("img").first().width());
-                    totWidth += $(this).width();
-                };
-            });
-            $(".slides").width(totWidth);
-            //alert("resized after images loaded : " + imgLoaded);
-        } else {
-            //something is wrong...
-        };
-        //*/
+            //*
+            if (imgLoaded == true) {
+                var totWidth = 0;
+                $(".slide").each(function(){
+                    if ($(this).hasClass("imgSlide")) {
+                        $(this).width($(this).children("img").first().width());
+                        totWidth += $(this).width();
+                    };
+                });
+                $(".slides").width(totWidth);
+                //alert("resized after images loaded : " + imgLoaded);
+            } else {
+                //something is wrong...
+            };
+            //*/
 
-        var firstImgW = $(".imgSlide").first().children("img").first().width();
-        if (firstImgW > window.innerWidth*0.8*0.5 && firstImgW < window.innerWidth*0.88) {
-            $(".projPageDesc, .projectInfo").width(firstImgW);
+            var firstImgW = $(".imgSlide").first().children("img").first().width();
+            if (firstImgW > window.innerWidth*0.8*0.5 && firstImgW < window.innerWidth*0.88) {
+                $(".projPageDesc, .projectInfo").width(firstImgW);
+            } else {
+                $(".projPageDesc, .projectInfo").removeAttr("style");
+            };
+            
+            var bar = $(".slides").offset().top + $(".slides").height();
+            $(".projNav").css("top",bar+"px").removeClass("hidden");
+            $(".projNavSide").addClass("hidden");
+            $(".projectInfo").html($(".vertInfo").html()).removeClass("hidden");
+            $(".vertInfo").addClass("hidden");
         } else {
             $(".projPageDesc, .projectInfo").removeAttr("style");
-        };
-        
-        var bar = $(".slides").offset().top + $(".slides").height();
-        $(".projNav").css("top",bar+"px").removeClass("hidden");
-        $(".projNavSide").addClass("hidden");
-        $(".projectInfo").html($(".vertInfo").html()).removeClass("hidden");
-        $(".vertInfo").addClass("hidden");
-    } else {
-        $(".projPageDesc, .projectInfo").removeAttr("style");
-        $(".slides").removeAttr("style");
-        // console.log("stuff");
-        $(".slide").each(function(){
-            $(this).removeAttr("style");
-        });
+            $(".slides").removeAttr("style");
+            // console.log("stuff");
+            $(".slide").each(function(){
+                $(this).removeAttr("style");
+            });
 
-        totBarHeight = $(".imgSlide").last().offset().top - window.innerHeight + $(".imgSlide").last().height();
-        leftoverHeight = $(document).height() - ($(".imgSlide").last().offset().top + $(".imgSlide").last().height());
-        $(".projNavSide").css("height",( window.innerHeight - barStartTop )+"px").removeClass("hidden");
-        $(".projNav").addClass("hidden");
-        $(".projectInfo").addClass("hidden");
-        $(".vertInfo").removeClass("hidden");
+            totBarHeight = $(".imgSlide").last().offset().top - window.innerHeight + $(".imgSlide").last().height();
+            leftoverHeight = $(document).height() - ($(".imgSlide").last().offset().top + $(".imgSlide").last().height());
+            $(".projNavSide").css("height",( window.innerHeight - barStartTop )+"px").removeClass("hidden");
+            $(".projNav").addClass("hidden");
+            $(".projectInfo").addClass("hidden");
+            $(".vertInfo").removeClass("hidden");
+        };
     };
     
 
