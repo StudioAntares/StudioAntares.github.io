@@ -206,7 +206,7 @@ window.onpageshow = function (event) {
 // });
 
 var flag = false;
-$(".menu, .touchPad").bind('touchstart', function(){
+$(".menu, .touchPad").bind('touchstart click', function(){
   if (!flag) {
     flag = true;
     setTimeout(function(){ flag = false; }, 100);
@@ -688,6 +688,7 @@ function resizeCover(){
     // $("#projContainer").addClass("sideScroll");
     if (whichPage === "project") {
         if ($("#projContainer").hasClass("sideScroll")) {
+            $("#projMargin").addClass("flowRight");
 
             //*
             if (imgLoaded == true) {
@@ -718,6 +719,7 @@ function resizeCover(){
             $(".projectInfo").html($(".vertInfo").html()).removeClass("hidden");
             $(".vertInfo").addClass("hidden");
         } else {
+            $("#projMargin").removeClass("flowRight");
             $(".projPageDesc, .projectInfo").removeAttr("style");
             $(".slides").removeAttr("style");
             // console.log("stuff");
