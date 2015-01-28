@@ -663,7 +663,12 @@ header, #headerbg {
 }
 
 .rgba .projPage #projMargin.flowRight {
-    padding-right: 0%;
+    padding: 0%;
+    padding-top: 50px;
+}
+
+.rgba .projPage #projMargin.flowRight .projectInfo {
+    padding: 0 10%;
 }
 
 .rightFade {
@@ -679,7 +684,20 @@ header, #headerbg {
     -webkit-transform: translate3d(0, 0, 0);
 }
 
-.rgba .projPage #projMargin.flowRight .rightFade{
+.leftFade {
+    visibility: hidden;
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 10%;
+    background: rgba(0,0,0,0.85);
+    z-index: 100;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.rgba .projPage #projMargin.flowRight .rightFade, .rgba .projPage #projMargin.flowRight .leftFade{
     visibility: visible;
     display: block;
 }
@@ -758,12 +776,18 @@ header, #headerbg {
     margin: auto;
 }
 
-.sideScroll .imgSlideLast {
+.flowRight .sideScroll .imgSlideLast {
     text-align: left;
 }
 
-.sideScroll .imgSlideLast img {
+.flowRight .sideScroll .imgSlideLast img, .flowRight .sideScroll .firstSlide img {
     margin: 0px 0px;
+}
+
+.flowRight .sideScroll .firstSlide img {
+    float: right;
+    /*text-align: right;*/
+
 }
 
 .projPageTitle h1 {
@@ -948,7 +972,7 @@ header, #headerbg {
         padding: 0% 6%;
     }
 
-    .rightFade {
+    .rightFade, .leftFade {
         width: 6%;
         /*height: 85.5%;*/
     }
