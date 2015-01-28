@@ -208,7 +208,23 @@ h1 {
   visibility: hidden;
   z-index: 999;
   -webkit-transform: translate3d(0, 0, 0);
+  /*background: #f00;*/
 }
+
+.touchPad {
+    visibility: visible;
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 80px;
+    height: 80px;
+    background: #f00;
+    z-index: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+
 
 .menu-global {
   backface-visibility: hidden;

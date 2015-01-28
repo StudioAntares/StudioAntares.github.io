@@ -206,7 +206,7 @@ window.onpageshow = function (event) {
 // });
 
 var flag = false;
-$(".menu").bind('touchstart', function(){
+$(".menu, .touchPad").bind('touchstart', function(){
   if (!flag) {
     flag = true;
     setTimeout(function(){ flag = false; }, 100);
