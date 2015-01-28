@@ -212,7 +212,8 @@ $(".menu").bind('touchstart', function(){
   if (!flag) {
     flag = true;
     setTimeout(function(){ flag = false; }, 100);
-    alert("woo");
+    // alert("woo");
+    $("#my-menu").trigger("open.mm");
   }
 
   return false
