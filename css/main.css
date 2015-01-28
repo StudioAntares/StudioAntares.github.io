@@ -230,29 +230,26 @@ h1 {
 }
 
 
-.menu-top-click {
+.clicked .menu-top {
   backface-visibility: hidden;
   top: 10px;
 
   -moz-transform:rotate(45deg);
   -o-transform:rotate(45deg);
   -webkit-transform:rotate(45deg);
-
   transform: rotate(45deg);
-
   transition: 0.55s;
 }
-.menu-middle-click {
+.clicked .menu-middle {
   opacity: 0;
 }
-.menu-bottom-click {
+.clicked .menu-bottom {
   backface-visibility: hidden;
   top: 10px;
 
   -moz-transform:rotate(-45deg);
   -o-transform:rotate(-45deg);
   -webkit-transform:rotate(-45deg);
-
   transform: rotate(-45deg);
   transition: 0.55s;
 }

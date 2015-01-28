@@ -152,9 +152,7 @@ $(document).ready(function() {
            position  : "right"
         }
      }).on( "closing.mm", function() {
-        Menu.el.menuTop.removeClass('menu-top-click');
-        Menu.el.menuMiddle.removeClass('menu-middle-click');
-        Menu.el.menuBottom.removeClass('menu-bottom-click'); 
+        $(".menu").removeClass("clicked");
      }).css("visibility","visible");
 
     //$("body").addClass("good");
@@ -214,6 +212,7 @@ $(".menu").bind('touchstart', function(){
     setTimeout(function(){ flag = false; }, 100);
     // alert("woo");
     $("#my-menu").trigger("open.mm");
+    $(".menu").addClass("clicked");
   }
 
   return false
