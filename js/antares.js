@@ -115,6 +115,7 @@ $(document).ready(function() {
 
     var Menu;
     if (Modernizr.csstransitions && Modernizr.csstransforms) {
+        /*
         Menu = {
             el: {
                 ham: $('.menu'),
@@ -123,18 +124,8 @@ $(document).ready(function() {
                 menuBottom: $('.menu-bottom')
             },
             init: function() {
-                //Menu.bindUIactions();
-            },
-            activateMenu: function() {
-                Menu.el.menuTop.toggleClass('menu-top-click');
-                Menu.el.menuMiddle.toggleClass('menu-middle-click');
-                Menu.el.menuBottom.toggleClass('menu-bottom-click'); 
-            }
-        };
-        Menu.init();
-
-        /*
-            bindUIactions: function() {
+                Menu.bindUIactions();
+            }, bindUIactions: function() {
                 Menu.el.ham
                 .on('click',
                     function(event) {
@@ -144,6 +135,13 @@ $(document).ready(function() {
                     }
                 );
             },
+            activateMenu: function() {
+                Menu.el.menuTop.toggleClass('menu-top-click');
+                Menu.el.menuMiddle.toggleClass('menu-middle-click');
+                Menu.el.menuBottom.toggleClass('menu-bottom-click'); 
+            }
+        };
+        //Menu.init();
         */
     } else {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -204,10 +202,23 @@ window.onpageshow = function (event) {
     }
 };
 
-$(".menu").click(function(){
-    //alert("menu");
-    $("#my-menu").trigger("open.mm");
+// $(".menu").click(function(){
+//     //alert("menu");
+//     $("#my-menu").trigger("open.mm");
+// });
+
+var flag = false;
+$(".menu").bind('touchstart', function(){
+  if (!flag) {
+    flag = true;
+    setTimeout(function(){ flag = false; }, 100);
+    alert("woo");
+  }
+
+  return false
 });
+
+
 
 var lastScrollLeft = 0;
 $("#projContainer.singleProject").scroll(function() {
