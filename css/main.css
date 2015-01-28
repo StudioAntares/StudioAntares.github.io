@@ -245,7 +245,7 @@ h1 {
   top: 18px;
 }
 
-
+/*
 .clicked .menu-top {
   backface-visibility: hidden;
   top: 10px;
@@ -269,6 +269,7 @@ h1 {
   transform: rotate(-45deg);
   transition: 0.55s;
 }
+*/
 
 
 /* * * * * * Helpers * * * * * */
