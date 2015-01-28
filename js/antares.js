@@ -227,7 +227,7 @@ $("#projContainer.singleProject").scroll(function() {
         if (whichPage === "project"){
             //console.log(containerScrollLeft);
 
-            var maxScroll = $(".slides").width() - $(".projNav").width();// - 10;
+            var maxScroll = $(".slides").width() - $(".projNav").width() - $(".rightFade").width();// - 10;
             var perc = (containerScrollLeft*100)/maxScroll;
 
             if (perc > 100) {perc = 100;};
@@ -694,7 +694,11 @@ function resizeCover(){
             if (imgLoaded == true) {
                 var totWidth = 0;
                 $(".slide").each(function(){
-                    if ($(this).hasClass("imgSlide")) {
+                    if ($(this).hasClass("imgSlideLast")) {
+                        var margWidth = $(".rightFade").width();
+                        $(this).width($(this).children("img").first().width() + margWidth);
+                        totWidth += $(this).width();
+                    } else if ($(this).hasClass("imgSlide")) {
                         $(this).width($(this).children("img").first().width());
                         totWidth += $(this).width();
                     };

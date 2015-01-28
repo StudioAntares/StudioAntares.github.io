@@ -758,7 +758,13 @@ header, #headerbg {
     margin: auto;
 }
 
+.sideScroll .imgSlideLast {
+    text-align: left;
+}
 
+.sideScroll .imgSlideLast img {
+    margin: 0px 0px;
+}
 
 .projPageTitle h1 {
     color: #fff;
