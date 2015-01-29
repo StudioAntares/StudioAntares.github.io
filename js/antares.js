@@ -87,27 +87,18 @@ $(document).ready(function() {
     $("#contactInfo").append(contactInfoText);
 
     if (whichPage === "home") {
-        titles = ["001",
-                  "002",
-                  "003",
-                  "004",
-                  "005",
-                  "006",
-                  "007",
-                  "008",
-                  "009",
-                  "010"];
-    
-        descriptions = ["Description description content description stuff", 
-                        "stuff stuff stuff describing things that are real", 
-                        "Description description content description stuff", 
-                        "stuff stuff stuff describing things that are real", 
-                        "Description description content description stuff", 
-                        "stuff stuff stuff describing things that are real", 
-                        "Description description content description stuff",
-                        "stuff stuff stuff describing things that are real",
-                        "Description description content description stuff",
-                        "stuff stuff stuff describing things that are real"]
+        mainProjects = [
+                  ["clubsuites","001","Description description content description stuff"],
+                  ["clubsuites","002","stuff stuff stuff describing things that are real"],
+                  ["clubsuites","003","Description description content description stuff"],
+                  ["clubsuites","004","stuff stuff stuff describing things that are real"],
+                  ["clubsuites","005","Description description content description stuff"],
+                  ["clubsuites","006","stuff stuff stuff describing things that are real"],
+                  ["clubsuites","007","Description description content description stuff"],
+                  ["clubsuites","008","stuff stuff stuff describing things that are real"],
+                  ["clubsuites","009","Description description content description stuff"],
+                  ["clubsuites","010","stuff stuff stuff describing things that are real"]
+                  ];
     };
 
     //$("#projName").html(titles[0]);
@@ -276,8 +267,9 @@ $(window).scroll(function() {
 
 $(window).on("backstretch.before", function (e, instance, index) {
     $("#projName, #projDesc").fadeOut(1500,function(){
-        $("#projName").html(titles[index]);
-        $("#projDesc").html(descriptions[index]);
+        var coverDest = "projects/" + mainProjects[index][0] + "/index.html";
+        $("#projName").html(mainProjects[index][1]).attr("data-dest",coverDest);
+        $("#projDesc").html(mainProjects[index][2]).attr("data-dest",coverDest);
         $("#projName, #projDesc").fadeIn(1500);
     });
 });
@@ -299,7 +291,7 @@ $(".mediaButton").click(function(){
     };
 });
 
-$(".navLink").click(function(event){
+$(".navLink, #projName, #projDesc").click(function(event){
     event.preventDefault();
 
     var dest = $(this).attr("data-dest");
@@ -329,6 +321,11 @@ $(".navLink").click(function(event){
                 document.location.href = procDest;
             })
         };        
+    } else if (dest.indexOf("projects/") >= 0) {
+        //alert("yes");
+        $("#container").fadeOut(1000,function(){
+            document.location.href = dest;
+        })
     } else {
         overlay(dest,active);
     };
@@ -640,6 +637,7 @@ function createThumbImages() {
                 //console.log(projectDir);
                 var thumbPath = "projects/" + projectDir + "/img/thumb.jpg";
                 $thumb.backstretch([thumbPath],{duration: 6500, fade: 3000});
+                //projectDir = "projects/" + projectDir;// + "/index.html";
                 projectDir = "projects/" + projectDir + "/index.html";
                 $thumb.attr("href",projectDir);
             };

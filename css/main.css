@@ -420,6 +420,8 @@ header, #headerbg {
     font-size: 0.95em;
     text-align: left;
     width: 75%;
+    display: block;
+
 }
 
 #projDesc {
