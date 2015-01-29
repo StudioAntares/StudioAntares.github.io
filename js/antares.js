@@ -3,8 +3,7 @@
 // GLOBAL VARS
 var whichPage;
 
-var titles;
-var descriptions;
+var mainProjects;
 
 var showAbout = false;
 var showContact = false;
@@ -39,9 +38,24 @@ $(document).ready(function() {
     if (document.getElementById("fullBg") !== null && document.getElementById("fullBg") !== undefined) {
         //alert("Home Page");
         whichPage = "home";
+
+        mainProjects = [
+                  ["clubsuites","1","001","Description description content description stuff"],
+                  ["clubsuites","2","002","stuff stuff stuff describing things that are real"],
+                  ["clubsuites","1","003","Description description content description stuff"],
+                  ["clubsuites","2","004","stuff stuff stuff describing things that are real"],
+                  ["clubsuites","1","005","Description description content description stuff"],
+                  ["clubsuites","2","006","stuff stuff stuff describing things that are real"],
+                  ["clubsuites","1","007","Description description content description stuff"],
+                  ["clubsuites","2","008","stuff stuff stuff describing things that are real"],
+                  ["clubsuites","1","009","Description description content description stuff"],
+                  ["clubsuites","2","010","stuff stuff stuff describing things that are real"]
+                  ];
+
         $("body").addClass("homePage");
         pageBg = $("#fullBg");
-        pageBg.backstretch(["img/main/1.jpg"],{duration: 2500, fade: 3000});
+        var bgSrc = "projects/" + mainProjects[0][0] + "/img/cover" + mainProjects[0][1] + ".jpg";
+        pageBg.backstretch([bgSrc],{duration: 2500, fade: 3000});
         resizeBg(pageBg);
     } else if (document.getElementById("workBg") !== null && document.getElementById("workBg") !== undefined) {
         //alert("Work Page");
@@ -90,18 +104,7 @@ $(document).ready(function() {
     $("#contactInfo").append(contactInfoText);
 
     if (whichPage === "home") {
-        mainProjects = [
-                  ["clubsuites","001","Description description content description stuff"],
-                  ["clubsuites","002","stuff stuff stuff describing things that are real"],
-                  ["clubsuites","003","Description description content description stuff"],
-                  ["clubsuites","004","stuff stuff stuff describing things that are real"],
-                  ["clubsuites","005","Description description content description stuff"],
-                  ["clubsuites","006","stuff stuff stuff describing things that are real"],
-                  ["clubsuites","007","Description description content description stuff"],
-                  ["clubsuites","008","stuff stuff stuff describing things that are real"],
-                  ["clubsuites","009","Description description content description stuff"],
-                  ["clubsuites","010","stuff stuff stuff describing things that are real"]
-                  ];
+        
     };
 
     //$("#projName").html(titles[0]);
@@ -169,8 +172,11 @@ $( window ).load(function() {
     };
     if (whichPage === "home") {
         var bgArray = pageBg.data('backstretch');
-        for (var i = 2; i <= 11; i++) {
-            bgArray.images.push('img/main/' + i + '.jpg');
+        for (var i = 1; i < mainProjects.length; i++) {
+            var pictureSrc = "projects/" + mainProjects[i][0] + "/img/cover" + mainProjects[i][1] + ".jpg";
+            //bgArray.images.push('img/main/' + i + '.jpg');
+            bgArray.images.push(pictureSrc);
+
         };
     } else if (whichPage === "work") {
         createThumbImages();
@@ -272,8 +278,8 @@ $(window).scroll(function() {
 $(window).on("backstretch.before", function (e, instance, index) {
     $("#projName, #projDesc").fadeOut(1500,function(){
         var coverDest = "projects/" + mainProjects[index][0] + "/index.html";
-        $("#projName").html(mainProjects[index][1]).attr("data-dest",coverDest);
-        $("#projDesc").html(mainProjects[index][2]).attr("data-dest",coverDest);
+        $("#projName").html(mainProjects[index][2]).attr("data-dest",coverDest);
+        $("#projDesc").html(mainProjects[index][3]).attr("data-dest",coverDest);
         $("#projName, #projDesc").fadeIn(1500);
     });
 });
