@@ -130,6 +130,10 @@ h1 {
     background-color: #000000;
 }
 
+#fullBg.hasLink {
+    cursor: pointer;
+}
+
 #workBg, #projBg {
     position: fixed;
 }

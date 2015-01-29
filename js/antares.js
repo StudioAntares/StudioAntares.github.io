@@ -40,16 +40,35 @@ $(document).ready(function() {
         whichPage = "home";
 
         mainProjects = [
-                  ["clubsuites","1","001","Description description content description stuff"],
-                  ["clubsuites","2","002","stuff stuff stuff describing things that are real"],
-                  ["clubsuites","1","003","Description description content description stuff"],
-                  ["clubsuites","2","004","stuff stuff stuff describing things that are real"],
-                  ["clubsuites","1","005","Description description content description stuff"],
-                  ["clubsuites","2","006","stuff stuff stuff describing things that are real"],
-                  ["clubsuites","1","007","Description description content description stuff"],
-                  ["clubsuites","2","008","stuff stuff stuff describing things that are real"],
-                  ["clubsuites","1","009","Description description content description stuff"],
-                  ["clubsuites","2","010","stuff stuff stuff describing things that are real"]
+                  ["clubsuites","1","Santa Anita Club Suites",
+                   "Los Angeles, CA"],
+
+                  ["clubsuites","2","002",
+                   "stuff stuff stuff describing things that are real"],
+
+                  ["clubsuites","1","003",
+                   "Description description content description stuff"],
+
+                  ["clubsuites","2","Santa Anita Club Suites",
+                   "Los Angeles, CA"],
+
+                  ["clubsuites","1","005",
+                   "Description description content description stuff"],
+
+                  ["clubsuites","2","006",
+                   "stuff stuff stuff describing things that are real"],
+
+                  ["clubsuites","1","007",
+                   "Description description content description stuff"],
+
+                  ["clubsuites","2","008",
+                   "stuff stuff stuff describing things that are real"],
+
+                  ["clubsuites","1","009",
+                   "Description description content description stuff"],
+
+                  ["clubsuites","2","010",
+                   "stuff stuff stuff describing things that are real"]
                   ];
 
         $("body").addClass("homePage");
@@ -219,7 +238,16 @@ $(".menu, .touchPad").bind('touchstart click', function(){
   return false
 });
 
-
+$("#fullBg").click(function(){
+    var whereTo = $(this).attr("data-dest");
+    //alert(whereTo);
+    if (whereTo !== null && whereTo !== undefined && whereTo !== "") {
+        $("#container").fadeOut(1000,function(){
+            document.location.href = whereTo;
+        })
+        // alert(whereTo);
+    };
+});
 
 var lastScrollLeft = 0;
 $("#projContainer.singleProject").scroll(function() {
@@ -276,15 +304,20 @@ $(window).scroll(function() {
 });
 
 $(window).on("backstretch.before", function (e, instance, index) {
+    $("#fullBg").removeAttr("data-dest");
     $("#projName, #projDesc").fadeOut(1500,function(){
         var coverDest = "projects/" + mainProjects[index][0] + "/index.html";
         $("#projName").html(mainProjects[index][2]).attr("data-dest",coverDest);
         $("#projDesc").html(mainProjects[index][3]).attr("data-dest",coverDest);
         $("#projName, #projDesc").fadeIn(1500);
+        // console.log("before: " + index);
     });
 });
 
 $(window).on("backstretch.after", function (e, instance, index) {
+    // console.log("after: " + index);
+    var coverDest = "projects/" + mainProjects[index][0] + "/index.html";
+    $("#fullBg").attr("data-dest",coverDest).addClass("hasLink");
 });
 
 $(".mediaButton").click(function(){
