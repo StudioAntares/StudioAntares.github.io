@@ -43,8 +43,8 @@ $(document).ready(function() {
                   ["clubsuites","1","Santa Anita Club Suites",
                    "Los Angeles, CA"],
 
-                  ["clubsuites","2","002",
-                   "stuff stuff stuff describing things that are real"],
+                  ["mcc","1","Manhattan Country Club",
+                   "Manhattan Beach, CA"],
 
                   ["clubsuites","1","003",
                    "Description description content description stuff"],
