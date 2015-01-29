@@ -80,6 +80,9 @@ $(document).ready(function() {
         if (Modernizr.csstransitions && Modernizr.opacity) {
             $("#projMargin").addClass("fadeMeIn");
         };
+        $(".introCurtainOverlay").fadeOut(2000,function(){
+            $(this).addClass("hidden");
+        });
     };
 
     // console.log(aboutInfoText);
@@ -187,6 +190,7 @@ window.onpageshow = function (event) {
         // alert("loaded");
         $("#container").removeAttr("style");
         $(".curtainOverlay").removeAttr("style");
+        $(".introCurtainOverlay").addClass("hidden");
         //window.location.reload()
     }
 };

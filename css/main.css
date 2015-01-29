@@ -651,6 +651,18 @@ header, #headerbg {
 /* * * * * * * * * * * * * * * * * * * * * * * * * */
 /* * * * * * * * Project Page Styles * * * * * * * */
 
+.introCurtainOverlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 0px;
+    background: #000;
+    z-index: 50;
+    display: none;
+    /*-webkit-transform: translate3d(0, 0, 0);*/
+}
+
 
 .projPage #projMargin {
     position: relative;
