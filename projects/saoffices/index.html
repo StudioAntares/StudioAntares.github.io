@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Studio Antares</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+
+        <link rel="stylesheet" href="../../css/normalize.css">
+        <link rel="stylesheet" href="../../css/main.css">
+        <link rel="stylesheet" href="../../css/jquery.mmenu.customwidth.position.css">
+        <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+
+        <script src="//use.typekit.net/dsz0noy.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+
+        <style>
+            .no-touch ::-webkit-scrollbar { 
+                display: none; 
+            }
+
+            .landscape ::-webkit-scrollbar { 
+                display: none; 
+            }
+
+            .opacity .introCurtainOverlay {
+                height: 100%;
+                display: block;
+            }
+        </style>
+
+    </head>
+    <body onunload="">
+
+        <div id="container">
+            <!--[if lt IE 8]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+
+
+            <header>
+                <div id="headerbg"></div>
+                <img src="../../img/logoTop.png" id="logoTop"/>
+                <div id="antaresName">Studio Antares</div>
+                <div id="navLinks">
+                    <a href="../../work.html" class="navLink" data-dest="work">work</a>
+                    <a href="" class="navLink" data-dest="about">about</a>
+                    <a href="process/" class="navLink" data-dest="process">process</a>
+                    <a href="" class="navLink" id="lastNav" data-dest="contact">contact</a>
+                </div>
+
+                <div class="menu" >
+                    <span class="menu-global menu-top"></span>
+                    <span class="menu-global menu-middle"></span>
+                    <span class="menu-global menu-bottom"></span>
+                </div>
+                <!-- <div class="touchPad"></div> -->
+            </header>
+            <div class="curtainOverlay"></div>
+            <div class="introCurtainOverlay"></div>
+
+            <div id="projMargin">
+                <div class="rightFade"></div>
+                <div class="leftFade"></div>
+                <!--
+                <div id="projTags">
+                    <a href="" class="tagLink" data-filter="all">All</a>
+                    <a href="" class="tagLink" data-filter="red">Red</a>
+                    <a href="" class="tagLink" data-filter="green">Green</a>
+                    <a href="" class="tagLink" data-filter="blue">Blue</a>
+                </div>
+                -->
+                <div class="projMarginL"></div>
+                <div class="projMarginR"></div>
+                <div id="projContainer" class="singleProject">
+
+                    <div class="slides">
+                        <div class="slide spacer"></div><!--
+                        --><div class="slide imgSlide firstSlide">
+                            <img src="img/1.jpg" />
+                        </div><!--
+                        --><div class="slide imgSlide">
+                            <img src="img/2.jpg" />
+                        </div><!--
+                        --><div class="slide imgSlide">
+                            <img src="img/3.jpg" />
+                        </div><!--
+                        --><div class="slide imgSlide imgSlideLast">
+                            <img src="img/4.jpg" />
+                        </div><!--
+                        --><div class="slide vertInfo">
+                            <div class="projPageTitle">
+                                <h1>Santa Anita Park Offices</h1>
+                                <h2>Arcadia, CA</h2>
+                            </div>
+                            <div class="projPageDesc">
+                                <p>
+                                    
+                                </p>
+                                <p>
+                                    
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projectInfo"> </div>
+                </div>
+                
+
+                
+            </div>
+
+            <div class="projNav hidden">
+                <div class="projBar"></div>
+            </div>
+
+            <div class="projNavSide">
+                <div class="projBarSide"></div>
+            </div>
+
+            <div id="labelPane">
+                <!--needed for timing-->
+            </div>
+
+            <div id="projBg" data-src="img/1.jpg">
+            </div>
+
+            <div id="aboutInfo" class="infoOverlay">
+                <div class="close closeOver">&times;</div>
+            </div>
+
+            <div id="contactInfo" class="infoOverlay">
+                <div class="close closeOver">&times;</div>
+            </div>
+        </div>
+
+        <nav id="my-menu">
+           <ul>
+              <li><a href="../../index.html" class="mmenuLink" data-dest="home">home</a></li>
+              <li><a href="../../work.html" class="mmenuLink" data-dest="work">work</a></li>
+              <li><a href="#" class="mmenuLink" data-dest="about">about</a></li>
+              <li><a href="#" class="mmenuLink" data-dest="process">process</a></li>
+              <li><a href="#" class="mmenuLink" data-dest="contact">contact</a></li>
+           </ul>
+        </nav>
+        
+
+
+
+        <!-- JQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+        <script>if(jQuery.Color === undefined) {document.write('<script src="../../js/vendor/jquery.color.min.js"><\/script>')}</script>
+
+        <!-- Vendor JS -->
+        <script src="../../js/vendor/detectmobile.js"></script>
+        <script src="../../js/vendor/jquery.backstretch.min.js"></script>
+        <script src="../../js/vendor/jquery.mmenu.min.js"></script>
+        <script src="../../js/vendor/imagesloaded.pkgd.min.js"></script>
+        <script src="../../js/vendor/fastclick.js"></script>
+        
+
+        <!-- Custom JS -->
+        <script src="../../js/info.js"></script>
+        <script src="../../js/antares.js"></script>
+
+        <!-- Google Analytics: -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-56555124-1','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>

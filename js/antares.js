@@ -41,16 +41,16 @@ $(document).ready(function() {
 
         mainProjects = [
                   ["clubsuites","1","Santa Anita Club Suites",
-                   "Los Angeles, CA"],
+                   "Arcadia, CA"],
 
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
 
-                  ["clubsuites","1","003",
-                   "Description description content description stuff"],
+                  ["saoffices","1","Santa Anita Park Offices",
+                   "Arcadia, CA"],
 
                   ["clubsuites","2","Santa Anita Club Suites",
-                   "Los Angeles, CA"],
+                   "Arcadia, CA"],
 
                   ["clubsuites","1","005",
                    "Description description content description stuff"],
