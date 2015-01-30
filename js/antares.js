@@ -52,8 +52,8 @@ $(document).ready(function() {
                   ["clubsuites","2","Santa Anita Club Suites",
                    "Arcadia, CA"],
 
-                  ["clubsuites","1","005",
-                   "Description description content description stuff"],
+                  ["summitridge","1","Summit Ridge House",
+                   "Los Angeles, CA"],
 
                   ["clubsuites","2","006",
                    "stuff stuff stuff describing things that are real"],
@@ -173,6 +173,10 @@ $(document).ready(function() {
 
     //$("body").addClass("good");
     // alert("loaded");
+
+    // $(".movHolder").each(function(){
+    //     // $(this).fitVids();
+    // });
 
 });
 
@@ -304,20 +308,26 @@ $(window).scroll(function() {
 });
 
 $(window).on("backstretch.before", function (e, instance, index) {
-    $("#fullBg").removeAttr("data-dest");
-    $("#projName, #projDesc").fadeOut(1500,function(){
+    if (whichPage === "home") {
+        //$("#fullBg").removeAttr("data-dest");
         var coverDest = "projects/" + mainProjects[index][0] + "/index.html";
-        $("#projName").html(mainProjects[index][2]).attr("data-dest",coverDest);
-        $("#projDesc").html(mainProjects[index][3]).attr("data-dest",coverDest);
-        $("#projName, #projDesc").fadeIn(1500);
-        // console.log("before: " + index);
-    });
+        // $("#fullBg").attr("data-dest",coverDest).addClass("hasLink");
+        $("#projName, #projDesc").fadeOut(1500,function(){
+            $("#projName").html(mainProjects[index][2]).attr("data-dest",coverDest);
+            $("#projDesc").html(mainProjects[index][3]).attr("data-dest",coverDest);
+            $("#projName, #projDesc").fadeIn(1500);
+            // console.log("before: " + index);
+            //$("#fullBg").attr("data-dest",coverDest).addClass("hasLink");
+        });
+    };
 });
 
 $(window).on("backstretch.after", function (e, instance, index) {
     // console.log("after: " + index);
-    var coverDest = "projects/" + mainProjects[index][0] + "/index.html";
-    $("#fullBg").attr("data-dest",coverDest).addClass("hasLink");
+    if (whichPage === "home") {
+        var coverDest = "projects/" + mainProjects[index][0] + "/index.html";
+        $("#fullBg").attr("data-dest",coverDest).addClass("hasLink");  
+    };
 });
 
 $(".mediaButton").click(function(){
@@ -675,8 +685,11 @@ function createThumbImages() {
     if (whichPage === "work") {
         $(".innerImage").each(function(){
             var $thumb = $(this);
-            if ($thumb.attr("data-dir") !== null && $thumb.attr("data-dir") !== undefined) {
-                var projectDir = $thumb.attr("data-dir");
+            var thumbHref = $thumb.attr("href");
+            if (thumbHref !== null && thumbHref !== undefined 
+                 && thumbHref !== "#" && thumbHref !== "") {
+                //var projectDir = $thumb.attr("data-dir");
+                var projectDir = thumbHref.split('/')[1];
                 //console.log(projectDir);
                 var thumbPath = "projects/" + projectDir + "/img/thumb.jpg";
                 $thumb.backstretch([thumbPath],{duration: 6500, fade: 3000});
@@ -731,6 +744,10 @@ function resizeCover(){
         if ($("#projContainer").hasClass("sideScroll")) {
             $("#projMargin").addClass("flowRight");
 
+            $(".movHolder").each(function(){
+                $(this).removeAttr("style");
+            });
+
             //*
             if (imgLoaded == true) {
                 var totWidth = 0;
@@ -742,6 +759,17 @@ function resizeCover(){
                     } else if ($(this).hasClass("imgSlideLast")) {
                         var margWidth = $(".rightFade").width();
                         $(this).width($(this).children("img").first().width() + margWidth);
+                        totWidth += $(this).width();
+                    } else if ($(this).hasClass("vidSlideLast")) {
+                        var margWidth = $(".rightFade").width();
+                        var vidW =  $(this).height() * 1.7777;
+                        $(this).children(".movHolder").first().width(vidW)
+                        $(this).width($(this).children(".movHolder").first().width() + margWidth);
+                        totWidth += $(this).width();
+                    } else if ($(this).hasClass("vidSlide")) {
+                        var vidW =  $(this).height() * 1.7777;
+                        $(this).children(".movHolder").first().width(vidW)
+                        $(this).width($(this).children(".movHolder").first().width());
                         totWidth += $(this).width();
                     } else if ($(this).hasClass("imgSlide")) {
                         $(this).width($(this).children("img").first().width());
@@ -768,6 +796,10 @@ function resizeCover(){
             $(".projectInfo").html($(".vertInfo").html()).removeClass("hidden");
             $(".vertInfo").addClass("hidden");
         } else {
+            $(".movHolder").each(function(){
+                $(this).removeAttr("style");
+                $(this).height($(this).width() * 0.5625);
+            });
             $("#projMargin").removeClass("flowRight");
             $(".projPageDesc, .projectInfo").removeAttr("style");
             $(".slides").removeAttr("style");

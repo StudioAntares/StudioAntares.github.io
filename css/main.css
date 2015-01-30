@@ -108,6 +108,10 @@ html, body {
     height: 100%;
 }
 
+body.homePage {
+    overflow: hidden;
+}
+
 body {
     background-color: #000000;
 }
@@ -757,6 +761,11 @@ header, #headerbg {
     /*margin: auto;*/
 }
 
+.slide .movHolder {
+    width: 100%;
+    /*background-color: #ccc;*/
+}
+
 #projContainer.singleProject.sideScroll {
     max-height: 700px;
     height: 85%;
@@ -784,6 +793,12 @@ header, #headerbg {
     /*float: left;*/
     /*display: block;*/
     display: inline-block;
+}
+
+.sideScroll .slide .movHolder {
+    width: auto;
+    height: 100%;
+    /*background-color: #ccc;*/
 }
 
 
