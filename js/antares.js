@@ -55,8 +55,8 @@ $(document).ready(function() {
                   ["summitridge","1","Summit Ridge House",
                    "Los Angeles, CA"],
 
-                  ["clubsuites","2","006",
-                   "stuff stuff stuff describing things that are real"],
+                  ["redwood","1","Private Residence",
+                   "Mar Vista, CA"],
 
                   ["clubsuites","1","007",
                    "Description description content description stuff"],
