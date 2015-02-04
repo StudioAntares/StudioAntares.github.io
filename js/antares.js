@@ -35,6 +35,13 @@ $(document).ready(function() {
     getScreenAspect();
     FastClick.attach(document.body);
 
+    $(".navLink").each(function(){
+        var $this = $(this);
+        if ($this.attr("data-dest")==="process") {
+            $this.addClass("hidden");
+        };
+    })
+
     if (document.getElementById("fullBg") !== null && document.getElementById("fullBg") !== undefined) {
         //alert("Home Page");
         whichPage = "home";
