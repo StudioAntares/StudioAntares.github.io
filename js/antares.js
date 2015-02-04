@@ -61,8 +61,8 @@ $(document).ready(function() {
                   ["mur","1","Multiple Unit Residence",
                    "Sofia, Bulgaria"],
 
-                  ["clubsuites","2","008",
-                   "stuff stuff stuff describing things that are real"],
+                  ["resortspa","1","Resort & Spa",
+                   "Rhodope Mountains, Bulgaria"],
 
                   ["clubsuites","1","009",
                    "Description description content description stuff"],
