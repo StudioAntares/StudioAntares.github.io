@@ -58,8 +58,8 @@ $(document).ready(function() {
                   ["redwood","1","Private Residence",
                    "Mar Vista, CA"],
 
-                  ["clubsuites","1","007",
-                   "Description description content description stuff"],
+                  ["mur","1","Multiple Unit Residence",
+                   "Sofia, Bulgaria"],
 
                   ["clubsuites","2","008",
                    "stuff stuff stuff describing things that are real"],
