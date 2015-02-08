@@ -78,11 +78,11 @@ $(document).ready(function() {
                   ["mur","1","Multiple Unit Residence",
                    "Sofia, Bulgaria"],
 
+                  ["horseinstall","1","Video Installation Proposal",
+                   "Santa Anita Park, Arcadia, CA"],
+
                   ["resortspa","1","Resort & Spa",
                    "Rhodope Mountains, Bulgaria"],
-
-                  ["nyapt","1","Manhattan Apt",
-                   "Manhattan, NYC"],
 
                   ["pimlico","1","Pimlico Club Suites",
                    "Baltimore, MD"]
@@ -492,9 +492,10 @@ $(".tagLink").click(function(event){
 $(".innerImage").click(function(event){
     event.preventDefault();
     var projDest = $(this).attr("href");
-    $("#container").fadeOut(1000,function(){
-        document.location.href = projDest;
-    })
+    // $("#container").fadeOut(1000,function(){
+    //     document.location.href = projDest;
+    // })
+    curtainTransition(projDest);
 });
 
 $(".closeOver").click(function(){
