@@ -42,6 +42,13 @@ $(document).ready(function() {
         };
     })
 
+    $("#my-menu ul li a").each(function(){
+        var $this = $(this);
+        if ($this.attr("data-dest")==="process") {
+            $this.parent().addClass("hidden");
+        };
+    })
+
     if (document.getElementById("fullBg") !== null && document.getElementById("fullBg") !== undefined) {
         //alert("Home Page");
         whichPage = "home";
@@ -59,6 +66,9 @@ $(document).ready(function() {
                   ["clubsuites","2","Santa Anita Club Suites",
                    "Arcadia, CA"],
 
+                  ["quartet","1","QUARTET v4.0",
+                   "Theatrical Stage Design, NYC"],
+
                   ["summitridge","1","Summit Ridge House",
                    "Los Angeles, CA"],
 
@@ -71,11 +81,11 @@ $(document).ready(function() {
                   ["resortspa","1","Resort & Spa",
                    "Rhodope Mountains, Bulgaria"],
 
-                  ["clubsuites","1","009",
-                   "Description description content description stuff"],
+                  ["nyapt","1","Manhattan Apt",
+                   "Manhattan, NYC"],
 
-                  ["clubsuites","2","010",
-                   "stuff stuff stuff describing things that are real"]
+                  ["pimlico","1","Pimlico Club Suites",
+                   "Baltimore, MD"]
                   ];
 
         $("body").addClass("homePage");

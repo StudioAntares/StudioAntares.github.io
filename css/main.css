@@ -125,6 +125,10 @@ h1 {
     font-weight: 400;
 }
 
+.italic {
+  font-style: italic;
+}
+
 #fullBg, #workBg, #projBg {
     position: absolute;
     bottom: 0px;
