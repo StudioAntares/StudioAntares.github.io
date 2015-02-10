@@ -63,7 +63,7 @@ $(document).ready(function() {
                   ["saoffices","1","Santa Anita Park Offices",
                    "Arcadia, CA"],
 
-                  ["clubsuites","2","Santa Anita Club Suites",
+                  ["sarenovation","1","Santa Anita Park Renovation",
                    "Arcadia, CA"],
 
                   ["quartet","1","QUARTET v4.0",
