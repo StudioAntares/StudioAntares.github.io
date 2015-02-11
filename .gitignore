@@ -11,3 +11,4 @@ profile
 
 /unused/*
 */unsused/*
+!*/unused/todo.txt
