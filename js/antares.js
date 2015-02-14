@@ -69,7 +69,7 @@ $(document).ready(function() {
                   ["quartet","1","QUARTET v4.0",
                    "Theatrical Stage Design, NYC"],
 
-                  ["summitridge","1","Summit Ridge House",
+                  ["summitridge","1","Summitridge House",
                    "Los Angeles, CA"],
 
                   ["redwood","1","Private Residence",
