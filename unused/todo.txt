@@ -7,12 +7,9 @@ add offices
 
 MUR add plans
 
-add nakamura house
-
 Add POSE
 
-get rid of last pic for MCC
--add site plan and section
+MCC: add site plan and section
 
 Scroll wheel vs touch scroll?
 
@@ -55,3 +52,5 @@ hotel/spa
 -switch thumb to 2nd image
 Get rid of quartet renderings
 add turf terrace
+add nakamura house
+get rid of last pic for MCC
