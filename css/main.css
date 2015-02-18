@@ -512,6 +512,8 @@ header, #headerbg {
     background: none;
     z-index: 5;
     display: none;
+    font-size: 1.1em;
+    font-weight: 200 !important;
 }
 
 .curtainOverlay{
