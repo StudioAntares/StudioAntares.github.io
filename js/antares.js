@@ -489,6 +489,26 @@ $(".tagLink").click(function(event){
     }
 });
 
+$(".leftFade").hover(
+  function() {
+    //console.log("L - ininin")
+    projectImagesLoopL();
+  }, function() {
+    //console.log("L - outoutout")
+    projectImagesStop();
+  }
+);
+
+$(".rightFade").hover(
+  function() {
+    //console.log("R - ininin")
+    projectImagesLoopR();
+  }, function() {
+    //console.log("R - outoutout")
+    projectImagesStop();
+  }
+);
+
 $(".innerImage").click(function(event){
     event.preventDefault();
     var projDest = $(this).attr("href");
@@ -907,6 +927,40 @@ function getScreenAspect() {
         $("#projContainer").removeClass("sideScroll");
     };
     //console.log(screenAspect);
+}
+
+function projectImagesLoopL(){
+    if (whichPage === "project") {
+        if ($("#projContainer").hasClass("sideScroll")) {
+            var content = $("#projContainer.singleProject")
+            var maxScroll = $(".slides").width() - $(".projNav").width() - (2 * $(".rightFade").width() )
+            var speed = Math.floor(maxScroll/50)
+            // console.log(speed);
+            content.stop();
+            if (content.scrollLeft() > 0) {
+                content.animate({scrollLeft:'-=' + speed}, 1000, 'linear', projectImagesLoopL);
+            };
+        }
+    }
+}
+
+function projectImagesLoopR(){
+    if (whichPage === "project") {
+        if ($("#projContainer").hasClass("sideScroll")) {
+            var content = $("#projContainer.singleProject")
+            var maxScroll = $(".slides").width() - $(".projNav").width() - (2 * $(".rightFade").width() )
+            var speed = Math.floor(maxScroll/50)
+            // console.log(speed);
+            content.stop();
+            if (content.scrollLeft() < maxScroll) {
+                content.animate({scrollLeft:'+=' + speed}, 1000, 'linear', projectImagesLoopR);
+            };
+        }
+    }
+}       
+
+function projectImagesStop(){
+    $("#projContainer.singleProject").stop();
 }
 
 ////////////////////////

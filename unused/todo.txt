@@ -1,5 +1,3 @@
-about/contact text
-
 turf terrace plan & section
 
 add offices
@@ -11,15 +9,12 @@ Add POSE
 
 MCC: add site plan and section
 
-Scroll wheel vs touch scroll?
-
 North parcel
 KNIC School
 
 Redwood add plans
 
 Inserts
-get video
 look for images
 Add photo to shelf video
 
@@ -54,3 +49,5 @@ Get rid of quartet renderings
 add turf terrace
 add nakamura house
 get rid of last pic for MCC
+about/contact text
+Scroll wheel vs touch scroll?
