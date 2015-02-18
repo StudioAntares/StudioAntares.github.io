@@ -935,6 +935,9 @@ function projectImagesLoopL(){
             var content = $("#projContainer.singleProject")
             var maxScroll = $(".slides").width() - $(".projNav").width() - (2 * $(".rightFade").width() )
             var speed = Math.floor(maxScroll/50)
+            if (speed < 200) {
+                speed = 200;
+            };
             // console.log(speed);
             content.stop();
             if (content.scrollLeft() > 0) {
@@ -950,6 +953,9 @@ function projectImagesLoopR(){
             var content = $("#projContainer.singleProject")
             var maxScroll = $(".slides").width() - $(".projNav").width() - (2 * $(".rightFade").width() )
             var speed = Math.floor(maxScroll/50)
+            if (speed < 200) {
+                speed = 200;
+            };
             // console.log(speed);
             content.stop();
             if (content.scrollLeft() < maxScroll) {
