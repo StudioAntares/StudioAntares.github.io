@@ -5,12 +5,7 @@ add offices
 
 MUR add plans
 
-Add POSE
-
 MCC: add site plan and section
-
-North parcel
-KNIC School
 
 Redwood add plans
 
@@ -51,3 +46,5 @@ add nakamura house
 get rid of last pic for MCC
 about/contact text
 Scroll wheel vs touch scroll?
+Add POSE
+North parcel/KNIC School
