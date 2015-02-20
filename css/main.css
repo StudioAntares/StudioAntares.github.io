@@ -844,7 +844,7 @@ header, #headerbg {
 
 .projPageDesc {
     color: #fff;
-    font-size: 0.9em;
+    font-size: 1em;
     margin-bottom: 50px;
     text-align: justify;
 }
@@ -903,6 +903,14 @@ header, #headerbg {
 .touch .projNav, .touch .projNavSide {
     display: none !important;
     visibility: hidden;
+}
+
+.sideLink, .whiteLink {
+    text-decoration: underline;
+}
+
+.sideLink:hover, .whiteLink:hover {
+    color: #ccc;
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */

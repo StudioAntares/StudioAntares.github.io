@@ -1,17 +1,34 @@
-turf terrace plan & section
-
-add offices
--plan 
-
 MUR add plans
-
-MCC: add site plan and section
 
 Redwood add plans
 
 Inserts
 look for images
 Add photo to shelf video
+
+mockup - portraits of people in about page
+
+Summitridge movie looks low-res?
+
+Redwood last picture?
+Add plan
+
+add MUR plans
+add some other renderings?
+look for alt image from cover?
+Gurdova Glava
+
+Pose thumbnail change to still image of kolio with red
+switch order
+remove last ocean shot
+
+
+Hotel/Spa - add night rendering?
+
+
+
+
+
 
 ----------------------------------
 text for each project
@@ -48,3 +65,30 @@ about/contact text
 Scroll wheel vs touch scroll?
 Add POSE
 North parcel/KNIC School
+
+add offices
+only "club suites"
+"KNIC School" add one mmore renderig at end
+Summitridge (no "house")
+"Mar Vista" Residence
+remove "proposal" (decided to keep)
+remove first two images turf terrace
+re-crop thumb
+turf terrace "santa anita park," arcadia, CA
+increase font size
+
+SAP Rennovations "Plural"
+Write text
+"selected projects above"
+start with louvers, end with cirlce
+add more images from tents
+switch offices images, move to end
+add chair office rendering to end
+
+MCC: "new poolhouse and event terrrace under construction, part of a larger rennovation.....completed 2015"
+HRTV movie low res?
+HRTV move everything to rennovations after cirlce before offices at end
+change thumbnail text to MUR
+Link to WaxFactory
+switch image 2 and 3
+crop last picture on right side

@@ -60,20 +60,20 @@ $(document).ready(function() {
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
 
-                  ["saoffices","1","Santa Anita Park Offices",
-                   "Arcadia, CA"],
-
-                  ["sarenovation","1","Santa Anita Park Renovation",
+                  ["sarenovation","1","Santa Anita Park Renovations",
                    "Arcadia, CA"],
 
                   ["quartet","1","QUARTET v4.0",
                    "Theatrical Stage Design, NYC"],
 
-                  ["summitridge","1","Summitridge House",
+                  ["summitridge","1","Summitridge",
                    "Los Angeles, CA"],
 
-                  ["redwood","1","Private Residence",
+                  ["redwood","1","Mar Vista Residence",
                    "Mar Vista, CA"],
+
+                  ["sarenovation","2","Santa Anita Park Renovations",
+                   "Arcadia, CA"],
 
                   ["mur","1","Multiple Unit Residence",
                    "Sofia, Bulgaria"],
@@ -509,12 +509,23 @@ $(".rightFade").hover(
   }
 );
 
-$(".innerImage").click(function(event){
+$(".innerImage, .sideLink").click(function(event){
     event.preventDefault();
     var projDest = $(this).attr("href");
     // $("#container").fadeOut(1000,function(){
     //     document.location.href = projDest;
     // })
+    curtainTransition(projDest);
+});
+
+// $('#projContainer').on('click','.sidelink', function(event) {
+//     
+//     console.log("didit");
+// });
+
+$('.projectInfo').on('click', 'a.sideLink', function(event) {
+    event.preventDefault();
+    var projDest = $(this).attr("href");
     curtainTransition(projDest);
 });
 
