@@ -18,11 +18,6 @@ add some other renderings?
 look for alt image from cover?
 Gurdova Glava
 
-Pose thumbnail change to still image of kolio with red
-switch order
-remove last ocean shot
-
-
 Hotel/Spa - add night rendering?
 
 
@@ -92,3 +87,7 @@ change thumbnail text to MUR
 Link to WaxFactory
 switch image 2 and 3
 crop last picture on right side
+
+Pose thumbnail change to still image of kolio with red
+switch order
+remove last ocean shot
