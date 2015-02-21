@@ -8,8 +8,6 @@ Add photo to shelf video
 
 mockup - portraits of people in about page
 
-Summitridge movie looks low-res?
-
 Redwood last picture?
 Add plan
 
@@ -91,3 +89,4 @@ crop last picture on right side
 Pose thumbnail change to still image of kolio with red
 switch order
 remove last ocean shot
+Summitridge movie looks low-res?
