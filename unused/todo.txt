@@ -1,22 +1,8 @@
-MUR add plans
-
-Redwood add plans
-
 Inserts
 look for images
 Add photo to shelf video
 
 mockup - portraits of people in about page
-
-Redwood last picture?
-Add plan
-
-add MUR plans
-add some other renderings?
-look for alt image from cover?
-Gurdova Glava
-
-Hotel/Spa - add night rendering?
 
 
 
@@ -90,3 +76,11 @@ Pose thumbnail change to still image of kolio with red
 switch order
 remove last ocean shot
 Summitridge movie looks low-res?
+
+add MUR plans
+add some other renderings?
+look for alt image from cover?
+Gurdova Glava
+
+Hotel/Spa - add night rendering?
+Redwood add plans
