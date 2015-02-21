@@ -1,7 +1,3 @@
-Inserts
-look for images
-Add photo to shelf video
-
 mockup - portraits of people in about page
 
 
@@ -84,3 +80,7 @@ Gurdova Glava
 
 Hotel/Spa - add night rendering?
 Redwood add plans
+
+Inserts
+look for images
+Add photo to shelf video
