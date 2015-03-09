@@ -10,6 +10,7 @@ var showContact = false;
 var trans = false;
 
 var workDest = "work.html"
+var mediaDest = "media.html"
 var procDest = "process/"
 var homeDest = "index.html"
 
@@ -114,6 +115,27 @@ $(document).ready(function() {
         });
         $container.masonry( 'on', 'layoutComplete', expandThumbBgs);
         resizeBg(pageBg);
+    } else if (document.getElementById("mediaBg") !== null && document.getElementById("workBg") !== undefined) {
+        //alert("Work Page");
+        whichPage = "media";
+        $("body").addClass("mediaPage");
+        pageBg = $("#mediaBg");
+        pageBg.backstretch(["img/work/mesh.jpg"],{duration: 6500, fade: 3000});
+        //paneFade = 10;
+        resizeThumbs();
+        if (Modernizr.csstransitions && Modernizr.opacity) {
+            $("#projMargin").addClass("fadeMeIn");
+        };
+        $container = $('#projContainer');
+        // initialize
+        $container.masonry({
+            "columnWidth": ".projThumb",
+            "gutter": ".gutter",
+            "itemSelector": '.activeThumb',
+            "isResizeBound": false
+        });
+        $container.masonry( 'on', 'layoutComplete', expandThumbBgs);
+        resizeBg(pageBg);
     } else if (document.getElementById("projBg") !== null && document.getElementById("projBg") !== undefined) {
         //alert("Work Page");
         whichPage = "project";
@@ -125,6 +147,7 @@ $(document).ready(function() {
         // resizeThumbs();
         // $container = $('#projContainer');
         workDest = "../../work.html"
+        mediaDest = "../../media.html"
         procDest = "../../process/"
         homeDest = "../../index.html"
         if (Modernizr.csstransitions && Modernizr.opacity) {
@@ -218,7 +241,7 @@ $( window ).load(function() {
             bgArray.images.push(pictureSrc);
 
         };
-    } else if (whichPage === "work") {
+    } else if (whichPage === "work" || whichPage === "media") {
         createThumbImages();
     } else if (whichPage === "project") {
         addTextBg();
@@ -396,6 +419,16 @@ $(".navLink, #projName, #projDesc").click(function(event){
         $("#container").fadeOut(1000,function(){
             document.location.href = dest;
         })
+    } else if (dest == "media") {
+        if (whichPage === "media") {
+            hideOver();
+        } else if (whichPage === "project") {
+            curtainTransition(mediaDest);
+        } else {
+            $("#container").fadeOut(1000,function(){
+                document.location.href = mediaDest;
+            })
+        };
     } else {
         overlay(dest,active);
     };
@@ -425,6 +458,13 @@ $(".mmenuLink").click(function(event){
             $("#my-menu").trigger("close.mm");
         } else {
             document.location.href = homeDest;
+        };
+    } else if (dest == "media") {
+        if (whichPage === "media") {
+            hideOver();
+            $("#my-menu").trigger("close.mm");
+        } else {
+            document.location.href = mediaDest;
         };
     } else {
         $("#my-menu").trigger("close.mm");
@@ -592,7 +632,7 @@ on_resize(function() {
 $( window ).resize(function() {
     //Normal on-resize handler
     getScreenAspect();
-    if (whichPage === "work" && $container != undefined) {
+    if ((whichPage === "work" || whichPage === "media") && $container != undefined) {
         resizeThumbs();
         $container.masonry();
     };
@@ -632,6 +672,9 @@ function hideOver(){
     if (whichPage === "work") {
         $(".navLink:eq(0)").addClass("underlined");
     };
+    if (whichPage === "media") {
+        $(".navLink:eq(1)").addClass("underlined");
+    };
 };
 
 function fadeRGBA(thing, target) {
@@ -665,6 +708,9 @@ function overlay(dest,active) {
                         showAbout = false;
                         if (whichPage === "work") {
                             $(".navLink:eq(0)").addClass("underlined");
+                        };
+                        if (whichPage === "media") {
+                            $(".navLink:eq(1)").addClass("underlined");
                         };
                         trans = false;        
                     });
@@ -704,6 +750,9 @@ function overlay(dest,active) {
                         if (whichPage === "work") {
                             $(".navLink:eq(0)").addClass("underlined");
                         };
+                        if (whichPage === "media") {
+                            $(".navLink:eq(1)").addClass("underlined");
+                        };
                         trans = false;        
                     });
                 });
@@ -731,7 +780,7 @@ function curtainTransition(dest) {
 }
 
 function createThumbImages() {
-    if (whichPage === "work") {
+    if (whichPage === "work" || whichPage === "media") {
         $(".innerImage").each(function(){
             var $thumb = $(this);
             var thumbHref = $thumb.attr("href");

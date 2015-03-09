@@ -129,7 +129,7 @@ h1 {
   font-style: italic;
 }
 
-#fullBg, #workBg, #projBg {
+#fullBg, #workBg, #projBg, #mediaBg {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -142,7 +142,7 @@ h1 {
     cursor: pointer;
 }
 
-#workBg, #projBg {
+#workBg, #projBg, #mediaBg {
     position: fixed;
 }
 
@@ -333,11 +333,11 @@ header, #headerbg {
     background-color: #000000;
 }
 
-.workPage header, .projPage header {
+.workPage header, .projPage header, .mediaPage header {
     z-index: 5;
 }
 
-.no-touch .workPage header, .no-touch .projPage header {
+.no-touch .workPage header, .no-touch .projPage header, .no-touch .mediaPage header {
     position: fixed;
 }
 
@@ -409,7 +409,7 @@ header, #headerbg {
     z-index: 2;
 }
 
-.workPage #labelPane, .projPage #labelPane {
+.workPage #labelPane, .projPage #labelPane, .mediaPage #labelPane {
     position: fixed;
     top: 100%;
     right: 100%;
@@ -1001,7 +1001,7 @@ header, #headerbg {
         top: -0.5em;
     }
 
-    .workPage #projMargin {
+    .workPage #projMargin, .mediaPage #projMargin {
         width: 85%;
         padding: 100px 0px;
     }
