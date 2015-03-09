@@ -780,7 +780,7 @@ function curtainTransition(dest) {
 }
 
 function createThumbImages() {
-    if (whichPage === "work" || whichPage === "media") {
+    if (whichPage === "work") {
         $(".innerImage").each(function(){
             var $thumb = $(this);
             var thumbHref = $thumb.attr("href");
@@ -796,6 +796,19 @@ function createThumbImages() {
                 $thumb.attr("href",projectDir);
             };
         });
+    } else if (whichPage === "media") {
+        $(".innerImage").each(function(){
+            var $thumb = $(this);
+            var thumbMediaSrc = $thumb.attr("data-mediasrc");
+            if (thumbMediaSrc !== null && thumbMediaSrc !== undefined 
+                 && thumbMediaSrc !== "#" && thumbMediaSrc !== "") {
+                var thumbPath = "mediaEntries/" + thumbMediaSrc + "/img/thumb.jpg";
+                $thumb.backstretch([thumbPath],{duration: 6500, fade: 3000});
+                //projectDir = "projects/" + projectDir;// + "/index.html";
+                //var clickThrough = $thumb.attr("data-clickthrough");
+                //$thumb.attr("href",clickThrough);
+            };
+        });
     };
 }
 
@@ -805,6 +818,8 @@ function resizeThumbs(){
         var w = $(this).width();
         if ($(this).hasClass("vertThumb")) {
             $(this).css("height", (w * 1.5) + "px");
+        } else if ($(this).hasClass("vidThumb")) {
+            $(this).css("height", (w * (9/16)) + "px");
         } else {
             $(this).css("height", w + "px");
         };
