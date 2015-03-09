@@ -5,6 +5,7 @@ mockup - portraits of people in about page
 
 
 
+
 ----------------------------------
 text for each project
 get raw render frames from Tony
@@ -84,3 +85,16 @@ Redwood add plans
 Inserts
 look for images
 Add photo to shelf video
+
+----
+
+Switch clubsuites image 2
+MUR put all plans/schematics together
+Mur switch 2 and 3
+Change KNIC Text
+Add KNIC video and move image 2 to the end
+Fix mcc last image
+Fix summitridge video embed settings
+Move Inserts vid to #2
+Redwood move tree to the end
+Suite offices move 1+3 to second-from last, orange seats at end, horse6 at front
