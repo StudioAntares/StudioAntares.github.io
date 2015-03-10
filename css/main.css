@@ -579,48 +579,6 @@ header, #headerbg {
     height: 200px;
 }
 
-.vidThumb {
-    height: 100px;
-}
-
-.thumbPlayButton {
-    position: absolute;
-    left: 50%;
-    top: 45%;
-    margin-left: -30px;
-    margin-top: -20px;
-    width: 60px;
-    height: 40px;
-    background: #333;
-    border-radius: 7px;
-}
-
-.no-touch.opacity.csstransitions .thumbPlayButton {
-    background: #181818;
-    opacity: 0.7;
-    transition: opacity .25s ease-in-out;
-    -moz-transition: opacity .25s ease-in-out;
-    -webkit-transition: opacity .25s ease-in-out;
-}
-
-.no-touch .innerImage:hover .thumbPlayButton {
-    /*background: #111;*/
-    /*background: rgba(24, 24, 24, 0.9);*/
-    opacity: 0.9;
-}
-
-.thumbPlayButton:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 10.5px;
-    left: 24px;
-    margin: 0 auto;
-    border-style: solid;
-    border-width: 9.5px 0 9.5px 17px;
-    border-color: transparent transparent transparent #fff;
-}
-
 .gutter {
     position: fixed;
     bottom: 0%;
@@ -702,6 +660,61 @@ header, #headerbg {
     height: 1px;
     display: none !important;
     visibility: hidden;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * Media Page Styles * * * * * * * */
+
+.vidThumb {
+    height: 100px;
+}
+
+.thumbPlayButton {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    margin-left: -30px;
+    margin-top: -20px;
+    width: 60px;
+    height: 40px;
+    background: #333;
+    border-radius: 7px;
+}
+
+.no-touch.opacity.csstransitions .thumbPlayButton {
+    background: #181818;
+    opacity: 0.7;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.no-touch .innerImage:hover .thumbPlayButton {
+    /*background: #111;*/
+    /*background: rgba(24, 24, 24, 0.9);*/
+    opacity: 0.9;
+}
+
+.thumbPlayButton:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10.5px;
+    left: 24px;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 9.5px 0 9.5px 17px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.mfp-close{
+    color: white;
+}
+
+#custom-content img {
+    max-width: 100%;
+    margin-bottom: 10px;
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -809,7 +822,7 @@ header, #headerbg {
     /*margin: auto;*/
 }
 
-.slide .movHolder {
+.slide .movHolder, #custom-content .movHolder {
     width: 100%;
     /*background-color: #ccc;*/
 }
