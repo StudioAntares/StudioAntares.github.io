@@ -709,7 +709,7 @@ header, #headerbg {
 }
 
 .mfp-close{
-    color: white;
+    color: white !important;
 }
 
 #custom-content img {
