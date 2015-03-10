@@ -1,13 +1,32 @@
 <div id="custom-content" class="white-popup-block" style="max-width:600px; margin: 20px auto;">
-	<div class="movHolder">
-        <iframe src="https://player.vimeo.com/video/120991942" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
-    <p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.  These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. </p>
+	<style type="text/css">
+		#container {
+		    display: inline-block;
+		    position: relative;
+		    width: 100%;
+		}
+		#dummy {
+		    padding-top: 56.25%
+		}
+		#element {
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		}
+		.popupText {
+			font-weight: 300;
+		}
+	</style>
 
-    <script>
-    $(document).ready(function() {
-    	console.log("some shit");
-    });
-    </script>
+    <div id="container">
+	    <div id="dummy"></div>
+	    <div id="element">
+	        <iframe src="https://player.vimeo.com/video/120991942" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	    </div>
+	</div>
+
+    <p class="popupText">This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.  These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. </p>
 
 </div>
