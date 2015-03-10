@@ -651,9 +651,9 @@ $( window ).resize(function() {
 
 $('body').on('click', 'a.popupLink', function(event) {
     event.preventDefault();
-    alert("yes");
-    //var projDest = $(this).attr("href");
-    //curtainTransition(projDest);
+    //alert("Link Test");
+    var projDest = $(this).attr("href");
+    curtainTransition(projDest);
 });
 
 ////////////////////////
