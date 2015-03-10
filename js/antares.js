@@ -136,6 +136,11 @@ $(document).ready(function() {
         });
         $container.masonry( 'on', 'layoutComplete', expandThumbBgs);
         resizeBg(pageBg);
+
+        $('#firstThumb a').magnificPopup({
+            type: 'ajax'
+        });
+
     } else if (document.getElementById("projBg") !== null && document.getElementById("projBg") !== undefined) {
         //alert("Work Page");
         whichPage = "project";
@@ -550,12 +555,14 @@ $(".rightFade").hover(
 );
 
 $(".innerImage, .sideLink").click(function(event){
-    event.preventDefault();
-    var projDest = $(this).attr("href");
-    // $("#container").fadeOut(1000,function(){
-    //     document.location.href = projDest;
-    // })
-    curtainTransition(projDest);
+    if (whichPage !== "media") {
+        event.preventDefault();
+        var projDest = $(this).attr("href");
+        // $("#container").fadeOut(1000,function(){
+        //     document.location.href = projDest;
+        // })
+        curtainTransition(projDest);
+    };
 });
 
 // $('#projContainer').on('click','.sidelink', function(event) {
@@ -646,6 +653,10 @@ $( window ).resize(function() {
 // CUSTOM FUNCTIONS
 
 function hideOver(){
+    $(".navLink").each(function(){
+        $(this).removeClass("underlined");
+    })
+
     if (showAbout && !trans) {
         trans = true;
         $("#aboutInfo").fadeOut("slow",function(){
