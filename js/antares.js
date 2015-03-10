@@ -137,9 +137,13 @@ $(document).ready(function() {
         $container.masonry( 'on', 'layoutComplete', expandThumbBgs);
         resizeBg(pageBg);
 
-        $('#firstThumb a').magnificPopup({
-            type: 'ajax'
+        $(".innerImage").each(function(){
+            $(this).magnificPopup({
+                type: 'ajax'
+            });
         });
+
+        
 
     } else if (document.getElementById("projBg") !== null && document.getElementById("projBg") !== undefined) {
         //alert("Work Page");
