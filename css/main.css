@@ -961,11 +961,12 @@ header, #headerbg {
 }
 
 .sideLink, .whiteLink {
+    color: #6666cc;
     text-decoration: underline;
 }
 
 .sideLink:hover, .whiteLink:hover {
-    color: #ccc;
+    color: #333366;
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
