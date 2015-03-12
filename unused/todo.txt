@@ -1,7 +1,8 @@
 mockup - portraits of people in about page
 
 
-
+Suites move orange pic to front, replace with binoculars
+MCC reduce text size
 
 
 
