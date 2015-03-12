@@ -1,10 +1,9 @@
 mockup - portraits of people in about page
 
 
-Suites move orange pic to front, replace with binoculars
-MCC reduce text size
-turf terrace more margin (only on left)
 
+
+change MUR pic 1 + 4
 
 
 
@@ -100,3 +99,10 @@ Fix summitridge video embed settings
 Move Inserts vid to #2
 Redwood move tree to the end
 Suite offices move 1+3 to second-from last, orange seats at end, horse6 at front
+
+#########
+Final Notes:
+Suites move orange pic to front, replace with binoculars
+MCC reduce text size
+turf terrace more margin (only on left)
+redwood more margins on graphics
