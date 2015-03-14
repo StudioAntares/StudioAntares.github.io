@@ -1,12 +1,6 @@
 mockup - portraits of people in about page
 
 
-
-
-change MUR pic 1 + 4
-
-
-
 ----------------------------------
 text for each project
 get raw render frames from Tony
@@ -106,3 +100,4 @@ Suites move orange pic to front, replace with binoculars
 MCC reduce text size
 turf terrace more margin (only on left)
 redwood more margins on graphics
+change MUR pic 1 + 4

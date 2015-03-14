@@ -76,18 +76,15 @@ $(document).ready(function() {
                   ["sarenovation","2","Santa Anita Park Renovations",
                    "Arcadia, CA"],
 
-                  ["mur","1","Multiple Unit Residence",
+                  ["mur","2","Multiple Unit Residence",
                    "Sofia, Bulgaria"],
 
                   ["horseinstall","1","Video Installation Proposal",
                    "Santa Anita Park, Arcadia, CA"],
 
                   ["resortspa","1","Resort & Spa",
-                   "Rhodope Mountains, Bulgaria"],
-
-                  ["pimlico","1","Pimlico Club Suites",
-                   "Baltimore, MD"]
-                  ];
+                   "Rhodope Mountains, Bulgaria"]
+                ]
 
         $("body").addClass("homePage");
         pageBg = $("#fullBg");
@@ -812,6 +809,10 @@ function createThumbImages() {
                 var projectDir = thumbHref.split('/')[1];
                 //console.log(projectDir);
                 var thumbPath = "projects/" + projectDir + "/img/thumb.jpg";
+                if (projectDir =="mur") {
+                    thumbPath = "projects/" + projectDir + "/img/thumb2.jpg";
+                };
+                
                 $thumb.backstretch([thumbPath],{duration: 6500, fade: 3000});
                 //projectDir = "projects/" + projectDir;// + "/index.html";
                 projectDir = "projects/" + projectDir + "/index.html";
