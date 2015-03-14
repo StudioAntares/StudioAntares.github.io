@@ -1,5 +1,6 @@
 mockup - portraits of people in about page
-
+Analytics
+main page image and arrow tweaks
 
 ----------------------------------
 text for each project
