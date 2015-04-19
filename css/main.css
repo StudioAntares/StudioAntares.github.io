@@ -1053,6 +1053,10 @@ header, #headerbg {
     max-height: none !important;
 }
 
+.aboutPage .sideScroll .slide {
+    float: left;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
