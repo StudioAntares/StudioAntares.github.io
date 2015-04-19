@@ -984,7 +984,7 @@ header, #headerbg {
     padding-left: 0em;
 }
 
-.no-touch.csstransitions.opacity .aboutPage p.bioInfo {
+.no-touch.csstransitions.opacity .aboutPage .sideScroll p.bioInfo {
     height: 0px;
     display: none;
     visibility: hidden;
@@ -1002,7 +1002,7 @@ header, #headerbg {
 }
 
 
-.aboutPage .bioOverlay {
+.aboutPage .sideScroll .bioOverlay {
     visibility: hidden;
     display: none;
     height: 0px;
@@ -1013,7 +1013,7 @@ header, #headerbg {
     opacity: 0.0;
 }
 
-.no-touch.csstransitions.opacity .aboutPage .bioOverlay {
+.no-touch.csstransitions.opacity .aboutPage .sideScroll .bioOverlay {
     /*-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;*/
@@ -1032,6 +1032,7 @@ header, #headerbg {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 1em;
+    white-space: normal;
 
 }
 
