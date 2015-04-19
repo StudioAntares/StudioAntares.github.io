@@ -879,7 +879,6 @@ function resizeCover(){
     if (whichPage === "project") {
         if ($("#projContainer").hasClass("sideScroll")) {
             $(".aboutPage .sideScroll .slide img").css("max-height",window.innerHeight*0.65 + "px");
-            $(".aboutPage #projContainer").css("height",window.innerHeight*1.5 + "px");
 
             $("#projMargin").addClass("flowRight");
 
@@ -940,6 +939,19 @@ function resizeCover(){
             if ($("body").hasClass("aboutPage")) {
                 bar = $(".slides").offset().top + $(".slides img:first-of-type").height() - 4;
             };
+
+            var textHeight = 0;
+            $(".aboutPage .bioInfo").each(function(){
+                var thisHeight = $(this).outerHeight();
+                if (thisHeight>textHeight) {
+                    textHeight = thisHeight;
+                };
+            });
+            console.log("img: " + $(".aboutPage .slides img:first-of-type").height());
+            console.log("text: " + textHeight);
+            var contHeight = $(".aboutPage .slides img:first-of-type").height() + textHeight + 50;
+            console.log("container: " + contHeight);
+            $(".aboutPage #projContainer").css("height",contHeight + "px");
 
             $(".projNav").css("top",bar+"px").removeClass("hidden");
             $(".projNavSide").addClass("hidden");
