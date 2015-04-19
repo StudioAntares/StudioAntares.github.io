@@ -898,6 +898,7 @@ function resizeCover(){
                     } else if ($(this).hasClass("imgSlideLast")) {
                         var margWidth = $(".rightFade").width();
                         $(this).width($(this).children("img").first().width() + margWidth);
+                        $(this).children(".bioOverlay").css("right",margWidth + "px");
                         totWidth += $(this).width();
                     } else if ($(this).hasClass("vidSlideLast")) {
                         var margWidth = $(".rightFade").width();
@@ -947,11 +948,24 @@ function resizeCover(){
                     textHeight = thisHeight;
                 };
             });
-            console.log("img: " + $(".aboutPage .slides img:first-of-type").height());
+
+            var imgSize = $(".aboutPage .slides img:first-of-type").height();
+            console.log("img: " + imgSize);
             console.log("text: " + textHeight);
-            var contHeight = $(".aboutPage .slides img:first-of-type").height() + textHeight + 50;
+            var contHeight = imgSize + textHeight + 50;
             console.log("container: " + contHeight);
             $(".aboutPage #projContainer").css("height",contHeight + "px");
+
+            $(".bioOverlay").each(function(){
+                var over = $(this);
+                over.height(imgSize).width(imgSize);
+                over.html("<p>" + over.siblings(".bioInfo").html() + "<p>");
+            })
+
+            
+
+
+
 
             $(".projNav").css("top",bar+"px").removeClass("hidden");
             $(".projNavSide").addClass("hidden");
