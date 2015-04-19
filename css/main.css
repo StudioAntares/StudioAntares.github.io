@@ -1031,7 +1031,7 @@ header, #headerbg {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 1em;
+    padding: 1em 2em;
     white-space: normal;
     text-align: justify;
 
@@ -1083,6 +1083,10 @@ header, #headerbg {
 
     .gutter {
         width: 3%;
+    }
+    
+    .no-touch.csstransitions.opacity .aboutPage .bioOverlay p {
+        padding: 1em
     }
 }
 
