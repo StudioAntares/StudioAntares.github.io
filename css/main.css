@@ -969,6 +969,24 @@ header, #headerbg {
     color: #333366;
 }
 
+
+.aboutPage p.bioInfo {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #ccc;
+    width: 100%;
+    display: inline-block !important;
+    white-space: normal;
+    line-height: 1.2em;
+    padding: 0.5em;
+    padding-right: 1em;
+}
+
+.aboutPage .sideScroll .slide img {
+    max-height: 65vh;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */

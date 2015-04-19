@@ -878,6 +878,9 @@ function resizeCover(){
     // $("#projContainer").addClass("sideScroll");
     if (whichPage === "project") {
         if ($("#projContainer").hasClass("sideScroll")) {
+            $(".aboutPage .sideScroll .slide img").css("max-height",window.innerHeight*0.65 + "px");
+            $(".aboutPage #projContainer").css("height",window.innerHeight*1.5 + "px");
+
             $("#projMargin").addClass("flowRight");
 
             $(".movHolder").each(function(){
@@ -891,6 +894,7 @@ function resizeCover(){
                     if ($(this).hasClass("firstSlide")) {
                         var margWidth = $(".leftFade").width();
                         $(this).width($(this).children("img").first().width() + margWidth);
+                        $(".aboutPage .bioInfoFirst").css({"margin-left":margWidth + "px","float":"left"});
                         totWidth += $(this).width();
                     } else if ($(this).hasClass("imgSlideLast")) {
                         var margWidth = $(".rightFade").width();
@@ -914,6 +918,11 @@ function resizeCover(){
                 });
                 $(".slides").width(totWidth);
                 //alert("resized after images loaded : " + imgLoaded);
+                // if ($("body").hasClass("aboutPage")) {
+                //     $("p.bioInfo").each(function(){
+                //         //$(this).width($(this).parent().width());
+                //     })
+                // };
             } else {
                 //something is wrong...
             };
@@ -927,6 +936,11 @@ function resizeCover(){
             };
             
             var bar = $(".slides").offset().top + $(".slides").height();
+
+            if ($("body").hasClass("aboutPage")) {
+                bar = $(".slides").offset().top + $(".slides img:first-of-type").height() - 4;
+            };
+
             $(".projNav").css("top",bar+"px").removeClass("hidden");
             $(".projNavSide").addClass("hidden");
             $(".projectInfo").html($(".vertInfo").html()).removeClass("hidden");
@@ -1023,6 +1037,8 @@ function getScreenAspect() {
         $("body").removeClass("landscape");
         $("body").addClass("portrait");
         $("#projContainer").removeClass("sideScroll");
+        $(".aboutPage .slide img").css("max-height","none");
+        $(".aboutPage .bioInfoFirst").removeAttr("style");
     };
     //console.log(screenAspect);
 }
