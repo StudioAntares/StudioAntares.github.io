@@ -1065,6 +1065,7 @@ function getScreenAspect() {
         $("#projContainer").removeClass("sideScroll");
         $(".aboutPage .slide img").css("max-height","none");
         $(".aboutPage .bioInfoFirst").removeAttr("style");
+        $(".bioOverlay").empty().removeAttr("style");
     };
     //console.log(screenAspect);
 }

@@ -1033,6 +1033,7 @@ header, #headerbg {
     box-sizing: border-box;
     padding: 1em;
     white-space: normal;
+    text-align: justify;
 
 }
 
