@@ -13,6 +13,7 @@ var workDest = "work.html"
 var mediaDest = "media.html"
 var procDest = "process/"
 var homeDest = "index.html"
+var aboutDest = "about/index.html"
 
 var paneFade = "slow"
 var $container;
@@ -156,6 +157,7 @@ $(document).ready(function() {
         mediaDest = "../../media.html"
         procDest = "../../process/"
         homeDest = "../../index.html"
+        aboutDest = "../../about/index.html"
         if (Modernizr.csstransitions && Modernizr.opacity) {
             $("#projMargin").addClass("fadeMeIn");
         };
@@ -226,6 +228,12 @@ $(document).ready(function() {
 
     if ($("body").hasClass("aboutPage")) {
         $(".projectInfoTop").html($(".vertInfo").html()).removeClass("hidden");
+        aboutDest = "../about/index.html";
+        workDest = "../work.html"
+        mediaDest = "../media.html"
+        procDest = "../process/"
+        homeDest = "../index.html"
+        aboutDest = "../about/index.html"
     };
 
 });
@@ -439,6 +447,16 @@ $(".navLink, #projName, #projDesc").click(function(event){
                 document.location.href = mediaDest;
             })
         };
+    } else if (dest == "about") {
+        if ($("body").hasClass("aboutPage")) {
+            hideOver();
+        } else if (whichPage === "project") {
+            curtainTransition(aboutDest);
+        } else {
+            $("#container").fadeOut(1000,function(){
+                document.location.href = aboutDest;
+            })
+        };
     } else {
         overlay(dest,active);
     };
@@ -476,7 +494,14 @@ $(".mmenuLink").click(function(event){
         } else {
             document.location.href = mediaDest;
         };
-    } else {
+    } else if (dest == "about") {
+        if ($("body").hasClass("aboutPage")) {
+            hideOver();
+            $("#my-menu").trigger("close.mm");
+        } else {
+             document.location.href = aboutDest;
+        };
+    }else {
         $("#my-menu").trigger("close.mm");
         overlay(dest,99);
     };
@@ -591,7 +616,10 @@ $("#logoTop, #antaresName").click(function(){
     // };
     if (whichPage !== "home") {
         var homeUrl = "index.html";
-        if (whichPage === "project") {
+        if ($("body").hasClass("aboutPage")) {
+            homeUrl = "../index.html";
+            curtainTransition(homeUrl);
+        } else if (whichPage === "project") {
             homeUrl = "../../index.html";
             curtainTransition(homeUrl);
         } else {
@@ -697,6 +725,9 @@ function hideOver(){
     };
     if (whichPage === "media") {
         $(".navLink:eq(1)").addClass("underlined");
+    };
+    if ($("body").hasClass(".aboutPage")) {
+        $(".navLink:eq(2)").addClass("underlined");
     };
 };
 
