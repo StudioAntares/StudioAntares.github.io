@@ -750,7 +750,7 @@ header, #headerbg {
     padding-top: 50px;
 }
 
-.rgba .projPage #projMargin.flowRight .projectInfo {
+.rgba .projPage #projMargin.flowRight .projectInfo, .rgba .projPage #projMargin.flowRight .projectInfoTop {
     padding: 0 10%;
 }
 
@@ -904,7 +904,7 @@ header, #headerbg {
     text-align: justify;
 }
 
-.projectInfo .projPageDesc, .vertInfo .projPageDesc {
+.projectInfo .projPageDesc, .vertInfo .projPageDesc, .projectInfoTop .projPageDesc {
     width: 80%;
     max-width: 740px;
     padding-bottom: 40px;
@@ -1057,6 +1057,26 @@ header, #headerbg {
     float: left;
 }
 
+.aboutPage.infoTop .projectInfo, .aboutPage.infoTop .vertInfo {
+    visibility: hidden;
+    display: none;
+}
+
+.aboutPage .projNavSide {
+    visibility: hidden !important;
+    display: none !important;
+}
+
+.aboutPage .projectInfoTop {
+    visibility: hidden;
+    display: none;
+}
+
+.aboutPage.infoTop .projectInfoTop {
+    visibility: visible !important;
+    display: inline !important;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
@@ -1084,7 +1104,7 @@ header, #headerbg {
     .gutter {
         width: 3%;
     }
-    
+
     .no-touch.csstransitions.opacity .aboutPage .bioOverlay p {
         padding: 1em
     }
@@ -1160,7 +1180,7 @@ header, #headerbg {
         padding-bottom: 10px;
     }
 
-    .projectInfo .projPageDesc, .vertInfo .projPageDesc {
+    .projectInfo .projPageDesc, .vertInfo .projPageDesc, .projectInfoTop .projPageDesc {
         width: 100%;
         max-width: 768px;
         padding-bottom: 20px;
@@ -1179,7 +1199,7 @@ header, #headerbg {
         /*height: 85.5%;*/
     }
 
-    .rgba .projPage #projMargin.flowRight .projectInfo {
+    .rgba .projPage #projMargin.flowRight .projectInfo, .rgba .projPage #projMargin.flowRight .projectInfoTop {
         padding: 0 6%;
     }
 

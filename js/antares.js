@@ -224,6 +224,10 @@ $(document).ready(function() {
     //     // $(this).fitVids();
     // });
 
+    if ($("body").hasClass("aboutPage")) {
+        $(".projectInfoTop").html($(".vertInfo").html()).removeClass("hidden");
+    };
+
 });
 
 ////////////////////////
@@ -950,10 +954,10 @@ function resizeCover(){
             });
 
             var imgSize = $(".aboutPage .slides img:first-of-type").height();
-            console.log("img: " + imgSize);
-            console.log("text: " + textHeight);
+            //console.log("img: " + imgSize);
+            //console.log("text: " + textHeight);
             var contHeight = imgSize + textHeight + 50;
-            console.log("container: " + contHeight);
+            //console.log("container: " + contHeight);
             $(".aboutPage #projContainer").css("height",contHeight + "px");
 
             $(".bioOverlay").each(function(){
@@ -1058,11 +1062,17 @@ function getScreenAspect() {
         $("body").removeClass("portrait");
         $("body").addClass("landscape");
         $("#projContainer").addClass("sideScroll");
+        if ($("body").hasClass("aboutPage")) {
+            $("body").removeClass("infoTop");
+        };
     } else {
         screenAspect = "portrait";
         $("body").removeClass("landscape");
         $("body").addClass("portrait");
         $("#projContainer").removeClass("sideScroll");
+        if ($("body").hasClass("aboutPage")) {
+            $("body").addClass("infoTop");
+        };
         $(".aboutPage .slide img").css("max-height","none");
         $(".aboutPage .bioInfoFirst").removeAttr("style");
         $(".bioOverlay").empty().removeAttr("style");
