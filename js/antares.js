@@ -1089,7 +1089,7 @@ function addTextBg() {
 
 function getScreenAspect() {
     ratio = window.innerHeight/window.innerWidth;
-    if (ratio <= 1) {
+    if (ratio <= 1 && !($("body").hasClass("isMobile") && $("body").hasClass("aboutPage"))) {
         screenAspect = "landscape";
         $("body").removeClass("portrait");
         $("body").addClass("landscape");
