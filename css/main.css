@@ -982,6 +982,11 @@ header, #headerbg {
     padding: 0.5em;
     padding-right: 1em;
     padding-left: 0em;
+    text-align: justify;
+}
+
+.aboutPage.landscape p.bioInfo {
+    padding-right: 2.5em;
 }
 
 .no-touch.csstransitions.opacity .aboutPage .sideScroll p.bioInfo {

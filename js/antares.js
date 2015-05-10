@@ -928,12 +928,13 @@ function resizeCover(){
                     if ($(this).hasClass("firstSlide")) {
                         var margWidth = $(".leftFade").width();
                         $(this).width($(this).children("img").first().width() + margWidth);
-                        $(".aboutPage .bioInfoFirst").css({"margin-left":margWidth + "px","float":"left"});
+                        $(".aboutPage .bioInfoFirst").css({"margin-left":margWidth + "px","float":"left","width":$(this).children("img").first().width() + "px"});
                         totWidth += $(this).width();
                     } else if ($(this).hasClass("imgSlideLast")) {
                         var margWidth = $(".rightFade").width();
                         $(this).width($(this).children("img").first().width() + margWidth);
                         $(this).children(".bioOverlay").css("right",margWidth + "px");
+                        $(".aboutPage .bioInfoLast").css({"float":"left","width":$(this).children("img").first().width() + "px"});
                         totWidth += $(this).width();
                     } else if ($(this).hasClass("vidSlideLast")) {
                         var margWidth = $(".rightFade").width();
