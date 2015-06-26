@@ -62,6 +62,9 @@ $(document).ready(function() {
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
 
+                  ["helsinki","1","Guggenheim Helsinki Design Competition",
+                   "Helsinki, Finland"],
+
                   ["sarenovation","1","Santa Anita Park Renovations",
                    "Arcadia, CA"],
 
