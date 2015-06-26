@@ -302,6 +302,10 @@ h1 {
     text-decoration: underline;
 }
 
+.noDecHover:hover {
+    text-decoration: none !important;
+}
+
 .close {
     position: absolute;
     top: 0em;
