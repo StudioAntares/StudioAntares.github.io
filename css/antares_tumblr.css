@@ -1,0 +1,806 @@
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    position: relative;
+    z-index: 15;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0.2em;
+    margin-top: 80px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * Global Styles * * * * * * * * */
+
+html, body {
+    color: #ffffff;
+    font-family: "futura-pt", "Futura PT", "arial", sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body.homePage {
+    overflow: hidden;
+}
+
+body {
+    background-color: #000000;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+.italic {
+  font-style: italic;
+}
+
+#fullBg, #workBg, #projBg, #mediaBg {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+
+#fullBg.hasLink {
+    cursor: pointer;
+}
+
+#workBg, #projBg, #mediaBg {
+    position: fixed;
+}
+
+.dropCap { 
+    float: left; 
+    color: #903; 
+    font-size: 2.9em; 
+    line-height: 1em; 
+    padding-top: 0em; 
+    padding-right: 0.1em; 
+    padding-left: 0em; 
+    font-family: Georgia; 
+}
+
+.vCenterAlt {
+  /* use if you have a declared height */
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.vCenterParent {
+  /* Apply to parent of any element that is vertically centereed
+     using below method to prevent blurry rendering */
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.vCenter {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.noOverflow {
+    overflow: hidden;
+}
+/* * * * * * Menu Stuff * * * * * */
+#my-menu {
+    background-color: #151515;
+    color: #ffffff;
+}
+
+.mm-list {
+    font-size: 1.1em !important;
+}
+
+.mm-page {
+    height: 100%;
+}
+
+#container {
+    height: 100%;
+    min-height: 100%;
+    /*-webkit-transform: translate3d(0, 0, 0);*/
+    /*-webkit-backface-visibility: hidden;*/
+    /*-webkit-perspective: 1000;*/
+}
+
+.isMobile #container {
+    /*-webkit-transform: translate3d(0, 0, 0);*/
+}
+
+.menu {
+  cursor: pointer;
+  margin: 0 auto;
+  padding-left: 1.25em;
+  position: absolute;
+  top: 15px;
+  right: 6%;
+  width: 9px;
+  height: 18px;
+  visibility: hidden;
+  z-index: 999;
+  -webkit-transform: translate3d(0, 0, 0);
+  /*background: #f00;*/
+}
+
+.touchPad {
+    visibility: visible;
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 80px;
+    height: 80px;
+    background: #f00;
+    z-index: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+
+
+.menu-global {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  border-top: 4px solid white;
+  width: 100%;
+  /*transition: 0.55s;*/
+}
+
+.menu-top {
+  top: 0;
+}
+.menu-middle {
+  top: 9px;
+}
+.menu-bottom {
+  top: 18px;
+}
+
+.clicked .menu-global {
+    border-color: #888;
+}
+
+.clicked .menu-top {
+  backface-visibility: hidden;
+  top: 10px;
+
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform: rotate(45deg);
+  transition: 0.55s;
+}
+.clicked .menu-middle {
+  opacity: 0;
+  transition: 0.55s;
+
+}
+.clicked .menu-bottom {
+  backface-visibility: hidden;
+  top: 10px;
+
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg);
+  transform: rotate(-45deg);
+  transition: 0.55s;
+}
+
+
+/* * * * * * Helpers * * * * * */
+
+.no-touch a:hover {
+    text-decoration: underline;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.noDecHover:hover {
+    text-decoration: none !important;
+}
+
+.close {
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    font-size: 2.5em;
+}
+
+.no-touch .close:hover {
+    color: #999999;
+    cursor: pointer;
+}
+
+/* * * * * * Header * * * * * */
+
+header, #headerbg {
+    -webkit-transform: translate3d(0, 0, 0);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    max-width: 100%;
+    height: 50px;
+    z-index: 2;
+    background: none;
+}
+
+#headerbg {
+    z-index: 0;
+    background-color: #000000;
+}
+
+.workPage header, .projPage header, .mediaPage header {
+    z-index: 5;
+}
+
+.no-touch .workPage header, .no-touch .projPage header, .no-touch .mediaPage header {
+    position: fixed;
+}
+
+.rgba #headerbg {
+    background-color: rgba(0,0,0,0.75);
+}
+
+#logoTop {
+    -webkit-transform: translate3d(0, 0, 0);
+    position: absolute;
+    left: 10%;
+    bottom: -30%;
+    height: 110%;
+    width: auto;
+}
+
+#antaresName {
+    -webkit-transform: translate3d(0, 0, 0);
+    position: absolute;
+    left: 10%;
+    margin-left: 60px;
+    bottom: 0.05em;
+    font-size: 1.2em;
+}
+
+#antaresName:hover, #logoTop:hover {
+    cursor: pointer;
+}
+
+#navLinks {
+    position: absolute;
+    right: 10%;
+    bottom: 0.05em;
+    font-size: 1.1em;
+}
+
+.navLink {
+    padding-left: 1em;
+}
+
+#lastNav {
+    padding-right: 0em !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * Main Page Styles  * * * * * * * */
+
+
+#projMargin {
+    background: red;
+}
+
+/* * * * * * LabelPane * * * * * */
+
+#labelPane {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    padding-right: 10%;
+    width: 35%;
+    height: 10%;
+    background-color: #000000;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.workPage #labelPane, .projPage #labelPane, .mediaPage #labelPane {
+    position: fixed;
+    top: 100%;
+    right: 100%;
+    padding-right: none;
+    width: 1px;
+    height: 1px;
+    background-color: none;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.rgba #labelPane {
+    background-color: rgba(0,0,0,0.75);
+}
+
+#projName, #projDesc {
+    margin: 0em;
+    margin-top: 0.5em;
+    padding-left: 2%;
+    font-size: 0.95em;
+    text-align: left;
+    width: 75%;
+    display: block;
+
+}
+
+#projDesc {
+    font-size: 0.95em;
+    margin-top: 0.0em;
+    margin-bottom: 2.5em;
+}
+
+#mediaControls {
+    position: absolute;
+    top: 0.5em;
+    right: 22.5%;
+    visibility: hidden;
+    display: none;
+}
+
+.isNotMobile #mediaControls {
+    visibility: visible;
+    display: block;
+}
+
+#mediaControls:hover {
+    cursor: pointer;
+}
+
+.mediaButton {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../img/spritesSmall.png");
+}
+
+#playPause {
+    background-position: 0px 0px;
+}
+#playPause:hover {
+    background-position: 0px -15px;
+    /*cursor: pointer;*/
+}
+
+#prevButton {
+    background-position: -15px 0px;
+}
+#prevButton:hover {
+    background-position: -15px -15px;
+    /*cursor: pointer;*/
+}
+
+#nextButton {
+    background-position: -30px 0px;
+}#nextButton:hover {
+    background-position: -30px -15px;
+    /*cursor: pointer;*/
+}
+
+.play {
+    background-position: -45px 0px !important;
+}
+.play:hover {
+    background-position: -45px -15px !important;
+}
+
+
+/* * * * * * Overlay * * * * * */
+
+.closeOver {
+    top: -1em;
+}
+
+.infoOverlay {
+    position: absolute;
+    top: 200px;
+    left: 15%;
+    width: 70%;
+    height: auto;
+    background: none;
+    z-index: 5;
+    display: none;
+    font-size: 1.1em;
+    font-weight: 200 !important;
+}
+
+.curtainOverlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 0px;
+    background: #000;
+    z-index: 1050;
+    display: none;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* ==========================================================================
+   Media Queries 
+   ========================================================================== */
+
+@media only screen and (min-width: 1500px) {
+    .projThumb {
+        width: 24%;
+    }
+
+    .gutter {
+        width: 1%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .projThumb {
+        width: 48%;
+    }
+
+    .gutter {
+        width: 3%;
+    }
+
+    .no-touch.csstransitions.opacity .aboutPage .bioOverlay p {
+        padding: 1em
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #labelPane {
+        left: 0%;
+        padding-left: 10%;
+        width: 80%;
+    }
+
+    #mediaControls{
+        right: 12.5%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+/*@media only screen and (max-width: 650px) {*/
+
+    #logoTop, #antaresName {
+        left: 6%;
+    }
+
+    #navLinks, #projDesc {
+        visibility: hidden;
+        /*display: none;*/
+    }
+
+    .menu {
+        visibility: visible;
+    }
+
+    #labelPane {
+        left: 0%;
+        padding-left: 6%;
+        width: 100%;
+        height: 8%;
+    }
+
+    #mediaControls {
+        right: 19%;
+    }
+
+    #tempMessage {
+        position: absolute;
+        left: 6%;
+        width: 88%;
+        background-color: #000000;
+        font-size: 0.75em;
+    }
+
+    .close {
+        font-size: 2em;
+    }
+
+    .infoOverlay {
+        top: 100px;
+    }
+
+    .closeOver {
+        top: -0.5em;
+    }
+
+    .projectInfo .projPageDesc, .vertInfo .projPageDesc, .projectInfoTop .projPageDesc {
+        width: 100%;
+        max-width: 768px;
+        padding-bottom: 20px;
+    }
+
+    .projNavSide {
+        right: 6%;
+    }
+
+    .projNav {
+        padding: 0% 6%;
+    }
+
+    .rightFade, .leftFade {
+        width: 6%;
+        /*height: 85.5%;*/
+    }
+
+
+}
+
+@media only screen and (max-width: 450px) {
+    #tempMessage h1 {
+        margin-top: 1.1em;
+        font-size: 1.6em;
+    }
+
+    .projThumb {
+        width: 100%;
+    }
+
+    .gutter {
+        width: 5%;
+    }
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dppx) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
