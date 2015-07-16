@@ -3,9 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Studio Antares</title>
-        <meta name="description" content="Studio Antares">
+        <title>
+            {Title}
+            {block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}
+            {block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}
+        </title>
+        {block:Description}
+        <meta name="description" content="{MetaDescription}">
+        {/block:Description}
+
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        <link rel="shortcut icon" href="">
+        <link rel="apple-touch-icon-precomposed" href="">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
 
         <link rel="stylesheet" href="css/normalize.css">
@@ -16,9 +26,17 @@
         <script src="//use.typekit.net/dsz0noy.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
 
-    </head>
-    <body onunload="">
+        <!-- HTML5 Shiv -->
+        <!--[if lt IE 9]>
+            <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
+        <![endif]-->
 
+        <style>
+            {CustomCSS}
+        </style>
+    </head>
+
+    <body onunload="" data-urlencoded-name="{URLEncodedName}">
         <div id="container">
             <!--[if lt IE 8]>
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -51,44 +69,76 @@
 
             <div id="projMargin">
 
+                {block:Posts}
                 <div class="block">
-                    <h1>January 2, 2015</h1>
-                    <img src="img/IMG_6383.JPG">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                </div>
+                    {block:Date}
+                        <h1><a href="{Permalink}" title="{TimeAgo}">{Month} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a></h1>
+                    {/block:Date}
 
-                <div class="block">
-                    <h1>January 1, 2015</h1>
-                    <img src="img/IMG_6297.JPG">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                </div>
+                    {block:Text}
+                        {block:Title}<h2>{Title}</h2>{/block:Title}
+                        {block:Body}
+                            {Body}
+                        {/block:Body}
+                    {/block:Text}
 
-                <div class="block">
-                    <h1>January 1, 2015</h1>
+                    {block:Photo}
+                        {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Photo}
 
-                    <h2>Optional Title</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                </div>
+                    {block:Photoset}
+                        {Photoset}
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Photoset}
 
-                <div class="block">
-                    <h1>January 1, 2015</h1>
-                    <div class="movHolder">
-                        <iframe src="https://player.vimeo.com/video/131931598" frameborder="0" width="800px" height="450px" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
-                </div>
+                    {block:Quote}
+                        <span class="linkPost">"{Quote}"</span>
+                        {block:Source}
+                            {Source}
+                        {/block:Source}
+                    {/block:Quote}
 
-                <div class="block">
-                    <h1>January 1, 2015</h1>
-                    <a href="#" class="linkPost">A link to somewhere</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    {block:Link}
+                        <a target="_blank" href="{URL}" class="linkPost">{Name}</a>
+                        {block:Description}
+                            {Description}
+                        {/block:Description}
+                    {/block:Link}
+
+                    {block:Video}
+                        <div class="movHolder">
+                            {VideoEmbed-700}
+                        </div>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Video}
+
+
                 </div>
+                {/block:Posts}
                 
-                <div class="pagination">
-                    <div class="pagNewer"><a href="#">Newer Posts</a></div>
-                    <div class="pagOlder"><a href="#">Older Posts</a></div>
-                </div>
+                
+                
+
+                {block:IndexPage}
+                    {block:Pagination}
+                    <div class="pagination">
+                        {block:PreviousPage}
+                        <div class="pagNewer"><a href="{PreviousPage}" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}">Newer Posts</a></div>
+                        {/block:PreviousPage}
+
+                        {block:NextPage}
+                        <div class="pagOlder"><a href="{NextPage}" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}">Older Posts</a></div>
+                        {/block:NextPage}
+                    </div>
+                    {/block:Pagination}
+                {/block:IndexPage}
 
 
 

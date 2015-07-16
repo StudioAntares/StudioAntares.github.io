@@ -57,7 +57,7 @@ $(document).ready(function() {
 
     whichPage = "blog";
     pageBg = $("#blogBg");
-    pageBg.backstretch(["mesh.jpg"],{duration: 6500, fade: 3000});
+    pageBg.backstretch(["http://www.studio-antares.com/img/work/mesh.jpg"],{duration: 6500, fade: 3000});
 
     if (Modernizr.csstransitions && Modernizr.opacity) {
         $("#projMargin").addClass("fadeMeIn");
