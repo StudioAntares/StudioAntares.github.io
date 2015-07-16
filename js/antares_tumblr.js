@@ -138,6 +138,9 @@ $(".navLink").click(function(event){
 
     if (dest == "home") {
         $("#container").fadeOut(1000,function(){
+            try {
+                window.history.pushState({id: 'back'}, homeDest, homeDest);    
+            } catch(err) {}
             document.location.href = homeDest;
         })
     } else if (dest == "work") {
