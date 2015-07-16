@@ -320,33 +320,16 @@ h1 {
 
 /* * * * * * Header * * * * * */
 
-header, #headerbg {
+header {
     -webkit-transform: translate3d(0, 0, 0);
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
     max-width: 100%;
     height: 50px;
-    z-index: 2;
-    background: none;
-}
-
-#headerbg {
-    z-index: 0;
-    background-color: #000000;
-}
-
-.workPage header, .projPage header, .mediaPage header {
     z-index: 5;
-}
-
-.no-touch .workPage header, .no-touch .projPage header, .no-touch .mediaPage header {
-    position: fixed;
-}
-
-.rgba #headerbg {
-    background-color: rgba(0,0,0,0.75);
+    background: none;
 }
 
 #logoTop {
@@ -372,18 +355,19 @@ header, #headerbg {
 }
 
 #navLinks {
-    position: absolute;
-    right: 10%;
-    bottom: 0.05em;
-    font-size: 1.1em;
+    /*font-size: 1.1em;*/
+}
+
+#navLinks p {
+    margin: 0em;
 }
 
 .navLink {
-    padding-left: 1em;
+    /*padding-left: 1em;*/
 }
 
 #lastNav {
-    padding-right: 0em !important;
+    /*padding-right: 0em !important;*/
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * */
@@ -391,7 +375,67 @@ header, #headerbg {
 
 
 #projMargin {
-    background: red;
+    position: relative;
+    margin: 0% 5%;
+    margin-left: 25%;
+    padding: 30px;
+    height: auto;
+    min-height: 100%;
+    z-index: 3;
+    max-width: 800px;
+}
+
+#blogNavBlock {
+    position: fixed;
+    padding: 0px;
+    top: 20%;
+    left: 0px;
+    width: 25%;
+    min-height: 60%;
+    text-align: right;
+    z-index: 3;
+}
+
+#blogNavBlock p.desc {
+    display: inline-block;
+    max-width: 60%;
+    margin-bottom: 3em;
+}
+
+.block {
+    color: black;
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    background-color: #aaa;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 0em;
+    margin-bottom: 1em;
+}
+
+.block h1 {
+    font-size: 1.4em;
+    margin-top: 0em;
+    margin-bottom: 1em;
+
+}
+
+.block img {
+    width: 100%;
+    height: auto;
+}
+
+.opacity.csstransitions #projMargin {
+    opacity: 0.0;
+    transition: opacity 2s linear;
+    -moz-transition: opacity 2s linear;
+    -webkit-transition: opacity 2s linear;
+    /*opacity: 1.0;*/
+}
+
+.opacity.csstransitions #projMargin.fadeMeIn {
+    opacity: 1.0 !important;
 }
 
 /* * * * * * LabelPane * * * * * */
@@ -578,8 +622,10 @@ header, #headerbg {
         left: 6%;
     }
 
-    #navLinks, #projDesc {
+    #navLinks, #blogNavBlock {
         visibility: hidden;
+        width: 0px;
+        height: 0px;
         /*display: none;*/
     }
 
@@ -637,6 +683,15 @@ header, #headerbg {
         /*height: 85.5%;*/
     }
 
+    header {
+        background: black;
+    }
+
+    #projMargin {
+        margin: 3% 6%;
+        margin-top: 70px;
+        padding: 0px;
+    }
 
 }
 
