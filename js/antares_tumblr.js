@@ -9,11 +9,11 @@ var showAbout = false;
 var showContact = false;
 var trans = false;
 
-var workDest = "work.html"
-var mediaDest = "media.html"
-var procDest = "process/"
-var homeDest = "index.html"
-var aboutDest = "about/index.html"
+var workDest = "http://studio-antares.com/work.html"
+var mediaDest = "http://studio-antares.com/media.html"
+var procDest = "http://ongoing.studio-antares.com"
+var homeDest = "http://studio-antares.com"
+var aboutDest = "http://studio-antares.com/about/index.html"
 
 var paneFade = "slow"
 var $container;
@@ -51,8 +51,13 @@ $(document).ready(function() {
         };
     })
 
+    $(".movHolder").each(function(){
+        $(this).fitVids();
+    });
+
     whichPage = "blog";
-    pageBg = $("#projBg");
+    pageBg = $("#blogBg");
+    pageBg.backstretch(["mesh.jpg"],{duration: 6500, fade: 3000});
 
     if (Modernizr.csstransitions && Modernizr.opacity) {
         $("#projMargin").addClass("fadeMeIn");
@@ -123,61 +128,30 @@ $(".menu, .touchPad").bind('touchstart click', function(){
   return false
 });
 
-$(".navLink, #projName, #projDesc").click(function(event){
+$(".navLink").click(function(event){
     event.preventDefault();
 
     var dest = $(this).attr("data-dest");
     var active = $(this).index();
 
-    $(".navLink").each(function(){
-        $(this).removeClass("underlined");
-    })
+    // alert(dest);
 
-    if (dest == "work") {
-        if (whichPage === "work") {
-            hideOver();
-        } else if (whichPage === "project") {
-            curtainTransition(workDest);
-        } else {
-            $("#container").fadeOut(1000,function(){
-                document.location.href = workDest;
-            })
-        };
-    } else if (dest == "process") {
-        if (whichPage === "process") {
-            hideOver();
-        } else if (whichPage === "project") {
-            curtainTransition(procDest);
-        } else {
-            $("#container").fadeOut(1000,function(){
-                document.location.href = procDest;
-            })
-        };        
-    } else if (dest.indexOf("projects/") >= 0) {
-        //alert("yes");
+    if (dest == "home") {
         $("#container").fadeOut(1000,function(){
-            document.location.href = dest;
+            document.location.href = homeDest;
+        })
+    } else if (dest == "work") {
+        $("#container").fadeOut(1000,function(){
+            document.location.href = workDest;
         })
     } else if (dest == "media") {
-        if (whichPage === "media") {
-            hideOver();
-        } else if (whichPage === "project") {
-            curtainTransition(mediaDest);
-        } else {
-            $("#container").fadeOut(1000,function(){
-                document.location.href = mediaDest;
-            })
-        };
+        $("#container").fadeOut(1000,function(){
+            document.location.href = mediaDest;
+        })
     } else if (dest == "about") {
-        if ($("body").hasClass("aboutPage")) {
-            hideOver();
-        } else if (whichPage === "project") {
-            curtainTransition(aboutDest);
-        } else {
-            $("#container").fadeOut(1000,function(){
-                document.location.href = aboutDest;
-            })
-        };
+        $("#container").fadeOut(1000,function(){
+            document.location.href = aboutDest;
+        })
     } else {
         overlay(dest,active);
     };
@@ -188,55 +162,16 @@ $(".mmenuLink").click(function(event){
     var dest = $(this).attr("data-dest");
 
     if (dest == "work") {
-        if (whichPage === "work") {
-            hideOver();
-            $("#my-menu").trigger("close.mm");
-        } else {
-            document.location.href = workDest;
-        };
-    } else if (dest == "process") {
-        if (whichPage === "process") {
-            hideOver();
-            $("#my-menu").trigger("close.mm");
-        } else {
-            document.location.href = procDest;
-        };
+        document.location.href = workDest;
     } else if (dest == "home") {
-        if (whichPage === "home") {
-            hideOver();
-            $("#my-menu").trigger("close.mm");
-        } else {
-            document.location.href = homeDest;
-        };
+        document.location.href = homeDest;
     } else if (dest == "media") {
-        if (whichPage === "media") {
-            hideOver();
-            $("#my-menu").trigger("close.mm");
-        } else {
-            document.location.href = mediaDest;
-        };
+        document.location.href = mediaDest;
     } else if (dest == "about") {
-        if ($("body").hasClass("aboutPage")) {
-            hideOver();
-            $("#my-menu").trigger("close.mm");
-        } else {
-             document.location.href = aboutDest;
-        };
-    }else {
+        document.location.href = aboutDest;
+    } else {
         $("#my-menu").trigger("close.mm");
         overlay(dest,99);
-    };
-});
-
-
-$(".innerImage, .sideLink").click(function(event){
-    if (whichPage !== "media") {
-        event.preventDefault();
-        var projDest = $(this).attr("href");
-        // $("#container").fadeOut(1000,function(){
-        //     document.location.href = projDest;
-        // })
-        curtainTransition(projDest);
     };
 });
 
@@ -245,24 +180,9 @@ $(".closeOver").click(function(){
 });
 
 $("#logoTop, #antaresName").click(function(){
-    // if (showAbout || showContact) {
-    //     hideOver();
-    // };
-    if (whichPage !== "home") {
-        var homeUrl = "index.html";
-        if ($("body").hasClass("aboutPage")) {
-            homeUrl = "../index.html";
-            curtainTransition(homeUrl);
-        } else if (whichPage === "project") {
-            homeUrl = "../../index.html";
-            curtainTransition(homeUrl);
-        } else {
-            $("#container").fadeOut(1000,function(){
-                document.location.href = homeUrl;
-            });
-        }
-        
-    };
+    $("#container").fadeOut(1000,function(){
+        document.location.href = homeDest;
+    });
 });
 
 
@@ -283,12 +203,6 @@ $( window ).resize(function() {
     //resizeCover();
 });
 
-$('body').on('click', 'a.popupLink', function(event) {
-    event.preventDefault();
-    var projDest = $(this).attr("href");
-    curtainTransition(projDest);
-});
-
 ////////////////////////
 // CUSTOM FUNCTIONS
 
@@ -303,42 +217,17 @@ function blogMargin(){
 }
 
 function hideOver(){
-    $(".navLink").each(function(){
-        $(this).removeClass("underlined");
-    })
-
-    if (showAbout && !trans) {
-        trans = true;
-        $("#aboutInfo").fadeOut("slow",function(){
-            $("#headerbg").animate({height: "100%"},function(){
-                fadeRGBA($("#headerbg"),0.75);
-                $("#labelPane").fadeIn(paneFade,function(){
-                    showAbout = false;
-                    trans = false;        
-                });
-            });
-        });
-    } else if (showContact && !trans) {
+    if (showContact && !trans) {
         trans = true;
         $("#contactInfo").fadeOut("slow",function(){
-            $("#headerbg").animate({height: "100%"},function(){
-                fadeRGBA($("#headerbg"),0.75);
-                $("#labelPane").fadeIn(paneFade,function(){
-                    showContact = false;
-                    trans = false;        
-                });
-            });
-        });
-    };
-    if (whichPage === "work") {
-        $(".navLink:eq(0)").addClass("underlined");
-    };
-    if (whichPage === "media") {
-        $(".navLink:eq(1)").addClass("underlined");
-    };
-    if ($("body").hasClass(".aboutPage")) {
-        $(".navLink:eq(2)").addClass("underlined");
-    };
+            $(".curtainOverlay").fadeIn(1000,function() {
+                $(".curtainOverlay").height("0px");
+                $(".curtainOverlay").removeClass("transBG");
+                showContact = false;
+                trans = false;      
+            })
+        })
+    }
 };
 
 function fadeRGBA(thing, target) {
@@ -351,88 +240,19 @@ function overlay(dest,active) {
     var winHeight = window.innerHeight;
     // console.log(trans);
 
-    if (dest == "about" && !trans) {
-        if (!showAbout && !showContact) {
-            trans = true;
-            $("#labelPane").fadeOut( paneFade);
-            $("#headerbg").animate({height: winHeight +"px"}, function(){
-                fadeRGBA($("#headerbg"),0.9);
-                $("#aboutInfo").fadeIn("slow",function(){
-                    showAbout = true;
-                    $(".navLink:eq(" + active + ")").addClass("underlined");
-                    trans = false;
-                });
+    if (!showContact && !trans) {
+        trans = true;
+        $(".curtainOverlay").addClass("transBG");
+        $(".curtainOverlay").height(window.innerHeight);
+        $(".curtainOverlay").fadeIn(1000,function() {
+            //*
+            $("#contactInfo").fadeIn("slow",function(){
+                showContact = true;
+                trans = false;
             });
-        } else if (showAbout && !showContact) {
-            trans = true;
-            $("#aboutInfo").fadeOut("slow",function(){
-                $("#headerbg").animate({height: "100%"},function(){
-                    fadeRGBA($("#headerbg"),0.75);
-                    $("#labelPane").fadeIn(paneFade,function(){
-                        showAbout = false;
-                        if (whichPage === "work") {
-                            $(".navLink:eq(0)").addClass("underlined");
-                        };
-                        if (whichPage === "media") {
-                            $(".navLink:eq(1)").addClass("underlined");
-                        };
-                        trans = false;        
-                    });
-                });
-            });
-        } else if (!showAbout && showContact) {
-            trans = true;
-            $("#contactInfo").fadeOut(function(){
-                showContact = false;
-                $("#aboutInfo").fadeIn("slow",function(){
-                    showAbout = true;
-                    $(".navLink:eq(" + active + ")").addClass("underlined");
-                    trans = false;
-                });
-            });
-        };
-
-    } else if (dest == "contact" && !trans) {
-        if (!showContact && !showAbout) {
-            trans = true;
-            $("#labelPane").fadeOut( paneFade);
-            $("#headerbg").animate({height: winHeight +"px"}, function(){
-                fadeRGBA($("#headerbg"),0.9);
-                $("#contactInfo").fadeIn("slow",function(){
-                    showContact = true;
-                    $(".navLink:eq(" + active + ")").addClass("underlined");
-                    trans = false;
-                });
-            });
-        } else if (showContact && !showAbout) {
-            trans = true;
-            $("#contactInfo").fadeOut("slow",function(){
-                $("#headerbg").animate({height: "100%"},function(){
-                    fadeRGBA($("#headerbg"),0.75);
-                    $("#labelPane").fadeIn(paneFade,function(){
-                        showContact = false;
-                        if (whichPage === "work") {
-                            $(".navLink:eq(0)").addClass("underlined");
-                        };
-                        if (whichPage === "media") {
-                            $(".navLink:eq(1)").addClass("underlined");
-                        };
-                        trans = false;        
-                    });
-                });
-            });
-        } else if (!showContact && showAbout) {
-            trans = true;
-            $("#aboutInfo").fadeOut(function(){
-                showAbout = false;
-                $("#contactInfo").fadeIn("slow",function(){
-                    showContact = true;
-                    $(".navLink:eq(" + active + ")").addClass("underlined");
-                    trans = false;
-                });
-            });
-        };
-    };
+            //*/
+        })
+    }
 }
 
 function curtainTransition(dest) {
