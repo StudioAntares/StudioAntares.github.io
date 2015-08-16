@@ -26,20 +26,23 @@
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
             <header>
-                <img src="img/logoTop.png" id="logoTop"/>
+                <div id="headerbg"></div>
+                <img src="../img/logoTop.png" id="logoTop"/>
                 <div id="antaresName">Studio Antares</div>
-                <div id="navLinks" class="hidden">
-                    <a href="#" class="navLink">work</a>
-                    <a href="#" class="navLink">philosophy</a>
-                    <a href="#" class="navLink">process</a>
-                    <a href="#" class="navLink" id="lastNav">contact</a>
+                <div id="navLinks">
+                    <a href="../work.html" class="navLink" data-dest="work">selected projects</a>
+                    <a href="../media.html" class="navLink" data-dest="media">animation</a>
+                    <a href="" class="navLink underlined" data-dest="about">about</a>
+                    <a href="http://ongoing.studio-antares.com/" class="navLink" data-dest="process">ongoing</a>
+                    <a href="" class="navLink" id="lastNav" data-dest="contact">contact</a>
                 </div>
 
-                <div class="menu hidden" >
+                <div class="menu" >
                     <span class="menu-global menu-top"></span>
                     <span class="menu-global menu-middle"></span>
                     <span class="menu-global menu-bottom"></span>
                 </div>
+                <!-- <div class="touchPad"></div> -->
             </header>
 
             <div id="labelPane" class="hidden">
@@ -88,12 +91,14 @@
             
         </div>
 
-        <nav id="my-menu" class="hidden">
+        <nav id="my-menu">
            <ul>
-              <li><a href="/">work</a></li>
-              <li><a href="/about/">philosophy</a></li>
-              <li><a href="/contact/">process</a></li>
-              <li><a href="/contact/">contact</a></li>
+              <li><a href="../index.html" class="mmenuLink" data-dest="home">home</a></li>
+              <li><a href="../work.html" class="mmenuLink" data-dest="work">selected projects</a></li>
+              <li><a href="#" class="mmenuLink" data-dest="media">animation</a></li>
+              <li><a href="#" class="mmenuLink" data-dest="about">about</a></li>
+              <li><a href="#" class="mmenuLink" data-dest="process">ongoing</a></li>
+              <li><a href="#" class="mmenuLink" data-dest="contact">contact</a></li>
            </ul>
         </nav>
         

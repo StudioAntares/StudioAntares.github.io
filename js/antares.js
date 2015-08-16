@@ -11,7 +11,7 @@ var trans = false;
 
 var workDest = "work.html"
 var mediaDest = "media.html"
-var procDest = "process/"
+var procDest = "http://ongoing.studio-antares.com"
 var homeDest = "index.html"
 var aboutDest = "about/index.html"
 
@@ -37,6 +37,8 @@ $(document).ready(function() {
     getScreenAspect();
     FastClick.attach(document.body);
 
+    /*
+
     $(".navLink").each(function(){
         var $this = $(this);
         if ($this.attr("data-dest")==="process") {
@@ -50,7 +52,8 @@ $(document).ready(function() {
             $this.parent().addClass("hidden");
         };
     })
-
+    */
+    
     if (document.getElementById("fullBg") !== null && document.getElementById("fullBg") !== undefined) {
         //alert("Home Page");
         whichPage = "home";
@@ -158,7 +161,7 @@ $(document).ready(function() {
         // $container = $('#projContainer');
         workDest = "../../work.html"
         mediaDest = "../../media.html"
-        procDest = "../../process/"
+        // procDest = "../../process/"
         homeDest = "../../index.html"
         aboutDest = "../../about/index.html"
         if (Modernizr.csstransitions && Modernizr.opacity) {
@@ -234,7 +237,7 @@ $(document).ready(function() {
         aboutDest = "../about/index.html";
         workDest = "../work.html"
         mediaDest = "../media.html"
-        procDest = "../process/"
+        // procDest = "../process/"
         homeDest = "../index.html"
         aboutDest = "../about/index.html"
     };
