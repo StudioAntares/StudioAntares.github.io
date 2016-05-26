@@ -53,17 +53,17 @@ $(document).ready(function() {
         };
     })
     */
-    
+
     if (document.getElementById("fullBg") !== null && document.getElementById("fullBg") !== undefined) {
         //alert("Home Page");
         whichPage = "home";
 
         mainProjects = [
-                  ["clubsuites","1","Santa Anita Club Suites",
-                   "Arcadia, CA"],
-
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
+
+                  ["clubsuites","1","Santa Anita Club Suites",
+                   "Arcadia, CA"],
 
                   ["helsinki","1","Guggenheim Helsinki Design Competition",
                    "Helsinki, Finland"],
@@ -147,7 +147,7 @@ $(document).ready(function() {
             });
         });
 
-        
+
 
     } else if (document.getElementById("projBg") !== null && document.getElementById("projBg") !== undefined) {
         //alert("Work Page");
@@ -177,7 +177,7 @@ $(document).ready(function() {
     $("#contactInfo").append(contactInfoText + rot13rot5Encode(hide));
 
     if (whichPage === "home") {
-        
+
     };
 
     //$("#projName").html(titles[0]);
@@ -208,7 +208,7 @@ $(document).ready(function() {
             activateMenu: function() {
                 Menu.el.menuTop.toggleClass('menu-top-click');
                 Menu.el.menuMiddle.toggleClass('menu-middle-click');
-                Menu.el.menuBottom.toggleClass('menu-bottom-click'); 
+                Menu.el.menuBottom.toggleClass('menu-bottom-click');
             }
         };
         //Menu.init();
@@ -332,7 +332,7 @@ $("#projContainer.singleProject").scroll(function() {
 
             perc = perc + "%";
             //console.log(perc);
-            $(".projBar").css("width",perc);      
+            $(".projBar").css("width",perc);
         }
         lastScrollLeft = containerScrollLeft;
     }
@@ -366,7 +366,7 @@ $(window).scroll(function() {
             // console.log("bang");
             $(".projNavSide").css("top", (barStartTop - pushUp) + "px");
         } else {
-            $(".projNavSide").css("top", barStartTop + "px"); 
+            $(".projNavSide").css("top", barStartTop + "px");
         }
     }
 });
@@ -390,7 +390,7 @@ $(window).on("backstretch.after", function (e, instance, index) {
     // console.log("after: " + index);
     if (whichPage === "home") {
         var coverDest = "projects/" + mainProjects[index][0] + "/index.html";
-        $("#fullBg").attr("data-dest",coverDest).addClass("hasLink");  
+        $("#fullBg").attr("data-dest",coverDest).addClass("hasLink");
     };
 });
 
@@ -437,7 +437,7 @@ $(".navLink, #projName, #projDesc").click(function(event){
             $("#container").fadeOut(1000,function(){
                 document.location.href = procDest;
             })
-        };        
+        };
     } else if (dest.indexOf("projects/") >= 0) {
         //alert("yes");
         $("#container").fadeOut(1000,function(){
@@ -602,7 +602,7 @@ $(".innerImage, .sideLink").click(function(event){
 });
 
 // $('#projContainer').on('click','.sidelink', function(event) {
-//     
+//
 //     console.log("didit");
 // });
 
@@ -633,7 +633,7 @@ $("#logoTop, #antaresName").click(function(){
                 document.location.href = homeUrl;
             });
         }
-        
+
     };
 });
 
@@ -666,13 +666,13 @@ $("#projContainer.singleProject .slides").imagesLoaded()
 $(document).keyup(function(e) {
     if (e.keyCode == 27) {            // ESC
         hideOver();
-    }   
+    }
 });
 
 on_resize(function() {
     //Throttled on-resize handler
-    
-    
+
+
 })();
 
 $( window ).resize(function() {
@@ -710,7 +710,7 @@ function hideOver(){
                 fadeRGBA($("#headerbg"),0.75);
                 $("#labelPane").fadeIn(paneFade,function(){
                     showAbout = false;
-                    trans = false;        
+                    trans = false;
                 });
             });
         });
@@ -721,7 +721,7 @@ function hideOver(){
                 fadeRGBA($("#headerbg"),0.75);
                 $("#labelPane").fadeIn(paneFade,function(){
                     showContact = false;
-                    trans = false;        
+                    trans = false;
                 });
             });
         });
@@ -772,7 +772,7 @@ function overlay(dest,active) {
                         if (whichPage === "media") {
                             $(".navLink:eq(1)").addClass("underlined");
                         };
-                        trans = false;        
+                        trans = false;
                     });
                 });
             });
@@ -813,7 +813,7 @@ function overlay(dest,active) {
                         if (whichPage === "media") {
                             $(".navLink:eq(1)").addClass("underlined");
                         };
-                        trans = false;        
+                        trans = false;
                     });
                 });
             });
@@ -844,7 +844,7 @@ function createThumbImages() {
         $(".innerImage").each(function(){
             var $thumb = $(this);
             var thumbHref = $thumb.attr("href");
-            if (thumbHref !== null && thumbHref !== undefined 
+            if (thumbHref !== null && thumbHref !== undefined
                  && thumbHref !== "#" && thumbHref !== "") {
                 //var projectDir = $thumb.attr("data-dir");
                 var projectDir = thumbHref.split('/')[1];
@@ -853,7 +853,7 @@ function createThumbImages() {
                 if (projectDir =="mur") {
                     thumbPath = "projects/" + projectDir + "/img/thumb2.jpg";
                 };
-                
+
                 $thumb.backstretch([thumbPath],{duration: 6500, fade: 3000});
                 //projectDir = "projects/" + projectDir;// + "/index.html";
                 projectDir = "projects/" + projectDir + "/index.html";
@@ -864,7 +864,7 @@ function createThumbImages() {
         $(".innerImage").each(function(){
             var $thumb = $(this);
             var thumbMediaSrc = $thumb.attr("data-mediasrc");
-            if (thumbMediaSrc !== null && thumbMediaSrc !== undefined 
+            if (thumbMediaSrc !== null && thumbMediaSrc !== undefined
                  && thumbMediaSrc !== "#" && thumbMediaSrc !== "") {
                 var thumbPath = "mediaEntries/" + thumbMediaSrc + "/img/thumb.jpg";
                 $thumb.backstretch([thumbPath],{duration: 6500, fade: 3000});
@@ -976,7 +976,7 @@ function resizeCover(){
             } else {
                 $(".projPageDesc, .projectInfo").removeAttr("style");
             };
-            
+
             var bar = $(".slides").offset().top + $(".slides").height();
 
             if ($("body").hasClass("aboutPage")) {
@@ -1004,7 +1004,7 @@ function resizeCover(){
                 over.html("<p>" + over.siblings(".bioInfo").html() + "<p>");
             })
 
-            
+
 
 
 
@@ -1034,7 +1034,7 @@ function resizeCover(){
             $(".vertInfo").removeClass("hidden");
         };
     };
-    
+
 
     //$("#container").height(window.innerHeight);
     // getScreenAspect();
@@ -1079,7 +1079,7 @@ function resizeCover(){
     //     $(".slides").removeAttr('style');
     //     $(".projPageDesc, .vertInfo").removeAttr('style');
     //     $(".vertInfo").html($(".projectInfo").html());
-    // };  
+    // };
 }
 
 function addTextBg() {
@@ -1152,7 +1152,7 @@ function projectImagesLoopR(){
             };
         }
     }
-}       
+}
 
 function projectImagesStop(){
     $("#projContainer.singleProject").stop();
@@ -1200,27 +1200,27 @@ $container.masonry( 'remove', items[0] );
 
 // Simple ROT13+ROT5 cipher (Javascript implementation)
 // Copyright StatiX Industries 2013 (MIT License)
- 
+
 //This is the alphabet array
 var alphaBetString = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z";
 var alphaBetTable = alphaBetString.split(" ");
- 
+
 //This is the lookup table/array for the ROT13 characters
 var rot13String = "N O P Q R S T U V W X Y Z A B C D E F G H I J K L M n o p q r s t u v w x y z a b c d e f g h i j k l m";
 var rot13Table = rot13String.split(" ");
- 
+
 //This is for numbers. Numbers will be passed thru ROT5
 var numberString = "1 2 3 4 5 6 7 8 9 0";
 var numberTable = numberString.split(" ");
- 
+
 //This is the lookup table of ROT5
 var rot5String = "6 7 8 9 0 1 2 3 4 5";
 var rot5Table = rot5String.split(" ");
- 
+
 //Here's the table for symbols. Symbols will remain the same
 var symbolString = "~ ` ! @ # $ % ^ & * ( ) _ + - = { } [ ] \\ | ; \' : \" < > ? , . /";
 var symbolTable = symbolString.split(" ");
- 
+
 //Main function
 var rot13rot5Encode = function(input) {
     var output = "";
@@ -1246,7 +1246,7 @@ var rot13rot5Encode = function(input) {
     }
     return output; //Ultimately, return the output
 };
- 
+
 //If you want to run the cipher, uncomment the following lines and change userInput to your desired input
 //var userInput = "Developed by Pan Ziyue (@sammy0025) in StatiX Industries.";
 //console.log(rot13rot5Encode(userInput));
