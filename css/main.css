@@ -1060,7 +1060,6 @@ header, #headerbg {
 }
 
 .aboutPage .sideScroll .bioOverlay p {
-    /*background: red;*/
     position: absolute;
     bottom: 0;
 }
