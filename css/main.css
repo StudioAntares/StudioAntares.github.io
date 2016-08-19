@@ -146,15 +146,15 @@ h1 {
     position: fixed;
 }
 
-.dropCap { 
-    float: left; 
-    color: #903; 
-    font-size: 2.9em; 
-    line-height: 1em; 
-    padding-top: 0em; 
-    padding-right: 0.1em; 
-    padding-left: 0em; 
-    font-family: Georgia; 
+.dropCap {
+    float: left;
+    color: #903;
+    font-size: 2.9em;
+    line-height: 1em;
+    padding-top: 0em;
+    padding-right: 0.1em;
+    padding-left: 0em;
+    font-family: Georgia;
 }
 
 .vCenterAlt {
@@ -973,6 +973,9 @@ header, #headerbg {
     color: #333366;
 }
 
+.aboutPage .imgSlide {
+  position: relative;
+}
 
 .aboutPage p.bioInfo {
     -webkit-box-sizing: border-box;
@@ -1053,7 +1056,13 @@ header, #headerbg {
 
 .no-touch.csstransitions.opacity .aboutPage .sideScroll .slide:hover img {
     cursor: pointer;
-    opacity: 0.2;
+    opacity: 0.5  ;
+}
+
+.aboutPage .sideScroll .bioOverlay p {
+    /*background: red;*/
+    position: absolute;
+    bottom: 0;
 }
 
 
@@ -1092,7 +1101,7 @@ header, #headerbg {
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 
 /* ==========================================================================
-   Media Queries 
+   Media Queries
    ========================================================================== */
 
 @media only screen and (min-width: 1500px) {
