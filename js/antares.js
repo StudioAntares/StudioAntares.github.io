@@ -65,7 +65,7 @@ $(document).ready(function() {
                   ["clubsuites","1","Santa Anita Club Suites",
                    "Arcadia, CA"],
 
-                  ["helsinki","1","Guggenheim Helsinki Design Competition",
+                  ["helsinki","2","Guggenheim Helsinki Design Competition",
                    "Helsinki, Finland"],
 
                   ["sarenovation","1","Santa Anita Park Renovations",
