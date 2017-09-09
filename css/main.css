@@ -826,6 +826,10 @@ header, #headerbg {
     /*margin: auto;*/
 }
 
+.slide.slidePadRight {
+  padding-right: 10px;
+}
+
 .slide .movHolder, #custom-content .movHolder {
     width: 100%;
     /*background-color: #ccc;*/
