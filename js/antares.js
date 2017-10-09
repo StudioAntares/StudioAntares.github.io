@@ -86,9 +86,6 @@ $(document).ready(function() {
                   ["mur","2","Multiple Unit Residence",
                    "Sofia, Bulgaria"],
 
-                  ["horseinstall","1","Video Installation Proposal",
-                   "Santa Anita Park, Arcadia, CA"],
-
                   ["resortspa","1","Resort & Spa",
                    "Rhodope Mountains, Bulgaria"]
                 ]
