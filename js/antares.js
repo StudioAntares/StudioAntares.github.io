@@ -62,11 +62,14 @@ $(document).ready(function() {
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
 
-                  ["clubsuites","1","Santa Anita Club Suites",
+                  ["onehundred","1","100-to-1 Club",
                    "Arcadia, CA"],
 
                   ["helsinki","2","Guggenheim Helsinki Design Competition",
                    "Helsinki, Finland"],
+
+                  ["clubsuites","1","Santa Anita Club Suites",
+                   "Arcadia, CA"],
 
                   ["sarenovation","1","Santa Anita Park Renovations",
                    "Arcadia, CA"],
