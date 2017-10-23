@@ -59,11 +59,11 @@ $(document).ready(function() {
         whichPage = "home";
 
         mainProjects = [
+                  ["onehundred","1","100-to-1",
+                   "Arcadia, CA"],
+
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
-
-                  ["onehundred","1","100-to-1 Club",
-                   "Arcadia, CA"],
 
                   ["helsinki","2","Guggenheim Helsinki Design Competition",
                    "Helsinki, Finland"],
