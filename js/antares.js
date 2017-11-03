@@ -62,6 +62,9 @@ $(document).ready(function() {
                   ["onehundred","1","100-to-1",
                    "Arcadia, CA"],
 
+                  ["citymarket","1","City Market Social Club",
+                   "Los Angeles, CA"],
+
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
 
