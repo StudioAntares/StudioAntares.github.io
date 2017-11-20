@@ -86,9 +86,6 @@ $(document).ready(function() {
                   ["redwood","1","Mar Vista Residence",
                    "Mar Vista, CA"],
 
-                  ["sarenovation","2","Santa Anita Park Renovations",
-                   "Arcadia, CA"],
-
                   ["mur","2","Multiple Unit Residence",
                    "Sofia, Bulgaria"],
 
