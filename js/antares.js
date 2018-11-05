@@ -59,7 +59,7 @@ $(document).ready(function() {
         whichPage = "home";
 
         mainProjects = [
-                  ["citymarket","1","City Market Social Club",
+                  ["citymarket","1","City Market Social House",
                    "Los Angeles, CA"],
 
                   ["onehundred","1","100-to-1",
