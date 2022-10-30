@@ -59,23 +59,26 @@ $(document).ready(function() {
         whichPage = "home";
 
         mainProjects = [
-                  ["citymarket","1","City Market Social House",
-                   "Los Angeles, CA"],
-
-                  ["onehundred","1","100-to-1",
-                   "Arcadia, CA"],
+                  ["kalthom","1","Kalthom",
+                   "Ventura, CA"],
 
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
 
-                  ["helsinki","2","Guggenheim Helsinki Design Competition",
-                   "Helsinki, Finland"],
+                  ["onehundred","1","100-to-1",
+                   "Arcadia, CA"],
 
                   ["clubsuites","1","Santa Anita Club Suites",
                    "Arcadia, CA"],
 
                   ["sarenovation","1","Santa Anita Park Renovations",
                    "Arcadia, CA"],
+
+                  ["citymarket","1","City Market Social House",
+                   "Los Angeles, CA"],
+
+                  ["helsinki","2","Guggenheim Helsinki Design Competition",
+                   "Helsinki, Finland"],
 
                   ["quartet","1","QUARTET v4.0",
                    "Theatrical Stage Design, NYC"],
