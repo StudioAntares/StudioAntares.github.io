@@ -65,6 +65,9 @@ $(document).ready(function() {
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
 
+                  ["sls5x1","1","SLS 5x1",
+                   "Los Angeles, CA"],
+
                   ["onehundred","1","100-to-1",
                    "Arcadia, CA"],
 
