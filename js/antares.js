@@ -62,6 +62,9 @@ $(document).ready(function() {
                   ["kalthom","1","Kalthom",
                    "Ventura, CA"],
 
+                  ["cmwine","1","CM Wine Store",
+                    "Plovdiv, Bulgaria"],
+
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
 
