@@ -65,6 +65,9 @@ $(document).ready(function() {
                   ["cmwine","1","CM Wine Store",
                     "Plovdiv, Bulgaria"],
 
+                  ["districtonhigh","1","District on High",
+                    "Moorpark, CA"],
+
                   ["mcc","1","Manhattan Country Club",
                    "Manhattan Beach, CA"],
 
