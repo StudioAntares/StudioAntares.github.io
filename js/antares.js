@@ -62,6 +62,9 @@ $(document).ready(function() {
                   ["kalthom","1","Kalthom",
                    "Ventura, CA"],
 
+                  ["whgallery","1","WH_Art Gallery",
+                    "West Hollywood, CA"],
+
                   ["cmwine","1","CM Wine Store",
                     "Plovdiv, Bulgaria"],
 
