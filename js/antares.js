@@ -862,10 +862,7 @@ function createThumbImages() {
                 var projectDir = thumbHref.split('/')[1];
                 //console.log(projectDir);
                 var thumbPath = "projects/" + projectDir + "/img/thumb.jpg";
-                if (projectDir =="mur") {
-                    thumbPath = "projects/" + projectDir + "/img/thumb2.jpg";
-                };
-
+                
                 $thumb.backstretch([thumbPath],{duration: 6500, fade: 3000});
                 //projectDir = "projects/" + projectDir;// + "/index.html";
                 projectDir = "projects/" + projectDir + "/index.html";
